@@ -19,31 +19,57 @@ namespace HotelBookingManagementSystem.Controller
             return SQL.SQLPull(query);
         }
         
-        public static DataTable GetAvailableRooms(int roomTypeId)
+        public static DataTable GetAvailableRooms(int roomTypeId, DateTime checkin, DateTime checkout)
         {
-            string query = $@"
-                SELECT room_number
-                FROM rooms
-                WHERE room_type_id = {roomTypeId}
-                AND room_status = 'available'";
+            try
+            {
+                string query = $@"
+                    SELECT r.room_id, r.room_number
+                    FROM rooms r
+                    WHERE r.room_type_id = {roomTypeId}
+                    AND r.room_status = 'available'
+                    AND r.room_id NOT IN
+                    (
+                        SELECT br.room_id
+                        FROM booking_rooms br
+                        INNER JOIN bookings b
+                            ON br.booking_id = b.booking_id
+                        WHERE b.booking_status != 'cancelled'
+                          AND b.check_in_date < '{checkout:yyyy-MM-dd}'
+                          AND b.check_out_date > '{checkin:yyyy-MM-dd}'
+                    )";
 
-            return SQL.SQLPull(query);
+                return SQL.SQLPull(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Unexpected error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new DataTable();
+            }
         }
 
         public static int GetRoomCapacity(int roomTypeID)
         {
-            string query = $@"
-                SELECT max_occupancy 
-                FROM room_types 
-                WHERE room_type_id = {roomTypeID}";
-
-            DataTable dt = SQL.SQLPull(query);
-
-            if (dt.Rows.Count > 0)
+            try
             {
-                return Convert.ToInt32(dt.Rows[0]["max_occupancy"]);
+                string query = $@"
+                    SELECT max_occupancy 
+                    FROM room_types 
+                    WHERE room_type_id = {roomTypeID}";
+
+                DataTable dt = SQL.SQLPull(query);
+
+                if (dt.Rows.Count > 0)
+                {
+                    return Convert.ToInt32(dt.Rows[0]["max_occupancy"]);
+                }
+                return 0;
             }
-            return 0;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Unexpected error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
         }
 
         public static bool IsRoomCapacityValid(int roomTypeID, int guests)
@@ -57,55 +83,28 @@ namespace HotelBookingManagementSystem.Controller
             return false;
         }
 
-        public static bool CheckDateConflicts(int roomID, int bookingID, DateTime checkin, DateTime checkout)
-        {
-            string query = $@"
-                SELECT COUNT(1) AS ConflictCount
-                FROM booking_rooms br
-                INNER JOIN bookings b ON br.booking_id = b.booking_id
-                WHERE br.room_id = @roomID
-                AND b.booking_status != 'cancelled'
-                AND b.booking_id != {bookingID}
-                AND b.check_in_date < '{checkout:yyyy-MM-dd}' 
-                AND b.check_out_date > '{checkin:yyyy-MM-dd}'";
-
-            DataTable dt = SQL.SQLPull(query);
-
-            if (dt.Rows.Count > 0)
-            {
-                int count = Convert.ToInt32(dt.Rows[0]["ConflictCount"]);
-                return count > 0;
-            }
-            return false;
-        }
-
         public static int GetRoomTypePrice(int roomTypeID)
         {
-            string query = $@"
-                SELECT base_price
-                FROM room_types
-                WHERE room_type_id = {roomTypeID}";
-
-            DataTable dt = SQL.SQLPull(query);
-
-            if (dt.Rows.Count > 0)
+            try
             {
-                return Convert.ToInt32(dt.Rows[0]["base_price"]);
+                string query = $@"
+                    SELECT base_price
+                    FROM room_types
+                    WHERE room_type_id = {roomTypeID}";
+
+                DataTable dt = SQL.SQLPull(query);
+
+                if (dt.Rows.Count > 0)
+                {
+                    return Convert.ToInt32(dt.Rows[0]["base_price"]);
+                }
+                return -1;
             }
-            return -1;
-        }
-
-        public static int GetBookingID()
-        {
-            string query = "SELECT booking_id FROM bookings";
-
-            DataTable dt = SQL.SQLPull(query);
-
-            if (dt.Rows.Count > 0)
+            catch (Exception ex)
             {
-                return Convert.ToInt32(dt.Rows[0]["booking_id"]);
+                MessageBox.Show(ex.Message, "Unexpected error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
             }
-            return -1;
         }
 
         public static bool IsDateValid(DateTime checkin, DateTime checkout)
@@ -127,27 +126,42 @@ namespace HotelBookingManagementSystem.Controller
 
         public static int CreateBooking(int guestID, DateTime checkin, DateTime checkout, int createdBy, string bookingRef, string status, decimal totalAmount)
         {
-            int bookingID;
+            try
+            {
+                int bookingID;
 
-            string query = $@"
-                INSERT INTO bookings 
-                    (guest_id, created_by_user_id, booking_reference, booking_status, check_in_date, check_out_date, total_amount)
-                VALUES 
-                    ({guestID}, {createdBy}, '{bookingRef}', '{status}', '{checkin:yyyy-MM-dd}', '{checkout:yyyy-MM-dd}', {totalAmount});
-                SELECT LAST_INSERT_ID();";
+                string query = $@"
+                    INSERT INTO bookings 
+                        (guest_id, created_by_user_id, booking_reference, booking_status, check_in_date, check_out_date, total_amount)
+                    VALUES 
+                        ({guestID}, {createdBy}, '{bookingRef}', '{status}', '{checkin:yyyy-MM-dd}', '{checkout:yyyy-MM-dd}', {totalAmount});
+                    SELECT LAST_INSERT_ID();";
 
-            return bookingID = Convert.ToInt32(SQL.SQLPushGetID(query));
+                return bookingID = Convert.ToInt32(SQL.SQLPushGetID(query));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Unexpected error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
         }
 
         public static void CreateBookingRooms(int bookingID, int roomID, double rate, int guests)
         {
-            string query = $@"
-                INSERT INTO booking_rooms
-                    (booking_id, room_id, rate_at_booking, num_guests)
-                VALUES
-                    ({bookingID}, {roomID}, {rate}, {guests})";
+            try
+            {
+                string query = $@"
+                    INSERT INTO booking_rooms
+                        (booking_id, room_id, rate_at_booking, num_guests)
+                    VALUES
+                        ({bookingID}, {roomID}, {rate}, {guests})";
 
-            SQL.SQLPush(query);
+                SQL.SQLPush(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Unexpected error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public static string CalculateGrandTotal(DataGridView dgv, string totalAmount)
         {
@@ -186,44 +200,46 @@ namespace HotelBookingManagementSystem.Controller
             return decimal.TryParse(cleaned, out decimal result) ? result : 0m;
         }
 
-        public static bool ProcessCompleteBooking(
-            int guestId,
-            int createdByUserId,
-            string rawTotalAmount,
-            DataGridView dgvBookings)
+        public static bool ProcessCompleteBooking(int guestId, int createdByUserId, string rawTotalAmount, DataGridView dgvBookings)
         {
-            if (dgvBookings.Rows.Count == 0) return false;
-
-            decimal totalAmount = ParseTotalAmount(rawTotalAmount);
-            string bookingReference = GenerateReference();
-
-            // Get check-in date from first row
-            DateTime initialCheckin = Convert.ToDateTime(dgvBookings.Rows[0].Cells["CheckIn"].Value);
-            DateTime finalCheckout = Convert.ToDateTime(dgvBookings.Rows[0].Cells["CheckOut"].Value);
-            string status = CheckBookingStatus(initialCheckin);
-
-            // Save main booking record
-            int bookingID = CreateBooking(guestId, initialCheckin, finalCheckout, createdByUserId, bookingReference, status, totalAmount);
-
-            if (bookingID <= 0) return false;
-
-            // Loop through grid items and save room detail records
-            foreach (DataGridViewRow row in dgvBookings.Rows)
+            try
             {
-                if (row.IsNewRow) continue;
+                if (dgvBookings.Rows.Count == 0) return false;
 
-                int roomID = Convert.ToInt32(row.Cells["RoomID"].Value);
-                int guests = Convert.ToInt32(row.Cells["Guests"].Value);
-                int nights = Convert.ToInt32(row.Cells["Nights"].Value);
-                double totalLineItem = Convert.ToDouble(row.Cells["TotalAmount"].Value);
+                decimal totalAmount = ParseTotalAmount(rawTotalAmount);
+                string bookingReference = GenerateReference();
 
-                double rate = nights > 0 ? totalLineItem / nights : 0;
+                // Get check-in date from first row
+                DateTime initialCheckin = Convert.ToDateTime(dgvBookings.Rows[0].Cells["CheckIn"].Value);
+                DateTime finalCheckout = Convert.ToDateTime(dgvBookings.Rows[0].Cells["CheckOut"].Value);
+                string status = CheckBookingStatus(initialCheckin);
 
-                CreateBookingRooms(bookingID, roomID, rate, guests);
+                // Save main booking record
+                int bookingID = CreateBooking(guestId, initialCheckin, finalCheckout, createdByUserId, bookingReference, status, totalAmount);
+
+                if (bookingID <= 0) return false;
+
+                // Loop through grid items and save room detail records
+                foreach (DataGridViewRow row in dgvBookings.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    int roomID = Convert.ToInt32(row.Cells["RoomID"].Value);
+                    int guests = Convert.ToInt32(row.Cells["Guests"].Value);
+                    int nights = Convert.ToInt32(row.Cells["Nights"].Value);
+                    double totalLineItem = Convert.ToDouble(row.Cells["TotalAmount"].Value);
+
+                    double rate = nights > 0 ? totalLineItem / nights : 0;
+
+                    CreateBookingRooms(bookingID, roomID, rate, guests);
+                }
+                return true;
             }
-
-            return true;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Unexpected error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
-
     }
 }

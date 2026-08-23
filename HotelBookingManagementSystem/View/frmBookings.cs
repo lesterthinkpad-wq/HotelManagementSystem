@@ -44,6 +44,60 @@ namespace HotelBookingManagementSystem.View
             cboRoomType.DataSource = dt;
         }
 
+        private void LoadAvailableRooms()
+        {
+            if (cboRoomType.SelectedIndex == -1)
+                return;
+
+            if (cboRoomType.SelectedValue is DataRowView)
+                return;
+
+            int roomTypeId = Convert.ToInt32(cboRoomType.SelectedValue);
+
+            // gets the available only for a selected date
+            DataTable dt = BookingController.GetAvailableRooms(
+                roomTypeId,
+                dtpCheckinDate.Value.Date,
+                dtpCheckoutDate.Value.Date
+            );
+
+            cboRoomNumber.DisplayMember = "room_number";
+            cboRoomNumber.ValueMember = "room_id";
+            cboRoomNumber.DataSource = dt;
+        }
+
+        private void dtpCheckinDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (isInitializing)
+                return;
+
+            dtpCheckoutDate.MinDate = dtpCheckinDate.Value.AddDays(1);
+
+            if (!BookingController.IsDateValid(dtpCheckinDate.Value, dtpCheckoutDate.Value))
+            {
+                dtpCheckoutDate.Value = dtpCheckoutDate.MinDate;
+            }
+            LoadAvailableRooms();
+        }
+
+        private void dtpCheckoutDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (isInitializing)
+                return;
+
+            if (!BookingController.IsDateValid(dtpCheckinDate.Value, dtpCheckoutDate.Value))
+            {
+                MessageBox.Show(
+                    "Check in must be before checkout",
+                    "Invalid date",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                dtpCheckoutDate.Value = dtpCheckoutDate.MinDate;
+            }
+            LoadAvailableRooms();
+        }
+
         private void cboRoomType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboRoomType.SelectedIndex == -1)
@@ -54,7 +108,7 @@ namespace HotelBookingManagementSystem.View
 
             int roomTypeId = Convert.ToInt32(cboRoomType.SelectedValue);
 
-            DataTable dt = BookingController.GetAvailableRooms(roomTypeId);
+            DataTable dt = BookingController.GetAvailableRooms(roomTypeId, dtpCheckinDate.Value, dtpCheckoutDate.Value);
 
             cboRoomNumber.DisplayMember = "room_number";
             cboRoomNumber.ValueMember = "room_number";
@@ -94,8 +148,9 @@ namespace HotelBookingManagementSystem.View
                 return;
             }
 
+            int roomID = RoomController.GetRoomID(cboRoomNumber.SelectedValue.ToString());
             int roomTypeID = Convert.ToInt32(cboRoomType.SelectedValue);
-            int GuestID = Convert.ToInt32(txtGuestID.Text);
+            int guestID = Convert.ToInt32(txtGuestID.Text);
 
             DateTime checkIn = dtpCheckinDate.Value;
             DateTime checkOut = dtpCheckoutDate.Value;
@@ -106,11 +161,9 @@ namespace HotelBookingManagementSystem.View
             double basePrice = BookingController.GetRoomTypePrice(roomTypeID);
             double total = BookingController.CalculateLineTotal(basePrice, nights);
 
-            int roomID = RoomController.GetRoomID(cboRoomNumber.SelectedValue.ToString());
-
             dgvBookings.Rows.Add(
                 roomID,
-                GuestID,
+                guestID,
                 checkIn,
                 checkOut,
                 cboRoomType.Text,
@@ -139,36 +192,6 @@ namespace HotelBookingManagementSystem.View
                     txtEmail.Text = frmGuests.email;
                     txtPhoneNumber.Text = frmGuests.phone;
                 }
-            }
-        }
-
-        private void dtpCheckinDate_ValueChanged(object sender, EventArgs e)
-        {
-            if (isInitializing)
-                return;
-
-            dtpCheckoutDate.MinDate = dtpCheckinDate.Value.AddDays(1);
-
-            if (!BookingController.IsDateValid(dtpCheckinDate.Value, dtpCheckoutDate.Value))
-            {
-                dtpCheckoutDate.Value = dtpCheckoutDate.MinDate;
-            }
-        }
-
-        private void dtpCheckoutDate_ValueChanged(object sender, EventArgs e)
-        {
-            if (isInitializing)
-                return;
-
-            if (!BookingController.IsDateValid(dtpCheckinDate.Value, dtpCheckoutDate.Value))
-            {
-                MessageBox.Show(
-                    "Check in must be before checkout",
-                    "Invalid date",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-                dtpCheckoutDate.Value = dtpCheckoutDate.MinDate;
             }
         }
 
@@ -202,6 +225,8 @@ namespace HotelBookingManagementSystem.View
                 int guestID = Convert.ToInt32(txtGuestID.Text);
                 int createdByUserId = LoginController.userID;
                 string totalAmount = lblTotalAmount.Text;
+                DateTime checkin = dtpCheckinDate.Value;
+                DateTime checkout = dtpCheckoutDate.Value;
 
                 // Save booking and reset only on success
                 if (BookingController.ProcessCompleteBooking(guestID, createdByUserId, totalAmount, dgvBookings))
@@ -248,6 +273,8 @@ namespace HotelBookingManagementSystem.View
             btnConfirmBooking.Enabled = false;
             btnNewGuest.Enabled = true;
             btnSelectGuest.Enabled = true;
+            dtpCheckinDate.Enabled = true;
+            dtpCheckoutDate.Enabled = true;
             txtFName.Clear();
             txtLName.Clear();
             txtGuestID.Clear();
