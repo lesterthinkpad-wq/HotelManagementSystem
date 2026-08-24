@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             pnlSide = new Panel();
-            button1 = new Button();
+            btnLogout = new Button();
             btnReports = new Button();
             btnStaffAccount = new Button();
             btnRooms = new Button();
@@ -62,7 +62,7 @@
             // pnlSide
             // 
             pnlSide.BackColor = Color.FromArgb(47, 65, 86);
-            pnlSide.Controls.Add(button1);
+            pnlSide.Controls.Add(btnLogout);
             pnlSide.Controls.Add(btnReports);
             pnlSide.Controls.Add(btnStaffAccount);
             pnlSide.Controls.Add(btnRooms);
@@ -76,17 +76,18 @@
             pnlSide.Size = new Size(378, 1037);
             pnlSide.TabIndex = 0;
             // 
-            // button1
+            // btnLogout
             // 
-            button1.BackColor = Color.FromArgb(47, 65, 86);
-            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            button1.ForeColor = Color.FromArgb(245, 239, 235);
-            button1.Location = new Point(38, 946);
-            button1.Name = "button1";
-            button1.Size = new Size(294, 54);
-            button1.TabIndex = 8;
-            button1.Text = "Reports";
-            button1.UseVisualStyleBackColor = false;
+            btnLogout.BackColor = Color.FromArgb(47, 65, 86);
+            btnLogout.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnLogout.ForeColor = Color.FromArgb(245, 239, 235);
+            btnLogout.Location = new Point(38, 946);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(294, 54);
+            btnLogout.TabIndex = 8;
+            btnLogout.Text = "Log out";
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnReports
             // 
@@ -367,7 +368,7 @@
         private Button btnStaffAccount;
         private Button btnRooms;
         private Button btnGuests;
-        private Button button1;
+        private Button btnLogout;
         private DataGridView dgvBookingsAccounts;
         private Label lblRecentBookings;
         private Panel panel1;

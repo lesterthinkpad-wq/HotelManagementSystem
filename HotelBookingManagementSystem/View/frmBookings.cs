@@ -178,7 +178,7 @@ namespace HotelBookingManagementSystem.View
             lblTotalAmount.Text = totalAmount;
 
             BookingControls();
-        }   
+        }
 
         private void btnSelectGuest_Click(object sender, EventArgs e)
         {
@@ -280,6 +280,22 @@ namespace HotelBookingManagementSystem.View
             txtGuestID.Clear();
             txtEmail.Clear();
             txtPhoneNumber.Clear();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Close booking form now?",
+                "Cancelling",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            
+            if (result == DialogResult.Yes)
+            {
+                ResetControls();
+                this.Close();
+            }
+            return;
         }
     }
 }

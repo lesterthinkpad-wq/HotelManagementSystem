@@ -24,6 +24,9 @@ namespace HotelBookingManagementSystem.View
             {
                 frmDashboard dashboard = new frmDashboard();
                 dashboard.Show();
+
+                txtUserID.Clear();
+                txtPassword.Clear();
             }
         }
 
@@ -37,6 +40,21 @@ namespace HotelBookingManagementSystem.View
             {
                 txtPassword.PasswordChar = '*';
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Cancel login now?",
+                "Cancelling login",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            return;
         }
     }
 }

@@ -54,6 +54,15 @@
             numericUpDown1 = new NumericUpDown();
             nudGuests = new NumericUpDown();
             dgvBookings = new DataGridView();
+            RoomID = new DataGridViewTextBoxColumn();
+            GuestID = new DataGridViewTextBoxColumn();
+            CheckIn = new DataGridViewTextBoxColumn();
+            CheckOut = new DataGridViewTextBoxColumn();
+            RoomType = new DataGridViewTextBoxColumn();
+            RoomNumber = new DataGridViewTextBoxColumn();
+            Guests = new DataGridViewTextBoxColumn();
+            Nights = new DataGridViewTextBoxColumn();
+            TotalAmount = new DataGridViewTextBoxColumn();
             btnAddBookings = new Button();
             panel1 = new Panel();
             label9 = new Label();
@@ -64,15 +73,6 @@
             btnCancel = new Button();
             txtLName = new TextBox();
             txtGuestID = new TextBox();
-            RoomID = new DataGridViewTextBoxColumn();
-            GuestID = new DataGridViewTextBoxColumn();
-            CheckIn = new DataGridViewTextBoxColumn();
-            CheckOut = new DataGridViewTextBoxColumn();
-            RoomType = new DataGridViewTextBoxColumn();
-            RoomNumber = new DataGridViewTextBoxColumn();
-            Guests = new DataGridViewTextBoxColumn();
-            Nights = new DataGridViewTextBoxColumn();
-            TotalAmount = new DataGridViewTextBoxColumn();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudGuests).BeginInit();
@@ -366,6 +366,80 @@
             dgvBookings.Size = new Size(878, 180);
             dgvBookings.TabIndex = 38;
             // 
+            // RoomID
+            // 
+            RoomID.DataPropertyName = "RoomID";
+            RoomID.HeaderText = "RoomID";
+            RoomID.MinimumWidth = 6;
+            RoomID.Name = "RoomID";
+            RoomID.ReadOnly = true;
+            RoomID.Visible = false;
+            // 
+            // GuestID
+            // 
+            GuestID.DataPropertyName = "GuestID";
+            GuestID.HeaderText = "Guest ID";
+            GuestID.MinimumWidth = 6;
+            GuestID.Name = "GuestID";
+            GuestID.ReadOnly = true;
+            GuestID.Visible = false;
+            // 
+            // CheckIn
+            // 
+            CheckIn.DataPropertyName = "CheckIn";
+            CheckIn.HeaderText = "Check In";
+            CheckIn.MinimumWidth = 6;
+            CheckIn.Name = "CheckIn";
+            CheckIn.ReadOnly = true;
+            // 
+            // CheckOut
+            // 
+            CheckOut.DataPropertyName = "CheckOut";
+            CheckOut.HeaderText = "Check Out";
+            CheckOut.MinimumWidth = 6;
+            CheckOut.Name = "CheckOut";
+            CheckOut.ReadOnly = true;
+            // 
+            // RoomType
+            // 
+            RoomType.DataPropertyName = "RoomType";
+            RoomType.HeaderText = "Room Type";
+            RoomType.MinimumWidth = 6;
+            RoomType.Name = "RoomType";
+            RoomType.ReadOnly = true;
+            // 
+            // RoomNumber
+            // 
+            RoomNumber.DataPropertyName = "RoomNumber";
+            RoomNumber.HeaderText = "Room Number";
+            RoomNumber.MinimumWidth = 6;
+            RoomNumber.Name = "RoomNumber";
+            RoomNumber.ReadOnly = true;
+            // 
+            // Guests
+            // 
+            Guests.DataPropertyName = "Guests";
+            Guests.HeaderText = "Guests";
+            Guests.MinimumWidth = 6;
+            Guests.Name = "Guests";
+            Guests.ReadOnly = true;
+            // 
+            // Nights
+            // 
+            Nights.DataPropertyName = "Nights";
+            Nights.HeaderText = "Nights";
+            Nights.MinimumWidth = 6;
+            Nights.Name = "Nights";
+            Nights.ReadOnly = true;
+            // 
+            // TotalAmount
+            // 
+            TotalAmount.DataPropertyName = "TotalAmount";
+            TotalAmount.HeaderText = "Total";
+            TotalAmount.MinimumWidth = 6;
+            TotalAmount.Name = "TotalAmount";
+            TotalAmount.ReadOnly = true;
+            // 
             // btnAddBookings
             // 
             btnAddBookings.BackColor = Color.FromArgb(47, 65, 86);
@@ -457,6 +531,7 @@
             btnCancel.TabIndex = 41;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // txtLName
             // 
@@ -480,80 +555,6 @@
             txtGuestID.Size = new Size(80, 38);
             txtGuestID.TabIndex = 43;
             txtGuestID.Visible = false;
-            // 
-            // RoomID
-            // 
-            RoomID.DataPropertyName = "RoomID";
-            RoomID.HeaderText = "RoomID";
-            RoomID.MinimumWidth = 6;
-            RoomID.Name = "RoomID";
-            RoomID.ReadOnly = true;
-            RoomID.Visible = false;
-            // 
-            // GuestID
-            // 
-            GuestID.DataPropertyName = "GuestID";
-            GuestID.HeaderText = "Guest ID";
-            GuestID.MinimumWidth = 6;
-            GuestID.Name = "GuestID";
-            GuestID.ReadOnly = true;
-            GuestID.Visible = false;
-            // 
-            // CheckIn
-            // 
-            CheckIn.DataPropertyName = "CheckIn";
-            CheckIn.HeaderText = "Check In";
-            CheckIn.MinimumWidth = 6;
-            CheckIn.Name = "CheckIn";
-            CheckIn.ReadOnly = true;
-            // 
-            // CheckOut
-            // 
-            CheckOut.DataPropertyName = "CheckOut";
-            CheckOut.HeaderText = "Check Out";
-            CheckOut.MinimumWidth = 6;
-            CheckOut.Name = "CheckOut";
-            CheckOut.ReadOnly = true;
-            // 
-            // RoomType
-            // 
-            RoomType.DataPropertyName = "RoomType";
-            RoomType.HeaderText = "Room Type";
-            RoomType.MinimumWidth = 6;
-            RoomType.Name = "RoomType";
-            RoomType.ReadOnly = true;
-            // 
-            // RoomNumber
-            // 
-            RoomNumber.DataPropertyName = "RoomNumber";
-            RoomNumber.HeaderText = "Room Number";
-            RoomNumber.MinimumWidth = 6;
-            RoomNumber.Name = "RoomNumber";
-            RoomNumber.ReadOnly = true;
-            // 
-            // Guests
-            // 
-            Guests.DataPropertyName = "Guests";
-            Guests.HeaderText = "Guests";
-            Guests.MinimumWidth = 6;
-            Guests.Name = "Guests";
-            Guests.ReadOnly = true;
-            // 
-            // Nights
-            // 
-            Nights.DataPropertyName = "Nights";
-            Nights.HeaderText = "Nights";
-            Nights.MinimumWidth = 6;
-            Nights.Name = "Nights";
-            Nights.ReadOnly = true;
-            // 
-            // TotalAmount
-            // 
-            TotalAmount.DataPropertyName = "TotalAmount";
-            TotalAmount.HeaderText = "Total";
-            TotalAmount.MinimumWidth = 6;
-            TotalAmount.Name = "TotalAmount";
-            TotalAmount.ReadOnly = true;
             // 
             // frmBookings
             // 
