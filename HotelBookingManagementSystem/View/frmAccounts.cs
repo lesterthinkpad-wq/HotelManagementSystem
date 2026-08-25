@@ -24,5 +24,31 @@ namespace HotelBookingManagementSystem.View
             UserController.LoadUsers(dgvUsers);
             UserController.FormatDGV(dgvUsers);
         }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            txtUserID.Text = dgvUsers.SelectedRows[0].Cells["user_id"].Value.ToString();
+            txtFName.Text = dgvUsers.SelectedRows[0].Cells["first_name"].Value.ToString();
+            txtLName.Text = dgvUsers.SelectedRows[0].Cells["last_name"].Value.ToString();
+            txtEmail.Text = dgvUsers.SelectedRows[0].Cells["email"].Value.ToString();
+            txtPhoneNumber.Text = dgvUsers.SelectedRows[0].Cells["phone"].Value.ToString();
+            txtPassword.Text = dgvUsers.SelectedRows[0].Cells["password"].Value.ToString();
+            txtRole.Text = dgvUsers.SelectedRows[0].Cells["user_role"].Value.ToString();
+            
+            string status = dgvUsers.SelectedRows[0].Cells["is_active"].Value.ToString();
+
+            switch (status)
+            {
+                case "1":
+                    txtStatus.Text = "Active";
+                    break;
+                case "0":
+                    txtStatus.Text = "Inactive";
+                    break;
+                default:
+                    MessageBox.Show("No status for this user");
+                    break;
+            }
+        }
     }
 }

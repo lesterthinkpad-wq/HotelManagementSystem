@@ -13,8 +13,6 @@ namespace HotelBookingManagementSystem.Controller
         {
             try
             {
-                // Sukatam atuy NIGGA. DISPLAY ONLY WHAT IS NESCESSARY
-
                 string query = @"
                     SELECT user_id, first_name, last_name, email, password, user_role, phone, is_active
                     FROM users";

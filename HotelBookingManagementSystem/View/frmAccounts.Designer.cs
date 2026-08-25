@@ -37,13 +37,13 @@
             dgvUsers = new DataGridView();
             btnSearch = new Button();
             lblSearch = new Label();
-            txtUserID = new TextBox();
+            txtSearch = new TextBox();
             pnlGuestDetail = new Panel();
+            label7 = new Label();
+            txtUserID = new TextBox();
             btnClear = new Button();
             label5 = new Label();
-            cboIsActive = new ComboBox();
             label4 = new Label();
-            cboUserRole = new ComboBox();
             label2 = new Label();
             txtPhoneNumber = new TextBox();
             label3 = new Label();
@@ -59,6 +59,8 @@
             txtFName = new TextBox();
             btnSave = new Button();
             splitter2 = new Splitter();
+            txtRole = new TextBox();
+            txtStatus = new TextBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             pnlGuestDetail.SuspendLayout();
@@ -106,6 +108,7 @@
             btnEditUser.TabIndex = 33;
             btnEditUser.Text = "Edit user";
             btnEditUser.UseVisualStyleBackColor = false;
+            btnEditUser.Click += btnEditUser_Click;
             // 
             // dgvUsers
             // 
@@ -158,24 +161,26 @@
             lblSearch.TabIndex = 36;
             lblSearch.Text = "Search";
             // 
-            // txtUserID
+            // txtSearch
             // 
-            txtUserID.BackColor = Color.FromArgb(245, 239, 235);
-            txtUserID.BorderStyle = BorderStyle.FixedSingle;
-            txtUserID.Location = new Point(12, 124);
-            txtUserID.Multiline = true;
-            txtUserID.Name = "txtUserID";
-            txtUserID.Size = new Size(387, 38);
-            txtUserID.TabIndex = 35;
+            txtSearch.BackColor = Color.FromArgb(245, 239, 235);
+            txtSearch.BorderStyle = BorderStyle.FixedSingle;
+            txtSearch.Location = new Point(12, 124);
+            txtSearch.Multiline = true;
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(387, 38);
+            txtSearch.TabIndex = 35;
             // 
             // pnlGuestDetail
             // 
             pnlGuestDetail.BackColor = Color.FromArgb(47, 65, 86);
+            pnlGuestDetail.Controls.Add(txtStatus);
+            pnlGuestDetail.Controls.Add(txtRole);
+            pnlGuestDetail.Controls.Add(label7);
+            pnlGuestDetail.Controls.Add(txtUserID);
             pnlGuestDetail.Controls.Add(btnClear);
             pnlGuestDetail.Controls.Add(label5);
-            pnlGuestDetail.Controls.Add(cboIsActive);
             pnlGuestDetail.Controls.Add(label4);
-            pnlGuestDetail.Controls.Add(cboUserRole);
             pnlGuestDetail.Controls.Add(label2);
             pnlGuestDetail.Controls.Add(txtPhoneNumber);
             pnlGuestDetail.Controls.Add(label3);
@@ -195,6 +200,27 @@
             pnlGuestDetail.Name = "pnlGuestDetail";
             pnlGuestDetail.Size = new Size(910, 363);
             pnlGuestDetail.TabIndex = 38;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 12F);
+            label7.ForeColor = Color.FromArgb(245, 239, 235);
+            label7.Location = new Point(623, 204);
+            label7.Name = "label7";
+            label7.Size = new Size(77, 25);
+            label7.TabIndex = 37;
+            label7.Text = "User ID";
+            // 
+            // txtUserID
+            // 
+            txtUserID.BackColor = Color.FromArgb(245, 239, 235);
+            txtUserID.BorderStyle = BorderStyle.FixedSingle;
+            txtUserID.Location = new Point(623, 232);
+            txtUserID.Multiline = true;
+            txtUserID.Name = "txtUserID";
+            txtUserID.Size = new Size(115, 38);
+            txtUserID.TabIndex = 36;
             // 
             // btnClear
             // 
@@ -219,19 +245,6 @@
             label5.TabIndex = 34;
             label5.Text = "User details";
             // 
-            // cboIsActive
-            // 
-            cboIsActive.BackColor = Color.FromArgb(245, 239, 235);
-            cboIsActive.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboIsActive.Font = new Font("Microsoft Sans Serif", 16.2F);
-            cboIsActive.FormattingEnabled = true;
-            cboIsActive.ItemHeight = 31;
-            cboIsActive.Items.AddRange(new object[] { "Active", "Inactive" });
-            cboIsActive.Location = new Point(764, 153);
-            cboIsActive.Name = "cboIsActive";
-            cboIsActive.Size = new Size(115, 39);
-            cboIsActive.TabIndex = 33;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -242,18 +255,6 @@
             label4.Size = new Size(68, 25);
             label4.TabIndex = 32;
             label4.Text = "Status";
-            // 
-            // cboUserRole
-            // 
-            cboUserRole.BackColor = Color.FromArgb(245, 239, 235);
-            cboUserRole.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboUserRole.Font = new Font("Microsoft Sans Serif", 16.2F);
-            cboUserRole.FormattingEnabled = true;
-            cboUserRole.ItemHeight = 31;
-            cboUserRole.Location = new Point(623, 153);
-            cboUserRole.Name = "cboUserRole";
-            cboUserRole.Size = new Size(115, 39);
-            cboUserRole.TabIndex = 31;
             // 
             // label2
             // 
@@ -411,6 +412,26 @@
             splitter2.TabIndex = 0;
             splitter2.TabStop = false;
             // 
+            // txtRole
+            // 
+            txtRole.BackColor = Color.FromArgb(245, 239, 235);
+            txtRole.BorderStyle = BorderStyle.FixedSingle;
+            txtRole.Location = new Point(624, 154);
+            txtRole.Multiline = true;
+            txtRole.Name = "txtRole";
+            txtRole.Size = new Size(115, 38);
+            txtRole.TabIndex = 38;
+            // 
+            // txtStatus
+            // 
+            txtStatus.BackColor = Color.FromArgb(245, 239, 235);
+            txtStatus.BorderStyle = BorderStyle.FixedSingle;
+            txtStatus.Location = new Point(764, 154);
+            txtStatus.Multiline = true;
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new Size(115, 38);
+            txtStatus.TabIndex = 39;
+            // 
             // frmAccounts
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
@@ -420,7 +441,7 @@
             Controls.Add(pnlGuestDetail);
             Controls.Add(btnSearch);
             Controls.Add(lblSearch);
-            Controls.Add(txtUserID);
+            Controls.Add(txtSearch);
             Controls.Add(dgvUsers);
             Controls.Add(btnEditUser);
             Controls.Add(panel2);
@@ -450,7 +471,7 @@
         private DataGridView dgvUsers;
         private Button btnSearch;
         private Label lblSearch;
-        private TextBox txtUserID;
+        private TextBox txtSearch;
         private Panel pnlGuestDetail;
         private DateTimePicker dtpBirthDate;
         private Label label6;
@@ -467,10 +488,12 @@
         private TextBox txtPhoneNumber;
         private Label label3;
         private TextBox txtPassword;
-        private ComboBox cboUserRole;
-        private ComboBox cboIsActive;
         private Label label4;
         private Label label5;
         private Button btnClear;
+        private Label label7;
+        private TextBox txtUserID;
+        private TextBox txtStatus;
+        private TextBox txtRole;
     }
 }
