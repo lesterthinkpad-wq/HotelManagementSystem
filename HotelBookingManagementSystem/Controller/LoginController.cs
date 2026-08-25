@@ -30,7 +30,7 @@ namespace HotelBookingManagementSystem.Controller
 
                 string query = $@"
                     SELECT user_id, 
-                    password_hash,
+                    password,
                     user_role
                     FROM users WHERE user_id = '{user_id}'";
 
@@ -41,7 +41,7 @@ namespace HotelBookingManagementSystem.Controller
 
                 if (dt.Rows.Count > 0)
                 {
-                    string checkPassword = dt.Rows[0]["password_hash"].ToString();
+                    string checkPassword = dt.Rows[0]["password"].ToString();
                     if (checkPassword == password)
                     {
                         userRole = dt.Rows[0]["user_role"].ToString();

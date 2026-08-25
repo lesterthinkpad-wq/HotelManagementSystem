@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotelBookingManagementSystem.Controller;
+using StudentManagementApp.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,12 @@ namespace HotelBookingManagementSystem.View
         public frmAccounts()
         {
             InitializeComponent();
+        }
+
+        private void frmAccounts_Load(object sender, EventArgs e)
+        {
+            UserController.LoadUsers(dgvUsers);
+            UserController.FormatDGV(dgvUsers);
         }
     }
 }

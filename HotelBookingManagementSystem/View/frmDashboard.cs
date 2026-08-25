@@ -25,6 +25,7 @@ namespace HotelBookingManagementSystem.View
                 btnStaffAccount.Hide();
                 btnReports.Hide();
             }
+            lblRecentBookings.Text = "Active users";
             LoadData();
         }
 
@@ -55,6 +56,25 @@ namespace HotelBookingManagementSystem.View
             {
                 this.Close();
             }
+            return;
+        }
+
+        private void btnGuests_Click(object sender, EventArgs e)
+        {
+            frmGuests guestForm = new frmGuests();
+            guestForm.ShowDialog();
+        }
+
+        private void btnRooms_Click(object sender, EventArgs e)
+        {
+            frmRooms roomForms = new frmRooms();
+            roomForms.ShowDialog();
+        }
+
+        private void btnStaffAccount_Click(object sender, EventArgs e)
+        {
+            frmAccounts accountForm = new frmAccounts();
+            accountForm.ShowDialog();
         }
     }
 }

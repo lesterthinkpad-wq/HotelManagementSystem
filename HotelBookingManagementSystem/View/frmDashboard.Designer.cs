@@ -108,8 +108,9 @@
             btnStaffAccount.Name = "btnStaffAccount";
             btnStaffAccount.Size = new Size(294, 54);
             btnStaffAccount.TabIndex = 6;
-            btnStaffAccount.Text = "Staff Accounts";
+            btnStaffAccount.Text = "Accounts";
             btnStaffAccount.UseVisualStyleBackColor = false;
+            btnStaffAccount.Click += btnStaffAccount_Click;
             // 
             // btnRooms
             // 
@@ -121,6 +122,7 @@
             btnRooms.TabIndex = 5;
             btnRooms.Text = "Rooms";
             btnRooms.UseVisualStyleBackColor = false;
+            btnRooms.Click += btnRooms_Click;
             // 
             // btnGuests
             // 
@@ -132,6 +134,7 @@
             btnGuests.TabIndex = 4;
             btnGuests.Text = "Guests";
             btnGuests.UseVisualStyleBackColor = false;
+            btnGuests.Click += btnGuests_Click;
             // 
             // btnBookings
             // 

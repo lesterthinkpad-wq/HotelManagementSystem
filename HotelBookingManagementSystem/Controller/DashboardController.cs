@@ -12,9 +12,11 @@ namespace HotelBookingManagementSystem.Controller
     {
         public static void LoadDGV(DataGridView dgv)
         {
-            if (LoginController.staffAdmin == 0)
+            try
             {
-                string query = @"
+                if (LoginController.staffAdmin == 0)
+                {
+                    string query = @"
                 SELECT
                     CONCAT(g.first_name, ' ', g.last_name) AS Guest_Name,
                     r.room_number AS Room_Number,
@@ -31,16 +33,25 @@ namespace HotelBookingManagementSystem.Controller
                 ORDER BY b.booking_id DESC
                 LIMIT 10;";
 
-                dgv.DataSource = SQL.SQLPull(query);
+                    dgv.DataSource = SQL.SQLPull(query);
+                }
+                else if (LoginController.staffAdmin == 1)
+                {
+                    string query = @"SELECT * FROM users";
+                    dgv.DataSource = SQL.SQLPull(query);
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
             }
-            else if (LoginController.staffAdmin == 1)
+            catch (Exception ex)
             {
-                string query = @"SELECT * FROM users";
-                dgv.DataSource = SQL.SQLPull(query);
-            }
-            else
-            {
-                MessageBox.Show("Error");
+                MessageBox.Show(
+                    ex.Message,
+                    "Unexpected error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
