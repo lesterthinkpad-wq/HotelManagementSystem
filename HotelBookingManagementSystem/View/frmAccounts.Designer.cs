@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel2 = new Panel();
             lblAccounts = new Label();
             splitter1 = new Splitter();
@@ -39,6 +39,8 @@
             lblSearch = new Label();
             txtSearch = new TextBox();
             pnlGuestDetail = new Panel();
+            txtStatus = new TextBox();
+            txtRole = new TextBox();
             label7 = new Label();
             txtUserID = new TextBox();
             btnClear = new Button();
@@ -48,19 +50,15 @@
             txtPhoneNumber = new TextBox();
             label3 = new Label();
             txtPassword = new TextBox();
-            dtpBirthDate = new DateTimePicker();
             label6 = new Label();
             lblLName = new Label();
             txtLName = new TextBox();
-            lblDateBirth = new Label();
             lblEmail = new Label();
             txtEmail = new TextBox();
             label1 = new Label();
             txtFName = new TextBox();
             btnSave = new Button();
             splitter2 = new Splitter();
-            txtRole = new TextBox();
-            txtStatus = new TextBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             pnlGuestDetail.SuspendLayout();
@@ -115,23 +113,23 @@
             dgvUsers.AllowUserToAddRows = false;
             dgvUsers.AllowUserToDeleteRows = false;
             dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvUsers.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvUsers.DefaultCellStyle = dataGridViewCellStyle2;
             dgvUsers.Location = new Point(12, 168);
             dgvUsers.Name = "dgvUsers";
             dgvUsers.ReadOnly = true;
@@ -185,11 +183,9 @@
             pnlGuestDetail.Controls.Add(txtPhoneNumber);
             pnlGuestDetail.Controls.Add(label3);
             pnlGuestDetail.Controls.Add(txtPassword);
-            pnlGuestDetail.Controls.Add(dtpBirthDate);
             pnlGuestDetail.Controls.Add(label6);
             pnlGuestDetail.Controls.Add(lblLName);
             pnlGuestDetail.Controls.Add(txtLName);
-            pnlGuestDetail.Controls.Add(lblDateBirth);
             pnlGuestDetail.Controls.Add(lblEmail);
             pnlGuestDetail.Controls.Add(txtEmail);
             pnlGuestDetail.Controls.Add(label1);
@@ -198,8 +194,28 @@
             pnlGuestDetail.Controls.Add(splitter2);
             pnlGuestDetail.Location = new Point(12, 540);
             pnlGuestDetail.Name = "pnlGuestDetail";
-            pnlGuestDetail.Size = new Size(910, 363);
+            pnlGuestDetail.Size = new Size(910, 305);
             pnlGuestDetail.TabIndex = 38;
+            // 
+            // txtStatus
+            // 
+            txtStatus.BackColor = Color.FromArgb(245, 239, 235);
+            txtStatus.BorderStyle = BorderStyle.FixedSingle;
+            txtStatus.Location = new Point(764, 154);
+            txtStatus.Multiline = true;
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new Size(115, 38);
+            txtStatus.TabIndex = 39;
+            // 
+            // txtRole
+            // 
+            txtRole.BackColor = Color.FromArgb(245, 239, 235);
+            txtRole.BorderStyle = BorderStyle.FixedSingle;
+            txtRole.Location = new Point(624, 154);
+            txtRole.Multiline = true;
+            txtRole.Name = "txtRole";
+            txtRole.Size = new Size(115, 38);
+            txtRole.TabIndex = 38;
             // 
             // label7
             // 
@@ -211,6 +227,7 @@
             label7.Size = new Size(77, 25);
             label7.TabIndex = 37;
             label7.Text = "User ID";
+            label7.Visible = false;
             // 
             // txtUserID
             // 
@@ -221,13 +238,14 @@
             txtUserID.Name = "txtUserID";
             txtUserID.Size = new Size(115, 38);
             txtUserID.TabIndex = 36;
+            txtUserID.Visible = false;
             // 
             // btnClear
             // 
             btnClear.BackColor = Color.FromArgb(245, 239, 235);
             btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClear.ForeColor = Color.Black;
-            btnClear.Location = new Point(199, 292);
+            btnClear.Location = new Point(203, 232);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(164, 51);
             btnClear.TabIndex = 35;
@@ -298,15 +316,6 @@
             txtPassword.Size = new Size(256, 38);
             txtPassword.TabIndex = 24;
             // 
-            // dtpBirthDate
-            // 
-            dtpBirthDate.CalendarFont = new Font("Microsoft Sans Serif", 16.2F);
-            dtpBirthDate.Font = new Font("Microsoft Sans Serif", 13.8F);
-            dtpBirthDate.Location = new Point(29, 236);
-            dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(256, 34);
-            dtpBirthDate.TabIndex = 22;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -338,17 +347,6 @@
             txtLName.Name = "txtLName";
             txtLName.Size = new Size(256, 38);
             txtLName.TabIndex = 14;
-            // 
-            // lblDateBirth
-            // 
-            lblDateBirth.AutoSize = true;
-            lblDateBirth.Font = new Font("Microsoft Sans Serif", 12F);
-            lblDateBirth.ForeColor = Color.FromArgb(245, 239, 235);
-            lblDateBirth.Location = new Point(29, 208);
-            lblDateBirth.Name = "lblDateBirth";
-            lblDateBirth.Size = new Size(90, 25);
-            lblDateBirth.TabIndex = 13;
-            lblDateBirth.Text = "Hire date";
             // 
             // lblEmail
             // 
@@ -396,48 +394,29 @@
             // 
             btnSave.BackColor = Color.FromArgb(203, 217, 230);
             btnSave.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnSave.Location = new Point(27, 292);
+            btnSave.Location = new Point(31, 232);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(166, 51);
             btnSave.TabIndex = 4;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // splitter2
             // 
             splitter2.BackColor = Color.FromArgb(203, 217, 230);
             splitter2.Location = new Point(0, 0);
             splitter2.Name = "splitter2";
-            splitter2.Size = new Size(1, 363);
+            splitter2.Size = new Size(1, 305);
             splitter2.TabIndex = 0;
             splitter2.TabStop = false;
-            // 
-            // txtRole
-            // 
-            txtRole.BackColor = Color.FromArgb(245, 239, 235);
-            txtRole.BorderStyle = BorderStyle.FixedSingle;
-            txtRole.Location = new Point(624, 154);
-            txtRole.Multiline = true;
-            txtRole.Name = "txtRole";
-            txtRole.Size = new Size(115, 38);
-            txtRole.TabIndex = 38;
-            // 
-            // txtStatus
-            // 
-            txtStatus.BackColor = Color.FromArgb(245, 239, 235);
-            txtStatus.BorderStyle = BorderStyle.FixedSingle;
-            txtStatus.Location = new Point(764, 154);
-            txtStatus.Multiline = true;
-            txtStatus.Name = "txtStatus";
-            txtStatus.Size = new Size(115, 38);
-            txtStatus.TabIndex = 39;
             // 
             // frmAccounts
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(203, 217, 230);
-            ClientSize = new Size(934, 913);
+            ClientSize = new Size(934, 853);
             Controls.Add(pnlGuestDetail);
             Controls.Add(btnSearch);
             Controls.Add(lblSearch);
@@ -473,11 +452,9 @@
         private Label lblSearch;
         private TextBox txtSearch;
         private Panel pnlGuestDetail;
-        private DateTimePicker dtpBirthDate;
         private Label label6;
         private Label lblLName;
         private TextBox txtLName;
-        private Label lblDateBirth;
         private Label lblEmail;
         private TextBox txtEmail;
         private Label label1;
