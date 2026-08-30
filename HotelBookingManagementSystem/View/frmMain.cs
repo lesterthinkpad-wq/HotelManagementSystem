@@ -16,6 +16,8 @@ namespace HotelBookingManagementSystem.View
         public frmMain()
         {
             InitializeComponent();
+
+            tabBookings.Controls.Add(new BookingsControl { Dock = DockStyle.Fill });
         }
 
         private void frmDashboard_Load(object sender, EventArgs e)

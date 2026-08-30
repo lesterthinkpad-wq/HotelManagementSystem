@@ -28,15 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlSide = new Panel();
             btnLogout = new Button();
             btnReports = new Button();
             btnStaffAccount = new Button();
             btnRooms = new Button();
             btnGuests = new Button();
             btnBookings = new Button();
-            lblDashboard = new Label();
-            lblTitle = new Label();
             panel2 = new Panel();
             lblCurrentUser = new Label();
             splitter1 = new Splitter();
@@ -51,37 +48,24 @@
             panel4 = new Panel();
             lblAvailableRooms = new Label();
             label4 = new Label();
-            pnlSide.SuspendLayout();
+            tbcMain = new Guna.UI2.WinForms.Guna2TabControl();
+            tabDashboard = new TabPage();
+            tabBookings = new TabPage();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookingsAccounts).BeginInit();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
+            tbcMain.SuspendLayout();
+            tabDashboard.SuspendLayout();
             SuspendLayout();
-            // 
-            // pnlSide
-            // 
-            pnlSide.BackColor = Color.FromArgb(47, 65, 86);
-            pnlSide.Controls.Add(btnLogout);
-            pnlSide.Controls.Add(btnReports);
-            pnlSide.Controls.Add(btnStaffAccount);
-            pnlSide.Controls.Add(btnRooms);
-            pnlSide.Controls.Add(btnGuests);
-            pnlSide.Controls.Add(btnBookings);
-            pnlSide.Controls.Add(lblDashboard);
-            pnlSide.Controls.Add(lblTitle);
-            pnlSide.Dock = DockStyle.Left;
-            pnlSide.Location = new Point(0, 0);
-            pnlSide.Name = "pnlSide";
-            pnlSide.Size = new Size(378, 1037);
-            pnlSide.TabIndex = 0;
             // 
             // btnLogout
             // 
             btnLogout.BackColor = Color.FromArgb(47, 65, 86);
             btnLogout.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnLogout.ForeColor = Color.FromArgb(245, 239, 235);
-            btnLogout.Location = new Point(38, 946);
+            btnLogout.Location = new Point(1345, 758);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(294, 54);
             btnLogout.TabIndex = 8;
@@ -93,7 +77,7 @@
             // 
             btnReports.BackColor = Color.FromArgb(245, 239, 235);
             btnReports.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnReports.Location = new Point(38, 494);
+            btnReports.Location = new Point(1345, 690);
             btnReports.Name = "btnReports";
             btnReports.Size = new Size(294, 54);
             btnReports.TabIndex = 7;
@@ -104,7 +88,7 @@
             // 
             btnStaffAccount.BackColor = Color.FromArgb(245, 239, 235);
             btnStaffAccount.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnStaffAccount.Location = new Point(38, 415);
+            btnStaffAccount.Location = new Point(1345, 611);
             btnStaffAccount.Name = "btnStaffAccount";
             btnStaffAccount.Size = new Size(294, 54);
             btnStaffAccount.TabIndex = 6;
@@ -116,7 +100,7 @@
             // 
             btnRooms.BackColor = Color.FromArgb(245, 239, 235);
             btnRooms.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnRooms.Location = new Point(38, 341);
+            btnRooms.Location = new Point(1345, 537);
             btnRooms.Name = "btnRooms";
             btnRooms.Size = new Size(294, 54);
             btnRooms.TabIndex = 5;
@@ -128,7 +112,7 @@
             // 
             btnGuests.BackColor = Color.FromArgb(245, 239, 235);
             btnGuests.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnGuests.Location = new Point(38, 263);
+            btnGuests.Location = new Point(1345, 459);
             btnGuests.Name = "btnGuests";
             btnGuests.Size = new Size(294, 54);
             btnGuests.TabIndex = 4;
@@ -140,7 +124,7 @@
             // 
             btnBookings.BackColor = Color.FromArgb(245, 239, 235);
             btnBookings.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnBookings.Location = new Point(38, 189);
+            btnBookings.Location = new Point(1345, 385);
             btnBookings.Name = "btnBookings";
             btnBookings.Size = new Size(294, 54);
             btnBookings.TabIndex = 3;
@@ -148,37 +132,15 @@
             btnBookings.UseVisualStyleBackColor = false;
             btnBookings.Click += btnBookings_Click;
             // 
-            // lblDashboard
-            // 
-            lblDashboard.AutoSize = true;
-            lblDashboard.Font = new Font("Monotype Corsiva", 16.2F, FontStyle.Bold | FontStyle.Italic);
-            lblDashboard.ForeColor = Color.FromArgb(245, 239, 235);
-            lblDashboard.Location = new Point(83, 79);
-            lblDashboard.Name = "lblDashboard";
-            lblDashboard.Size = new Size(132, 34);
-            lblDashboard.TabIndex = 2;
-            lblDashboard.Text = "Dashboard";
-            // 
-            // lblTitle
-            // 
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Monotype Corsiva", 25.8000011F, FontStyle.Bold | FontStyle.Italic);
-            lblTitle.ForeColor = Color.FromArgb(245, 239, 235);
-            lblTitle.Location = new Point(38, 21);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(294, 53);
-            lblTitle.TabIndex = 1;
-            lblTitle.Text = "Hotel California";
-            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(47, 65, 86);
             panel2.Controls.Add(lblCurrentUser);
             panel2.Controls.Add(splitter1);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(378, 0);
+            panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1528, 113);
+            panel2.Size = new Size(1906, 113);
             panel2.TabIndex = 1;
             // 
             // lblCurrentUser
@@ -207,7 +169,7 @@
             dgvBookingsAccounts.AllowUserToDeleteRows = false;
             dgvBookingsAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBookingsAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBookingsAccounts.Location = new Point(488, 562);
+            dgvBookingsAccounts.Location = new Point(173, 395);
             dgvBookingsAccounts.Name = "dgvBookingsAccounts";
             dgvBookingsAccounts.ReadOnly = true;
             dgvBookingsAccounts.RowHeadersWidth = 51;
@@ -219,7 +181,7 @@
             lblRecentBookings.AutoSize = true;
             lblRecentBookings.Font = new Font("Microsoft Sans Serif", 10.8F);
             lblRecentBookings.ForeColor = Color.DimGray;
-            lblRecentBookings.Location = new Point(488, 534);
+            lblRecentBookings.Location = new Point(173, 367);
             lblRecentBookings.Name = "lblRecentBookings";
             lblRecentBookings.Size = new Size(146, 22);
             lblRecentBookings.TabIndex = 3;
@@ -230,7 +192,7 @@
             panel1.BackColor = Color.FromArgb(86, 124, 141);
             panel1.Controls.Add(lblBookingNum);
             panel1.Controls.Add(lblTotalBookings);
-            panel1.Location = new Point(488, 190);
+            panel1.Location = new Point(175, 73);
             panel1.Name = "panel1";
             panel1.Size = new Size(267, 203);
             panel1.TabIndex = 4;
@@ -262,7 +224,7 @@
             panel3.BackColor = Color.FromArgb(86, 124, 141);
             panel3.Controls.Add(lblPendingCheckins);
             panel3.Controls.Add(lblPendings);
-            panel3.Location = new Point(949, 190);
+            panel3.Location = new Point(636, 73);
             panel3.Name = "panel3";
             panel3.Size = new Size(267, 203);
             panel3.TabIndex = 5;
@@ -294,7 +256,7 @@
             panel4.BackColor = Color.FromArgb(86, 124, 141);
             panel4.Controls.Add(lblAvailableRooms);
             panel4.Controls.Add(label4);
-            panel4.Location = new Point(1410, 190);
+            panel4.Location = new Point(1097, 73);
             panel4.Name = "panel4";
             panel4.Size = new Size(267, 203);
             panel4.TabIndex = 6;
@@ -321,30 +283,83 @@
             label4.TabIndex = 0;
             label4.Text = "Available Rooms";
             // 
-            // frmDashboard
+            // tbcMain
+            // 
+            tbcMain.Alignment = TabAlignment.Left;
+            tbcMain.Controls.Add(tabDashboard);
+            tbcMain.Controls.Add(tabBookings);
+            tbcMain.ItemSize = new Size(180, 40);
+            tbcMain.Location = new Point(0, 115);
+            tbcMain.Name = "tbcMain";
+            tbcMain.SelectedIndex = 0;
+            tbcMain.Size = new Size(1906, 923);
+            tbcMain.TabButtonHoverState.BorderColor = Color.Empty;
+            tbcMain.TabButtonHoverState.FillColor = Color.FromArgb(40, 52, 70);
+            tbcMain.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F);
+            tbcMain.TabButtonHoverState.ForeColor = Color.White;
+            tbcMain.TabButtonHoverState.InnerColor = Color.FromArgb(40, 52, 70);
+            tbcMain.TabButtonIdleState.BorderColor = Color.Empty;
+            tbcMain.TabButtonIdleState.FillColor = Color.FromArgb(33, 42, 57);
+            tbcMain.TabButtonIdleState.Font = new Font("Segoe UI Semibold", 10F);
+            tbcMain.TabButtonIdleState.ForeColor = Color.FromArgb(156, 160, 167);
+            tbcMain.TabButtonIdleState.InnerColor = Color.FromArgb(33, 42, 57);
+            tbcMain.TabButtonSelectedState.BorderColor = Color.Empty;
+            tbcMain.TabButtonSelectedState.FillColor = Color.FromArgb(29, 37, 49);
+            tbcMain.TabButtonSelectedState.Font = new Font("Segoe UI Semibold", 10F);
+            tbcMain.TabButtonSelectedState.ForeColor = Color.White;
+            tbcMain.TabButtonSelectedState.InnerColor = Color.FromArgb(76, 132, 255);
+            tbcMain.TabButtonSize = new Size(180, 40);
+            tbcMain.TabIndex = 9;
+            tbcMain.TabMenuBackColor = Color.FromArgb(33, 42, 57);
+            // 
+            // tabDashboard
+            // 
+            tabDashboard.Controls.Add(panel3);
+            tabDashboard.Controls.Add(btnLogout);
+            tabDashboard.Controls.Add(btnBookings);
+            tabDashboard.Controls.Add(panel4);
+            tabDashboard.Controls.Add(dgvBookingsAccounts);
+            tabDashboard.Controls.Add(btnReports);
+            tabDashboard.Controls.Add(btnGuests);
+            tabDashboard.Controls.Add(lblRecentBookings);
+            tabDashboard.Controls.Add(btnStaffAccount);
+            tabDashboard.Controls.Add(btnRooms);
+            tabDashboard.Controls.Add(panel1);
+            tabDashboard.Location = new Point(184, 4);
+            tabDashboard.Name = "tabDashboard";
+            tabDashboard.Padding = new Padding(3);
+            tabDashboard.Size = new Size(1718, 915);
+            tabDashboard.TabIndex = 0;
+            tabDashboard.Text = "Dashboard";
+            tabDashboard.UseVisualStyleBackColor = true;
+            // 
+            // tabBookings
+            // 
+            tabBookings.Location = new Point(184, 4);
+            tabBookings.Name = "tabBookings";
+            tabBookings.Padding = new Padding(3);
+            tabBookings.Size = new Size(1718, 915);
+            tabBookings.TabIndex = 1;
+            tabBookings.Text = "Bookings";
+            tabBookings.UseVisualStyleBackColor = true;
+            // 
+            // frmMain
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(203, 217, 230);
             ClientSize = new Size(1906, 1037);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel1);
-            Controls.Add(lblRecentBookings);
-            Controls.Add(dgvBookingsAccounts);
+            Controls.Add(tbcMain);
             Controls.Add(panel2);
-            Controls.Add(pnlSide);
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "frmDashboard";
+            Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmDashboard";
             Load += frmDashboard_Load;
-            pnlSide.ResumeLayout(false);
-            pnlSide.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookingsAccounts).EndInit();
@@ -354,17 +369,15 @@
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            tbcMain.ResumeLayout(false);
+            tabDashboard.ResumeLayout(false);
+            tabDashboard.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Panel pnlSide;
         private Panel panel2;
         private Splitter splitter1;
-        private Label lblTitle;
-        private Label lblDashboard;
         private Label lblCurrentUser;
         private Button btnBookings;
         private Button btnReports;
@@ -383,5 +396,8 @@
         private Panel panel4;
         private Label lblAvailableRooms;
         private Label label4;
+        private Guna.UI2.WinForms.Guna2TabControl tbcMain;
+        private TabPage tabDashboard;
+        private TabPage tabBookings;
     }
 }
