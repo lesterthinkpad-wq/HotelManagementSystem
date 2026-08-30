@@ -22,7 +22,7 @@ namespace HotelBookingManagementSystem.View
         {
             if (LoginController.CheckUser(txtUserID.Text, txtPassword.Text))
             {
-                frmDashboard dashboard = new frmDashboard();
+                frmMain dashboard = new frmMain();
                 dashboard.Show();
 
                 txtUserID.Clear();

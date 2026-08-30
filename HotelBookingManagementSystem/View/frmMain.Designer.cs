@@ -1,6 +1,6 @@
 ﻿namespace HotelBookingManagementSystem.View
 {
-    partial class frmDashboard
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.

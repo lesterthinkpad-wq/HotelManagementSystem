@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace HotelBookingManagementSystem.View
 {
-    public partial class frmDashboard : Form
+    public partial class frmMain : Form
     {
-        public frmDashboard()
+        public frmMain()
         {
             InitializeComponent();
         }
