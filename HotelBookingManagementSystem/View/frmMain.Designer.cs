@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             btnLogout = new Button();
-            btnReports = new Button();
-            btnStaffAccount = new Button();
-            btnRooms = new Button();
-            btnGuests = new Button();
-            btnBookings = new Button();
             panel2 = new Panel();
             lblCurrentUser = new Label();
             splitter1 = new Splitter();
@@ -51,6 +46,9 @@
             tbcMain = new Guna.UI2.WinForms.Guna2TabControl();
             tabDashboard = new TabPage();
             tabBookings = new TabPage();
+            tabGuests = new TabPage();
+            tabReports = new TabPage();
+            tabCheckout = new TabPage();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookingsAccounts).BeginInit();
             panel1.SuspendLayout();
@@ -65,72 +63,13 @@
             btnLogout.BackColor = Color.FromArgb(47, 65, 86);
             btnLogout.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnLogout.ForeColor = Color.FromArgb(245, 239, 235);
-            btnLogout.Location = new Point(1345, 758);
+            btnLogout.Location = new Point(1329, 613);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(294, 54);
             btnLogout.TabIndex = 8;
             btnLogout.Text = "Log out";
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
-            // 
-            // btnReports
-            // 
-            btnReports.BackColor = Color.FromArgb(245, 239, 235);
-            btnReports.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnReports.Location = new Point(1345, 690);
-            btnReports.Name = "btnReports";
-            btnReports.Size = new Size(294, 54);
-            btnReports.TabIndex = 7;
-            btnReports.Text = "Reports";
-            btnReports.UseVisualStyleBackColor = false;
-            // 
-            // btnStaffAccount
-            // 
-            btnStaffAccount.BackColor = Color.FromArgb(245, 239, 235);
-            btnStaffAccount.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnStaffAccount.Location = new Point(1345, 611);
-            btnStaffAccount.Name = "btnStaffAccount";
-            btnStaffAccount.Size = new Size(294, 54);
-            btnStaffAccount.TabIndex = 6;
-            btnStaffAccount.Text = "Accounts";
-            btnStaffAccount.UseVisualStyleBackColor = false;
-            btnStaffAccount.Click += btnStaffAccount_Click;
-            // 
-            // btnRooms
-            // 
-            btnRooms.BackColor = Color.FromArgb(245, 239, 235);
-            btnRooms.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnRooms.Location = new Point(1345, 537);
-            btnRooms.Name = "btnRooms";
-            btnRooms.Size = new Size(294, 54);
-            btnRooms.TabIndex = 5;
-            btnRooms.Text = "Rooms";
-            btnRooms.UseVisualStyleBackColor = false;
-            btnRooms.Click += btnRooms_Click;
-            // 
-            // btnGuests
-            // 
-            btnGuests.BackColor = Color.FromArgb(245, 239, 235);
-            btnGuests.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnGuests.Location = new Point(1345, 459);
-            btnGuests.Name = "btnGuests";
-            btnGuests.Size = new Size(294, 54);
-            btnGuests.TabIndex = 4;
-            btnGuests.Text = "Guests";
-            btnGuests.UseVisualStyleBackColor = false;
-            btnGuests.Click += btnGuests_Click;
-            // 
-            // btnBookings
-            // 
-            btnBookings.BackColor = Color.FromArgb(245, 239, 235);
-            btnBookings.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnBookings.Location = new Point(1345, 385);
-            btnBookings.Name = "btnBookings";
-            btnBookings.Size = new Size(294, 54);
-            btnBookings.TabIndex = 3;
-            btnBookings.Text = "Bookings";
-            btnBookings.UseVisualStyleBackColor = false;
-            btnBookings.Click += btnBookings_Click;
             // 
             // panel2
             // 
@@ -288,7 +227,11 @@
             tbcMain.Alignment = TabAlignment.Left;
             tbcMain.Controls.Add(tabDashboard);
             tbcMain.Controls.Add(tabBookings);
-            tbcMain.ItemSize = new Size(180, 40);
+            tbcMain.Controls.Add(tabGuests);
+            tbcMain.Controls.Add(tabCheckout);
+            tbcMain.Controls.Add(tabReports);
+            tbcMain.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbcMain.ItemSize = new Size(180, 50);
             tbcMain.Location = new Point(0, 115);
             tbcMain.Name = "tbcMain";
             tbcMain.SelectedIndex = 0;
@@ -308,22 +251,19 @@
             tbcMain.TabButtonSelectedState.Font = new Font("Segoe UI Semibold", 10F);
             tbcMain.TabButtonSelectedState.ForeColor = Color.White;
             tbcMain.TabButtonSelectedState.InnerColor = Color.FromArgb(76, 132, 255);
-            tbcMain.TabButtonSize = new Size(180, 40);
+            tbcMain.TabButtonSize = new Size(180, 50);
             tbcMain.TabIndex = 9;
             tbcMain.TabMenuBackColor = Color.FromArgb(33, 42, 57);
+            tbcMain.SelectedIndexChanged += tbcMain_SelectedIndexChanged;
             // 
             // tabDashboard
             // 
+            tabDashboard.BackColor = Color.FromArgb(203, 217, 230);
             tabDashboard.Controls.Add(panel3);
             tabDashboard.Controls.Add(btnLogout);
-            tabDashboard.Controls.Add(btnBookings);
             tabDashboard.Controls.Add(panel4);
             tabDashboard.Controls.Add(dgvBookingsAccounts);
-            tabDashboard.Controls.Add(btnReports);
-            tabDashboard.Controls.Add(btnGuests);
             tabDashboard.Controls.Add(lblRecentBookings);
-            tabDashboard.Controls.Add(btnStaffAccount);
-            tabDashboard.Controls.Add(btnRooms);
             tabDashboard.Controls.Add(panel1);
             tabDashboard.Location = new Point(184, 4);
             tabDashboard.Name = "tabDashboard";
@@ -331,17 +271,43 @@
             tabDashboard.Size = new Size(1718, 915);
             tabDashboard.TabIndex = 0;
             tabDashboard.Text = "Dashboard";
-            tabDashboard.UseVisualStyleBackColor = true;
             // 
             // tabBookings
             // 
+            tabBookings.BackColor = Color.FromArgb(203, 217, 230);
             tabBookings.Location = new Point(184, 4);
             tabBookings.Name = "tabBookings";
             tabBookings.Padding = new Padding(3);
             tabBookings.Size = new Size(1718, 915);
             tabBookings.TabIndex = 1;
             tabBookings.Text = "Bookings";
-            tabBookings.UseVisualStyleBackColor = true;
+            // 
+            // tabGuests
+            // 
+            tabGuests.BackColor = Color.FromArgb(203, 217, 230);
+            tabGuests.Location = new Point(184, 4);
+            tabGuests.Name = "tabGuests";
+            tabGuests.Size = new Size(1718, 915);
+            tabGuests.TabIndex = 2;
+            tabGuests.Text = "Guests";
+            // 
+            // tabReports
+            // 
+            tabReports.Location = new Point(184, 4);
+            tabReports.Name = "tabReports";
+            tabReports.Size = new Size(1718, 915);
+            tabReports.TabIndex = 3;
+            tabReports.Text = "Reports";
+            tabReports.UseVisualStyleBackColor = true;
+            // 
+            // tabCheckout
+            // 
+            tabCheckout.Location = new Point(184, 4);
+            tabCheckout.Name = "tabCheckout";
+            tabCheckout.Size = new Size(1718, 915);
+            tabCheckout.TabIndex = 4;
+            tabCheckout.Text = "Check out";
+            tabCheckout.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -358,8 +324,7 @@
             MinimizeBox = false;
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmDashboard";
-            Load += frmDashboard_Load;
+            Load += frmMain_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookingsAccounts).EndInit();
@@ -379,11 +344,6 @@
         private Panel panel2;
         private Splitter splitter1;
         private Label lblCurrentUser;
-        private Button btnBookings;
-        private Button btnReports;
-        private Button btnStaffAccount;
-        private Button btnRooms;
-        private Button btnGuests;
         private Button btnLogout;
         private DataGridView dgvBookingsAccounts;
         private Label lblRecentBookings;
@@ -399,5 +359,8 @@
         private Guna.UI2.WinForms.Guna2TabControl tbcMain;
         private TabPage tabDashboard;
         private TabPage tabBookings;
+        private TabPage tabGuests;
+        private TabPage tabCheckout;
+        private TabPage tabReports;
     }
 }

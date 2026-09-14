@@ -20,15 +20,10 @@ namespace HotelBookingManagementSystem.View
             tabBookings.Controls.Add(new BookingsControl { Dock = DockStyle.Fill });
         }
 
-        private void frmDashboard_Load(object sender, EventArgs e)
+
+        private void frmMain_Load(object sender, EventArgs e)
         {
-            if (LoginController.userRole == "Staff")
-            {
-                btnStaffAccount.Hide();
-                btnReports.Hide();
-            }
-            lblRecentBookings.Text = "Active users";
-            LoadData();
+
         }
 
         private void LoadData()
@@ -39,13 +34,7 @@ namespace HotelBookingManagementSystem.View
             lblBookingNum.Text = $"{DashboardController.GetTotalBookings()}";
             lblPendingCheckins.Text = $"{DashboardController.GetPendingsCount()}";
         }
-
-        private void btnBookings_Click(object sender, EventArgs e)
-        {
-            frmBookings bookings = new frmBookings();
-            bookings.ShowDialog();
-        }
-
+          
         private void btnLogout_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -61,22 +50,21 @@ namespace HotelBookingManagementSystem.View
             return;
         }
 
-        private void btnGuests_Click(object sender, EventArgs e)
+
+        private GuestControls _guestsControl;
+        private void tbcMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            frmGuests guestForm = new frmGuests();
-            guestForm.ShowDialog();
+            if (tbcMain.SelectedTab == tabGuests)
+            {
+                _guestsControl = new GuestControls { Dock = DockStyle.Fill };
+                tabGuests.Controls.Add(_guestsControl);
+                _guestsControl.LoadDGV();
+            }
+            else if (tbcMain.SelectedTab == tabBookings)
+            {
+
+            }
         }
 
-        private void btnRooms_Click(object sender, EventArgs e)
-        {
-            frmRooms roomForms = new frmRooms();
-            roomForms.ShowDialog();
-        }
-
-        private void btnStaffAccount_Click(object sender, EventArgs e)
-        {
-            frmAccounts accountForm = new frmAccounts();
-            accountForm.ShowDialog();
-        }
     }
 }
