@@ -23,7 +23,10 @@ namespace HotelBookingManagementSystem.View
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            if (LoginController.cAdFd == 2)
+            {
+                tabCheckout.Visible = false;
+            }
         }
 
         private void LoadData()
@@ -49,7 +52,6 @@ namespace HotelBookingManagementSystem.View
             }
             return;
         }
-
 
         private GuestControls _guestsControl;
         private void tbcMain_SelectedIndexChanged(object sender, EventArgs e)

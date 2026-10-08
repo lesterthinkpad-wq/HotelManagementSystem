@@ -57,7 +57,6 @@
             btnSearch = new Button();
             txtUserID = new TextBox();
             panel5 = new Panel();
-            button1 = new Button();
             lblGuests = new Label();
             splitter3 = new Splitter();
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
@@ -377,7 +376,6 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(47, 65, 86);
-            panel5.Controls.Add(button1);
             panel5.Controls.Add(lblGuests);
             panel5.Controls.Add(splitter3);
             panel5.Dock = DockStyle.Top;
@@ -385,17 +383,6 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(1718, 82);
             panel5.TabIndex = 17;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(203, 217, 230);
-            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            button1.Location = new Point(1516, 18);
-            button1.Name = "button1";
-            button1.Size = new Size(194, 51);
-            button1.TabIndex = 4;
-            button1.Text = "Bookings";
-            button1.UseVisualStyleBackColor = false;
             // 
             // lblGuests
             // 
@@ -485,7 +472,6 @@
         private Button btnSearch;
         private TextBox txtUserID;
         private Panel panel5;
-        private Button button1;
         private Label lblGuests;
         private Splitter splitter3;
         private TextBox txtGuestID;
