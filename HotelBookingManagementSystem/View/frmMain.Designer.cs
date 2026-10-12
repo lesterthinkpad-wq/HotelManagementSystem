@@ -232,7 +232,7 @@
             tbcMain.Controls.Add(tabReports);
             tbcMain.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbcMain.ItemSize = new Size(180, 50);
-            tbcMain.Location = new Point(0, 115);
+            tbcMain.Location = new Point(0, 114);
             tbcMain.Name = "tbcMain";
             tbcMain.SelectedIndex = 0;
             tbcMain.Size = new Size(1906, 923);
