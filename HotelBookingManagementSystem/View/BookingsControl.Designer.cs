@@ -575,6 +575,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(203, 217, 230);
             Controls.Add(btnConfirmBooking);
             Controls.Add(btnAddBooking);
             Controls.Add(txtGuestID);

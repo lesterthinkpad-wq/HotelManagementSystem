@@ -47,8 +47,8 @@
             tabDashboard = new TabPage();
             tabBookings = new TabPage();
             tabGuests = new TabPage();
-            tabReports = new TabPage();
             tabCheckout = new TabPage();
+            tabReports = new TabPage();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookingsAccounts).BeginInit();
             panel1.SuspendLayout();
@@ -232,12 +232,12 @@
             tbcMain.Controls.Add(tabReports);
             tbcMain.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbcMain.ItemSize = new Size(180, 50);
-            tbcMain.Location = new Point(0, 115);
+            tbcMain.Location = new Point(0, 114);
             tbcMain.Name = "tbcMain";
             tbcMain.SelectedIndex = 0;
             tbcMain.Size = new Size(1906, 923);
             tbcMain.TabButtonHoverState.BorderColor = Color.Empty;
-            tbcMain.TabButtonHoverState.FillColor = Color.FromArgb(40, 52, 70);
+            tbcMain.TabButtonHoverState.FillColor = Color.FromArgb(82, 107, 144);
             tbcMain.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F);
             tbcMain.TabButtonHoverState.ForeColor = Color.White;
             tbcMain.TabButtonHoverState.InnerColor = Color.FromArgb(40, 52, 70);
@@ -291,15 +291,6 @@
             tabGuests.TabIndex = 2;
             tabGuests.Text = "Guests";
             // 
-            // tabReports
-            // 
-            tabReports.Location = new Point(184, 4);
-            tabReports.Name = "tabReports";
-            tabReports.Size = new Size(1718, 915);
-            tabReports.TabIndex = 3;
-            tabReports.Text = "Reports";
-            tabReports.UseVisualStyleBackColor = true;
-            // 
             // tabCheckout
             // 
             tabCheckout.Location = new Point(184, 4);
@@ -308,6 +299,15 @@
             tabCheckout.TabIndex = 4;
             tabCheckout.Text = "Check out";
             tabCheckout.UseVisualStyleBackColor = true;
+            // 
+            // tabReports
+            // 
+            tabReports.Location = new Point(184, 4);
+            tabReports.Name = "tabReports";
+            tabReports.Size = new Size(1718, 915);
+            tabReports.TabIndex = 3;
+            tabReports.Text = "Reports";
+            tabReports.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 

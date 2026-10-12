@@ -14,7 +14,7 @@ namespace HotelBookingManagementSystem.Controller
         {
             try
             {
-                if (LoginController.staffAdmin == 0)
+                if (LoginController.cAdFd == 1)
                 {
                     string query = @"
                 SELECT
@@ -35,7 +35,7 @@ namespace HotelBookingManagementSystem.Controller
 
                     dgv.DataSource = SQL.SQLPull(query);
                 }
-                else if (LoginController.staffAdmin == 1)
+                else if (LoginController.cAdFd == 1)
                 {
                     string query = @"SELECT * FROM users";
                     dgv.DataSource = SQL.SQLPull(query);

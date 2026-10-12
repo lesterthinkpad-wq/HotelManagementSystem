@@ -12,9 +12,9 @@ namespace HotelBookingManagementSystem.Controller
     {
         public static int userID;
         public static string? userRole;
-        public static int staffAdmin = 0;
+        public static int cAdFd = 0;
 
-        public static bool CheckUser(string user_id, string password)
+        public static bool CheckUserRole(string user_id, string password)
         {
             try
             {
@@ -47,20 +47,24 @@ namespace HotelBookingManagementSystem.Controller
                         userRole = dt.Rows[0]["user_role"].ToString();
 
                         // check if it is a admin or staff
-                        if (userRole == "Admin")
+                        if (userRole == "admin")
                         {
-                            staffAdmin = 1;
+                            cAdFd = 1;
                         }
-                        else if (userRole == "Staff")
+                        else if (userRole == "front_desk")
                         {
-                            staffAdmin = 0;
+                            cAdFd = 2;
                         }
-
+                        else if (userRole == "cashier")
+                        {
+                            cAdFd = 3;
+                        }
                         MessageBox.Show(
                             "Login successful",
                             "Authentication successful",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+                        
                         return true;
                     }
                     else
