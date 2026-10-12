@@ -14,7 +14,7 @@ namespace HotelBookingManagementSystem.Controller
         public static string? userRole;
         public static int cAdFd = 0;
 
-        public static bool CheckUser(string user_id, string password)
+        public static bool CheckUserRole(string user_id, string password)
         {
             try
             {

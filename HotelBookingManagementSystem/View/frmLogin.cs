@@ -20,13 +20,10 @@ namespace HotelBookingManagementSystem.View
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (LoginController.CheckUser(txtUserID.Text, txtPassword.Text))
+            if (LoginController.CheckUserRole(txtUserID.Text, txtPassword.Text))
             {
-                frmMain dashboard = new frmMain();
-                dashboard.Show();
-
-                txtUserID.Clear();
-                txtPassword.Clear();
+                frmMain main = new frmMain();
+                main.Show();
             }
         }
 
