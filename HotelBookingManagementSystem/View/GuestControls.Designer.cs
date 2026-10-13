@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel2 = new Panel();
             btnBookings = new Button();
             lblSubtitle = new Label();
@@ -81,7 +81,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1092, 76);
+            panel2.Size = new Size(1402, 76);
             panel2.TabIndex = 5;
             panel2.Paint += panel2_Paint;
             // 
@@ -96,7 +96,7 @@
             btnBookings.FlatStyle = FlatStyle.Flat;
             btnBookings.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBookings.ForeColor = Color.White;
-            btnBookings.Location = new Point(928, 18);
+            btnBookings.Location = new Point(1238, 18);
             btnBookings.Name = "btnBookings";
             btnBookings.Size = new Size(140, 40);
             btnBookings.TabIndex = 1;
@@ -110,7 +110,7 @@
             lblSubtitle.ForeColor = Color.FromArgb(203, 217, 230);
             lblSubtitle.Location = new Point(26, 46);
             lblSubtitle.Name = "lblSubtitle";
-            lblSubtitle.Size = new Size(188, 15);
+            lblSubtitle.Size = new Size(235, 20);
             lblSubtitle.TabIndex = 2;
             lblSubtitle.Text = "Guest records and booking history";
             // 
@@ -121,7 +121,7 @@
             lblGuests.ForeColor = Color.White;
             lblGuests.Location = new Point(22, 8);
             lblGuests.Name = "lblGuests";
-            lblGuests.Size = new Size(87, 32);
+            lblGuests.Size = new Size(110, 41);
             lblGuests.TabIndex = 0;
             lblGuests.Text = "Guests";
             // 
@@ -134,7 +134,7 @@
             pnlListCard.Location = new Point(24, 100);
             pnlListCard.Name = "pnlListCard";
             pnlListCard.Padding = new Padding(16);
-            pnlListCard.Size = new Size(620, 548);
+            pnlListCard.Size = new Size(930, 675);
             pnlListCard.TabIndex = 3;
             // 
             // dgvGuests
@@ -142,33 +142,33 @@
             dgvGuests.AllowUserToAddRows = false;
             dgvGuests.AllowUserToDeleteRows = false;
             dgvGuests.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(249, 251, 253);
-            dgvGuests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(249, 251, 253);
+            dgvGuests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvGuests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGuests.BackgroundColor = Color.White;
             dgvGuests.BorderStyle = BorderStyle.None;
             dgvGuests.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvGuests.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(238, 243, 248);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(47, 65, 86);
-            dataGridViewCellStyle5.Padding = new Padding(8, 0, 8, 0);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(238, 243, 248);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(47, 65, 86);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvGuests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(238, 243, 248);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(47, 65, 86);
+            dataGridViewCellStyle2.Padding = new Padding(8, 0, 8, 0);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(238, 243, 248);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(47, 65, 86);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvGuests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvGuests.ColumnHeadersHeight = 40;
             dgvGuests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(47, 65, 86);
-            dataGridViewCellStyle6.Padding = new Padding(8, 0, 8, 0);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(219, 230, 242);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(47, 65, 86);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvGuests.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(47, 65, 86);
+            dataGridViewCellStyle3.Padding = new Padding(8, 0, 8, 0);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(219, 230, 242);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(47, 65, 86);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvGuests.DefaultCellStyle = dataGridViewCellStyle3;
             dgvGuests.Dock = DockStyle.Fill;
             dgvGuests.EnableHeadersVisualStyles = false;
             dgvGuests.GridColor = Color.FromArgb(228, 234, 241);
@@ -180,7 +180,7 @@
             dgvGuests.RowHeadersWidth = 51;
             dgvGuests.RowTemplate.Height = 36;
             dgvGuests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvGuests.Size = new Size(588, 472);
+            dgvGuests.Size = new Size(898, 599);
             dgvGuests.TabIndex = 0;
             // 
             // pnlToolbar
@@ -193,7 +193,7 @@
             pnlToolbar.Dock = DockStyle.Top;
             pnlToolbar.Location = new Point(16, 16);
             pnlToolbar.Name = "pnlToolbar";
-            pnlToolbar.Size = new Size(588, 44);
+            pnlToolbar.Size = new Size(898, 44);
             pnlToolbar.TabIndex = 1;
             // 
             // txtUserID
@@ -206,7 +206,7 @@
             txtUserID.Location = new Point(0, 0);
             txtUserID.Name = "txtUserID";
             txtUserID.PlaceholderText = "Search guests...";
-            txtUserID.Size = new Size(296, 27);
+            txtUserID.Size = new Size(606, 32);
             txtUserID.TabIndex = 0;
             // 
             // btnSearch
@@ -220,7 +220,7 @@
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(304, 0);
+            btnSearch.Location = new Point(614, 0);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(88, 28);
             btnSearch.TabIndex = 1;
@@ -238,7 +238,7 @@
             btnSelect.FlatStyle = FlatStyle.Flat;
             btnSelect.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSelect.ForeColor = Color.FromArgb(47, 65, 86);
-            btnSelect.Location = new Point(496, 0);
+            btnSelect.Location = new Point(806, 0);
             btnSelect.Name = "btnSelect";
             btnSelect.Size = new Size(92, 28);
             btnSelect.TabIndex = 3;
@@ -257,7 +257,7 @@
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRefresh.ForeColor = Color.FromArgb(47, 65, 86);
-            btnRefresh.Location = new Point(400, 0);
+            btnRefresh.Location = new Point(710, 0);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(88, 28);
             btnRefresh.TabIndex = 2;
@@ -270,7 +270,7 @@
             txtGuestID.Location = new Point(347, 9);
             txtGuestID.Name = "txtGuestID";
             txtGuestID.ReadOnly = true;
-            txtGuestID.Size = new Size(50, 23);
+            txtGuestID.Size = new Size(50, 27);
             txtGuestID.TabIndex = 99;
             txtGuestID.Visible = false;
             // 
@@ -283,9 +283,9 @@
             pnlGuestDetail.Controls.Add(pnlDetailDivider);
             pnlGuestDetail.Controls.Add(label2);
             pnlGuestDetail.Controls.Add(pnlDetailAccent);
-            pnlGuestDetail.Location = new Point(668, 100);
+            pnlGuestDetail.Location = new Point(978, 100);
             pnlGuestDetail.Name = "pnlGuestDetail";
-            pnlGuestDetail.Size = new Size(400, 548);
+            pnlGuestDetail.Size = new Size(400, 675);
             pnlGuestDetail.TabIndex = 4;
             // 
             // tblDetail
@@ -323,7 +323,8 @@
             tblDetail.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
             tblDetail.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tblDetail.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
-            tblDetail.Size = new Size(400, 492);
+            tblDetail.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tblDetail.Size = new Size(400, 619);
             tblDetail.TabIndex = 0;
             // 
             // label1
@@ -332,10 +333,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(92, 108, 128);
-            label1.Location = new Point(20, 15);
+            label1.Location = new Point(20, 12);
             label1.Margin = new Padding(0, 0, 0, 4);
             label1.Name = "label1";
-            label1.Size = new Size(62, 15);
+            label1.Size = new Size(80, 18);
             label1.TabIndex = 0;
             label1.Text = "First name";
             // 
@@ -345,10 +346,10 @@
             lblLName.AutoSize = true;
             lblLName.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLName.ForeColor = Color.FromArgb(92, 108, 128);
-            lblLName.Location = new Point(208, 15);
+            lblLName.Location = new Point(208, 12);
             lblLName.Margin = new Padding(8, 0, 0, 4);
             lblLName.Name = "lblLName";
-            lblLName.Size = new Size(61, 15);
+            lblLName.Size = new Size(77, 18);
             lblLName.TabIndex = 2;
             lblLName.Text = "Last name";
             // 
@@ -362,7 +363,7 @@
             txtFName.Location = new Point(20, 34);
             txtFName.Margin = new Padding(0, 0, 8, 0);
             txtFName.Name = "txtFName";
-            txtFName.Size = new Size(172, 26);
+            txtFName.Size = new Size(172, 31);
             txtFName.TabIndex = 0;
             // 
             // txtLName
@@ -375,7 +376,7 @@
             txtLName.Location = new Point(208, 34);
             txtLName.Margin = new Padding(8, 0, 0, 0);
             txtLName.Name = "txtLName";
-            txtLName.Size = new Size(172, 26);
+            txtLName.Size = new Size(172, 31);
             txtLName.TabIndex = 1;
             // 
             // lblEmail
@@ -385,10 +386,10 @@
             tblDetail.SetColumnSpan(lblEmail, 2);
             lblEmail.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEmail.ForeColor = Color.FromArgb(92, 108, 128);
-            lblEmail.Location = new Point(20, 118);
+            lblEmail.Location = new Point(20, 146);
             lblEmail.Margin = new Padding(0, 0, 0, 4);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(79, 15);
+            lblEmail.Size = new Size(102, 18);
             lblEmail.TabIndex = 3;
             lblEmail.Text = "Email address";
             // 
@@ -400,10 +401,10 @@
             tblDetail.SetColumnSpan(txtEmail, 2);
             txtEmail.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtEmail.ForeColor = Color.FromArgb(47, 65, 86);
-            txtEmail.Location = new Point(20, 137);
+            txtEmail.Location = new Point(20, 168);
             txtEmail.Margin = new Padding(0);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(360, 26);
+            txtEmail.Size = new Size(360, 31);
             txtEmail.TabIndex = 2;
             // 
             // label6
@@ -412,10 +413,10 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(92, 108, 128);
-            label6.Location = new Point(20, 221);
+            label6.Location = new Point(20, 280);
             label6.Margin = new Padding(0, 0, 0, 4);
             label6.Name = "label6";
-            label6.Size = new Size(86, 15);
+            label6.Size = new Size(111, 18);
             label6.TabIndex = 4;
             label6.Text = "Phone number";
             // 
@@ -425,10 +426,10 @@
             lblDateBirth.AutoSize = true;
             lblDateBirth.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDateBirth.ForeColor = Color.FromArgb(92, 108, 128);
-            lblDateBirth.Location = new Point(208, 221);
+            lblDateBirth.Location = new Point(208, 280);
             lblDateBirth.Margin = new Padding(8, 0, 0, 4);
             lblDateBirth.Name = "lblDateBirth";
-            lblDateBirth.Size = new Size(58, 15);
+            lblDateBirth.Size = new Size(76, 18);
             lblDateBirth.TabIndex = 5;
             lblDateBirth.Text = "Birth date";
             // 
@@ -439,10 +440,10 @@
             txtPhoneNumber.BorderStyle = BorderStyle.FixedSingle;
             txtPhoneNumber.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPhoneNumber.ForeColor = Color.FromArgb(47, 65, 86);
-            txtPhoneNumber.Location = new Point(20, 240);
+            txtPhoneNumber.Location = new Point(20, 302);
             txtPhoneNumber.Margin = new Padding(0, 0, 8, 0);
             txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Size = new Size(172, 26);
+            txtPhoneNumber.Size = new Size(172, 31);
             txtPhoneNumber.TabIndex = 3;
             // 
             // dtpBirthDate
@@ -454,10 +455,10 @@
             dtpBirthDate.CalendarTitleForeColor = Color.White;
             dtpBirthDate.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpBirthDate.Format = DateTimePickerFormat.Short;
-            dtpBirthDate.Location = new Point(208, 240);
+            dtpBirthDate.Location = new Point(208, 302);
             dtpBirthDate.Margin = new Padding(8, 0, 0, 0);
             dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(172, 26);
+            dtpBirthDate.Size = new Size(172, 31);
             dtpBirthDate.TabIndex = 4;
             // 
             // label7
@@ -466,10 +467,10 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(92, 108, 128);
-            label7.Location = new Point(20, 324);
+            label7.Location = new Point(20, 414);
             label7.Margin = new Padding(0, 0, 0, 4);
             label7.Name = "label7";
-            label7.Size = new Size(46, 15);
+            label7.Size = new Size(58, 18);
             label7.TabIndex = 6;
             label7.Text = "ID type";
             // 
@@ -479,10 +480,10 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(92, 108, 128);
-            label8.Location = new Point(208, 324);
+            label8.Location = new Point(208, 414);
             label8.Margin = new Padding(8, 0, 0, 4);
             label8.Name = "label8";
-            label8.Size = new Size(65, 15);
+            label8.Size = new Size(82, 18);
             label8.TabIndex = 7;
             label8.Text = "ID number";
             // 
@@ -493,10 +494,10 @@
             txtIDType.BorderStyle = BorderStyle.FixedSingle;
             txtIDType.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtIDType.ForeColor = Color.FromArgb(47, 65, 86);
-            txtIDType.Location = new Point(20, 343);
+            txtIDType.Location = new Point(20, 436);
             txtIDType.Margin = new Padding(0, 0, 8, 0);
             txtIDType.Name = "txtIDType";
-            txtIDType.Size = new Size(172, 26);
+            txtIDType.Size = new Size(172, 31);
             txtIDType.TabIndex = 5;
             // 
             // txtIDNumber
@@ -506,10 +507,10 @@
             txtIDNumber.BorderStyle = BorderStyle.FixedSingle;
             txtIDNumber.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtIDNumber.ForeColor = Color.FromArgb(47, 65, 86);
-            txtIDNumber.Location = new Point(208, 343);
+            txtIDNumber.Location = new Point(208, 436);
             txtIDNumber.Margin = new Padding(8, 0, 0, 0);
             txtIDNumber.Name = "txtIDNumber";
-            txtIDNumber.Size = new Size(172, 26);
+            txtIDNumber.Size = new Size(172, 31);
             txtIDNumber.TabIndex = 6;
             // 
             // btnSave
@@ -523,10 +524,10 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(20, 432);
+            btnSave.Location = new Point(20, 556);
             btnSave.Margin = new Padding(0, 8, 8, 0);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(172, 44);
+            btnSave.Size = new Size(172, 47);
             btnSave.TabIndex = 7;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
@@ -543,10 +544,10 @@
             btnViewBooking.FlatStyle = FlatStyle.Flat;
             btnViewBooking.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnViewBooking.ForeColor = Color.FromArgb(47, 65, 86);
-            btnViewBooking.Location = new Point(208, 432);
+            btnViewBooking.Location = new Point(208, 556);
             btnViewBooking.Margin = new Padding(8, 8, 0, 0);
             btnViewBooking.Name = "btnViewBooking";
-            btnViewBooking.Size = new Size(172, 44);
+            btnViewBooking.Size = new Size(172, 47);
             btnViewBooking.TabIndex = 8;
             btnViewBooking.Text = "Booking history";
             btnViewBooking.UseVisualStyleBackColor = false;
@@ -584,7 +585,7 @@
             // 
             // GuestControls
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(238, 242, 246);
             Controls.Add(pnlGuestDetail);
@@ -592,7 +593,7 @@
             Controls.Add(panel2);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "GuestControls";
-            Size = new Size(1092, 672);
+            Size = new Size(1402, 799);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             pnlListCard.ResumeLayout(false);

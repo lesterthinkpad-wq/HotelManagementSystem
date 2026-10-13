@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel2 = new Panel();
             lblSubtitle = new Label();
             lblCurrentUser = new Label();
@@ -109,7 +109,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
             SuspendLayout();
             // 
-            // panel2 (header)
+            // panel2
             // 
             panel2.BackColor = Color.FromArgb(47, 65, 86);
             panel2.Controls.Add(lblSubtitle);
@@ -120,17 +120,6 @@
             panel2.Size = new Size(1718, 76);
             panel2.TabIndex = 44;
             // 
-            // lblCurrentUser
-            // 
-            lblCurrentUser.AutoSize = true;
-            lblCurrentUser.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCurrentUser.ForeColor = Color.White;
-            lblCurrentUser.Location = new Point(22, 8);
-            lblCurrentUser.Name = "lblCurrentUser";
-            lblCurrentUser.Size = new Size(158, 32);
-            lblCurrentUser.TabIndex = 0;
-            lblCurrentUser.Text = "New booking";
-            // 
             // lblSubtitle
             // 
             lblSubtitle.AutoSize = true;
@@ -138,11 +127,22 @@
             lblSubtitle.ForeColor = Color.FromArgb(203, 217, 230);
             lblSubtitle.Location = new Point(26, 46);
             lblSubtitle.Name = "lblSubtitle";
-            lblSubtitle.Size = new Size(280, 15);
+            lblSubtitle.Size = new Size(355, 20);
             lblSubtitle.TabIndex = 1;
             lblSubtitle.Text = "Select a guest, add rooms, then confirm the booking";
             // 
-            // panel1 (footer with total amount and actions)
+            // lblCurrentUser
+            // 
+            lblCurrentUser.AutoSize = true;
+            lblCurrentUser.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCurrentUser.ForeColor = Color.White;
+            lblCurrentUser.Location = new Point(22, 8);
+            lblCurrentUser.Name = "lblCurrentUser";
+            lblCurrentUser.Size = new Size(202, 41);
+            lblCurrentUser.TabIndex = 0;
+            lblCurrentUser.Text = "New booking";
+            // 
+            // panel1
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(btnCancel);
@@ -156,45 +156,12 @@
             panel1.Size = new Size(1718, 72);
             panel1.TabIndex = 69;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.FromArgb(92, 108, 128);
-            label8.Location = new Point(24, 10);
-            label8.Name = "label8";
-            label8.Size = new Size(79, 15);
-            label8.TabIndex = 5;
-            label8.Text = "Total amount";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.FromArgb(47, 65, 86);
-            label9.Location = new Point(21, 28);
-            label9.Name = "label9";
-            label9.Size = new Size(30, 32);
-            label9.TabIndex = 7;
-            label9.Text = "₱";
-            // 
-            // lblTotalAmount
-            // 
-            lblTotalAmount.AutoSize = true;
-            lblTotalAmount.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalAmount.ForeColor = Color.FromArgb(47, 65, 86);
-            lblTotalAmount.Location = new Point(50, 28);
-            lblTotalAmount.Name = "lblTotalAmount";
-            lblTotalAmount.Size = new Size(0, 32);
-            lblTotalAmount.TabIndex = 6;
-            // 
             // btnCancel
             // 
             btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCancel.BackColor = Color.White;
             btnCancel.Cursor = Cursors.Hand;
             btnCancel.FlatAppearance.BorderColor = Color.FromArgb(232, 190, 182);
-            btnCancel.FlatAppearance.BorderSize = 1;
             btnCancel.FlatAppearance.MouseDownBackColor = Color.FromArgb(250, 224, 219);
             btnCancel.FlatAppearance.MouseOverBackColor = Color.FromArgb(253, 238, 235);
             btnCancel.FlatStyle = FlatStyle.Flat;
@@ -231,6 +198,38 @@
             btnConfirmBooking.Text = "Confirm booking";
             btnConfirmBooking.Click += btnConfirmBooking_Click;
             // 
+            // lblTotalAmount
+            // 
+            lblTotalAmount.AutoSize = true;
+            lblTotalAmount.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalAmount.ForeColor = Color.FromArgb(47, 65, 86);
+            lblTotalAmount.Location = new Point(50, 28);
+            lblTotalAmount.Name = "lblTotalAmount";
+            lblTotalAmount.Size = new Size(0, 41);
+            lblTotalAmount.TabIndex = 6;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.FromArgb(47, 65, 86);
+            label9.Location = new Point(21, 28);
+            label9.Name = "label9";
+            label9.Size = new Size(36, 41);
+            label9.TabIndex = 7;
+            label9.Text = "₱";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.FromArgb(92, 108, 128);
+            label8.Location = new Point(24, 10);
+            label8.Name = "label8";
+            label8.Size = new Size(99, 20);
+            label8.TabIndex = 5;
+            label8.Text = "Total amount";
+            // 
             // tblContent
             // 
             tblContent.ColumnCount = 2;
@@ -264,84 +263,17 @@
             pnlGuestCard.Size = new Size(693, 216);
             pnlGuestCard.TabIndex = 0;
             // 
-            // pnlGuestAccent
+            // txtGuestID
             // 
-            pnlGuestAccent.BackColor = Color.FromArgb(47, 65, 86);
-            pnlGuestAccent.Dock = DockStyle.Top;
-            pnlGuestAccent.Location = new Point(0, 0);
-            pnlGuestAccent.Name = "pnlGuestAccent";
-            pnlGuestAccent.Size = new Size(693, 3);
-            pnlGuestAccent.TabIndex = 4;
-            // 
-            // pnlGuestHeader
-            // 
-            pnlGuestHeader.BackColor = Color.White;
-            pnlGuestHeader.Controls.Add(btnSelectGuest);
-            pnlGuestHeader.Controls.Add(btnNewGuest);
-            pnlGuestHeader.Controls.Add(lblGuestTitle);
-            pnlGuestHeader.Dock = DockStyle.Top;
-            pnlGuestHeader.Location = new Point(0, 3);
-            pnlGuestHeader.Name = "pnlGuestHeader";
-            pnlGuestHeader.Size = new Size(693, 56);
-            pnlGuestHeader.TabIndex = 3;
-            // 
-            // lblGuestTitle
-            // 
-            lblGuestTitle.AutoSize = true;
-            lblGuestTitle.Font = new Font("Segoe UI Semibold", 12.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblGuestTitle.ForeColor = Color.FromArgb(47, 65, 86);
-            lblGuestTitle.Location = new Point(20, 14);
-            lblGuestTitle.Name = "lblGuestTitle";
-            lblGuestTitle.Size = new Size(54, 23);
-            lblGuestTitle.TabIndex = 0;
-            lblGuestTitle.Text = "Guest";
-            // 
-            // btnNewGuest
-            // 
-            btnNewGuest.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnNewGuest.BackColor = Color.FromArgb(47, 65, 86);
-            btnNewGuest.Cursor = Cursors.Hand;
-            btnNewGuest.FlatAppearance.BorderSize = 0;
-            btnNewGuest.FlatAppearance.MouseDownBackColor = Color.FromArgb(35, 50, 68);
-            btnNewGuest.FlatAppearance.MouseOverBackColor = Color.FromArgb(62, 82, 107);
-            btnNewGuest.FlatStyle = FlatStyle.Flat;
-            btnNewGuest.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNewGuest.ForeColor = Color.White;
-            btnNewGuest.Location = new Point(563, 12);
-            btnNewGuest.Name = "btnNewGuest";
-            btnNewGuest.Size = new Size(110, 32);
-            btnNewGuest.TabIndex = 1;
-            btnNewGuest.Text = "New guest";
-            btnNewGuest.UseVisualStyleBackColor = false;
-            // 
-            // btnSelectGuest
-            // 
-            btnSelectGuest.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSelectGuest.BackColor = Color.White;
-            btnSelectGuest.Cursor = Cursors.Hand;
-            btnSelectGuest.FlatAppearance.BorderColor = Color.FromArgb(203, 217, 230);
-            btnSelectGuest.FlatAppearance.BorderSize = 1;
-            btnSelectGuest.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 230, 240);
-            btnSelectGuest.FlatAppearance.MouseOverBackColor = Color.FromArgb(236, 242, 247);
-            btnSelectGuest.FlatStyle = FlatStyle.Flat;
-            btnSelectGuest.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSelectGuest.ForeColor = Color.FromArgb(47, 65, 86);
-            btnSelectGuest.Location = new Point(435, 12);
-            btnSelectGuest.Name = "btnSelectGuest";
-            btnSelectGuest.Size = new Size(120, 32);
-            btnSelectGuest.TabIndex = 0;
-            btnSelectGuest.Text = "Select guest";
-            btnSelectGuest.UseVisualStyleBackColor = false;
-            btnSelectGuest.Click += btnSelectGuest_Click;
-            // 
-            // pnlGuestDivider
-            // 
-            pnlGuestDivider.BackColor = Color.FromArgb(228, 234, 241);
-            pnlGuestDivider.Dock = DockStyle.Top;
-            pnlGuestDivider.Location = new Point(0, 59);
-            pnlGuestDivider.Name = "pnlGuestDivider";
-            pnlGuestDivider.Size = new Size(693, 1);
-            pnlGuestDivider.TabIndex = 2;
+            txtGuestID.BackColor = Color.FromArgb(243, 246, 249);
+            txtGuestID.BorderStyle = BorderStyle.FixedSingle;
+            txtGuestID.Location = new Point(600, 70);
+            txtGuestID.Name = "txtGuestID";
+            txtGuestID.ReadOnly = true;
+            txtGuestID.Size = new Size(80, 27);
+            txtGuestID.TabIndex = 0;
+            txtGuestID.TabStop = false;
+            txtGuestID.Visible = false;
             // 
             // tblGuest
             // 
@@ -369,29 +301,29 @@
             tblGuest.Size = new Size(693, 156);
             tblGuest.TabIndex = 1;
             // 
-            // label1 (First name)
+            // label1
             // 
             label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(92, 108, 128);
-            label1.Location = new Point(20, 19);
+            label1.Location = new Point(20, 12);
             label1.Margin = new Padding(0, 0, 0, 4);
             label1.Name = "label1";
-            label1.Size = new Size(64, 15);
+            label1.Size = new Size(80, 18);
             label1.TabIndex = 0;
             label1.Text = "First name";
             // 
-            // lblLName (Last name)
+            // lblLName
             // 
             lblLName.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblLName.AutoSize = true;
             lblLName.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLName.ForeColor = Color.FromArgb(92, 108, 128);
-            lblLName.Location = new Point(354, 19);
+            lblLName.Location = new Point(354, 12);
             lblLName.Margin = new Padding(8, 0, 0, 4);
             lblLName.Name = "lblLName";
-            lblLName.Size = new Size(63, 15);
+            lblLName.Size = new Size(77, 18);
             lblLName.TabIndex = 1;
             lblLName.Text = "Last name";
             // 
@@ -402,11 +334,11 @@
             txtFName.BorderStyle = BorderStyle.FixedSingle;
             txtFName.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtFName.ForeColor = Color.FromArgb(47, 65, 86);
-            txtFName.Location = new Point(20, 38);
+            txtFName.Location = new Point(20, 34);
             txtFName.Margin = new Padding(0, 0, 8, 0);
             txtFName.Name = "txtFName";
             txtFName.ReadOnly = true;
-            txtFName.Size = new Size(318, 26);
+            txtFName.Size = new Size(318, 31);
             txtFName.TabIndex = 2;
             txtFName.TabStop = false;
             // 
@@ -417,11 +349,11 @@
             txtLName.BorderStyle = BorderStyle.FixedSingle;
             txtLName.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtLName.ForeColor = Color.FromArgb(47, 65, 86);
-            txtLName.Location = new Point(354, 38);
+            txtLName.Location = new Point(354, 34);
             txtLName.Margin = new Padding(8, 0, 0, 0);
             txtLName.Name = "txtLName";
             txtLName.ReadOnly = true;
-            txtLName.Size = new Size(319, 26);
+            txtLName.Size = new Size(319, 31);
             txtLName.TabIndex = 3;
             txtLName.TabStop = false;
             // 
@@ -431,23 +363,23 @@
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEmail.ForeColor = Color.FromArgb(92, 108, 128);
-            lblEmail.Location = new Point(20, 81);
+            lblEmail.Location = new Point(20, 74);
             lblEmail.Margin = new Padding(0, 0, 0, 4);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(36, 15);
+            lblEmail.Size = new Size(46, 18);
             lblEmail.TabIndex = 4;
             lblEmail.Text = "Email";
             // 
-            // label6 (Phone number)
+            // label6
             // 
             label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(92, 108, 128);
-            label6.Location = new Point(354, 81);
+            label6.Location = new Point(354, 74);
             label6.Margin = new Padding(8, 0, 0, 4);
             label6.Name = "label6";
-            label6.Size = new Size(88, 15);
+            label6.Size = new Size(111, 18);
             label6.TabIndex = 5;
             label6.Text = "Phone number";
             // 
@@ -458,11 +390,11 @@
             txtEmail.BorderStyle = BorderStyle.FixedSingle;
             txtEmail.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtEmail.ForeColor = Color.FromArgb(47, 65, 86);
-            txtEmail.Location = new Point(20, 100);
+            txtEmail.Location = new Point(20, 96);
             txtEmail.Margin = new Padding(0, 0, 8, 0);
             txtEmail.Name = "txtEmail";
             txtEmail.ReadOnly = true;
-            txtEmail.Size = new Size(318, 26);
+            txtEmail.Size = new Size(318, 31);
             txtEmail.TabIndex = 6;
             txtEmail.TabStop = false;
             // 
@@ -473,25 +405,91 @@
             txtPhoneNumber.BorderStyle = BorderStyle.FixedSingle;
             txtPhoneNumber.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPhoneNumber.ForeColor = Color.FromArgb(47, 65, 86);
-            txtPhoneNumber.Location = new Point(354, 100);
+            txtPhoneNumber.Location = new Point(354, 96);
             txtPhoneNumber.Margin = new Padding(8, 0, 0, 0);
             txtPhoneNumber.Name = "txtPhoneNumber";
             txtPhoneNumber.ReadOnly = true;
-            txtPhoneNumber.Size = new Size(319, 26);
+            txtPhoneNumber.Size = new Size(319, 31);
             txtPhoneNumber.TabIndex = 7;
             txtPhoneNumber.TabStop = false;
             // 
-            // txtGuestID (hidden)
+            // pnlGuestDivider
             // 
-            txtGuestID.BackColor = Color.FromArgb(243, 246, 249);
-            txtGuestID.BorderStyle = BorderStyle.FixedSingle;
-            txtGuestID.Location = new Point(600, 70);
-            txtGuestID.Name = "txtGuestID";
-            txtGuestID.ReadOnly = true;
-            txtGuestID.Size = new Size(80, 27);
-            txtGuestID.TabIndex = 0;
-            txtGuestID.TabStop = false;
-            txtGuestID.Visible = false;
+            pnlGuestDivider.BackColor = Color.FromArgb(228, 234, 241);
+            pnlGuestDivider.Dock = DockStyle.Top;
+            pnlGuestDivider.Location = new Point(0, 59);
+            pnlGuestDivider.Name = "pnlGuestDivider";
+            pnlGuestDivider.Size = new Size(693, 1);
+            pnlGuestDivider.TabIndex = 2;
+            // 
+            // pnlGuestHeader
+            // 
+            pnlGuestHeader.BackColor = Color.White;
+            pnlGuestHeader.Controls.Add(btnSelectGuest);
+            pnlGuestHeader.Controls.Add(btnNewGuest);
+            pnlGuestHeader.Controls.Add(lblGuestTitle);
+            pnlGuestHeader.Dock = DockStyle.Top;
+            pnlGuestHeader.Location = new Point(0, 3);
+            pnlGuestHeader.Name = "pnlGuestHeader";
+            pnlGuestHeader.Size = new Size(693, 56);
+            pnlGuestHeader.TabIndex = 3;
+            // 
+            // btnSelectGuest
+            // 
+            btnSelectGuest.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSelectGuest.BackColor = Color.White;
+            btnSelectGuest.Cursor = Cursors.Hand;
+            btnSelectGuest.FlatAppearance.BorderColor = Color.FromArgb(203, 217, 230);
+            btnSelectGuest.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 230, 240);
+            btnSelectGuest.FlatAppearance.MouseOverBackColor = Color.FromArgb(236, 242, 247);
+            btnSelectGuest.FlatStyle = FlatStyle.Flat;
+            btnSelectGuest.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSelectGuest.ForeColor = Color.FromArgb(47, 65, 86);
+            btnSelectGuest.Location = new Point(435, 12);
+            btnSelectGuest.Name = "btnSelectGuest";
+            btnSelectGuest.Size = new Size(120, 32);
+            btnSelectGuest.TabIndex = 0;
+            btnSelectGuest.Text = "Select guest";
+            btnSelectGuest.UseVisualStyleBackColor = false;
+            btnSelectGuest.Click += btnSelectGuest_Click;
+            // 
+            // btnNewGuest
+            // 
+            btnNewGuest.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNewGuest.BackColor = Color.FromArgb(47, 65, 86);
+            btnNewGuest.Cursor = Cursors.Hand;
+            btnNewGuest.FlatAppearance.BorderSize = 0;
+            btnNewGuest.FlatAppearance.MouseDownBackColor = Color.FromArgb(35, 50, 68);
+            btnNewGuest.FlatAppearance.MouseOverBackColor = Color.FromArgb(62, 82, 107);
+            btnNewGuest.FlatStyle = FlatStyle.Flat;
+            btnNewGuest.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNewGuest.ForeColor = Color.White;
+            btnNewGuest.Location = new Point(563, 12);
+            btnNewGuest.Name = "btnNewGuest";
+            btnNewGuest.Size = new Size(110, 32);
+            btnNewGuest.TabIndex = 1;
+            btnNewGuest.Text = "New guest";
+            btnNewGuest.UseVisualStyleBackColor = false;
+            // 
+            // lblGuestTitle
+            // 
+            lblGuestTitle.AutoSize = true;
+            lblGuestTitle.Font = new Font("Segoe UI Semibold", 12.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblGuestTitle.ForeColor = Color.FromArgb(47, 65, 86);
+            lblGuestTitle.Location = new Point(20, 14);
+            lblGuestTitle.Name = "lblGuestTitle";
+            lblGuestTitle.Size = new Size(68, 30);
+            lblGuestTitle.TabIndex = 0;
+            lblGuestTitle.Text = "Guest";
+            // 
+            // pnlGuestAccent
+            // 
+            pnlGuestAccent.BackColor = Color.FromArgb(47, 65, 86);
+            pnlGuestAccent.Dock = DockStyle.Top;
+            pnlGuestAccent.Location = new Point(0, 0);
+            pnlGuestAccent.Name = "pnlGuestAccent";
+            pnlGuestAccent.Size = new Size(693, 3);
+            pnlGuestAccent.TabIndex = 4;
             // 
             // pnlStayCard
             // 
@@ -506,37 +504,6 @@
             pnlStayCard.Name = "pnlStayCard";
             pnlStayCard.Size = new Size(961, 216);
             pnlStayCard.TabIndex = 1;
-            // 
-            // pnlStayAccent
-            // 
-            pnlStayAccent.BackColor = Color.FromArgb(47, 65, 86);
-            pnlStayAccent.Dock = DockStyle.Top;
-            pnlStayAccent.Location = new Point(0, 0);
-            pnlStayAccent.Name = "pnlStayAccent";
-            pnlStayAccent.Size = new Size(961, 3);
-            pnlStayAccent.TabIndex = 3;
-            // 
-            // label2 (Stay details)
-            // 
-            label2.Dock = DockStyle.Top;
-            label2.Font = new Font("Segoe UI Semibold", 12.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(47, 65, 86);
-            label2.Location = new Point(0, 3);
-            label2.Name = "label2";
-            label2.Padding = new Padding(20, 0, 0, 0);
-            label2.Size = new Size(961, 56);
-            label2.TabIndex = 2;
-            label2.Text = "Stay details";
-            label2.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // pnlStayDivider
-            // 
-            pnlStayDivider.BackColor = Color.FromArgb(228, 234, 241);
-            pnlStayDivider.Dock = DockStyle.Top;
-            pnlStayDivider.Location = new Point(0, 59);
-            pnlStayDivider.Name = "pnlStayDivider";
-            pnlStayDivider.Size = new Size(961, 1);
-            pnlStayDivider.TabIndex = 1;
             // 
             // tblStay
             // 
@@ -568,42 +535,42 @@
             tblStay.Size = new Size(961, 156);
             tblStay.TabIndex = 0;
             // 
-            // lblDateBirth (Check in)
+            // lblDateBirth
             // 
             lblDateBirth.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblDateBirth.AutoSize = true;
             lblDateBirth.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDateBirth.ForeColor = Color.FromArgb(92, 108, 128);
-            lblDateBirth.Location = new Point(20, 19);
+            lblDateBirth.Location = new Point(20, 12);
             lblDateBirth.Margin = new Padding(0, 0, 0, 4);
             lblDateBirth.Name = "lblDateBirth";
-            lblDateBirth.Size = new Size(51, 15);
+            lblDateBirth.Size = new Size(67, 18);
             lblDateBirth.TabIndex = 0;
             lblDateBirth.Text = "Check in";
             // 
-            // label3 (Check out)
+            // label3
             // 
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(92, 108, 128);
-            label3.Location = new Point(334, 19);
+            label3.Location = new Point(334, 12);
             label3.Margin = new Padding(8, 0, 0, 4);
             label3.Name = "label3";
-            label3.Size = new Size(59, 15);
+            label3.Size = new Size(77, 18);
             label3.TabIndex = 1;
             label3.Text = "Check out";
             // 
-            // label7 (Guests)
+            // label7
             // 
             label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(92, 108, 128);
-            label7.Location = new Point(648, 19);
+            label7.Location = new Point(640, 12);
             label7.Margin = new Padding(8, 0, 0, 4);
             label7.Name = "label7";
-            label7.Size = new Size(44, 15);
+            label7.Size = new Size(53, 18);
             label7.TabIndex = 2;
             label7.Text = "Guests";
             // 
@@ -615,10 +582,10 @@
             dtpCheckinDate.CalendarTitleForeColor = Color.White;
             dtpCheckinDate.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpCheckinDate.Format = DateTimePickerFormat.Short;
-            dtpCheckinDate.Location = new Point(20, 38);
+            dtpCheckinDate.Location = new Point(20, 34);
             dtpCheckinDate.Margin = new Padding(0, 0, 8, 0);
             dtpCheckinDate.Name = "dtpCheckinDate";
-            dtpCheckinDate.Size = new Size(294, 26);
+            dtpCheckinDate.Size = new Size(298, 31);
             dtpCheckinDate.TabIndex = 3;
             dtpCheckinDate.ValueChanged += dtpCheckinDate_ValueChanged;
             // 
@@ -630,10 +597,10 @@
             dtpCheckoutDate.CalendarTitleForeColor = Color.White;
             dtpCheckoutDate.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpCheckoutDate.Format = DateTimePickerFormat.Short;
-            dtpCheckoutDate.Location = new Point(334, 38);
+            dtpCheckoutDate.Location = new Point(334, 34);
             dtpCheckoutDate.Margin = new Padding(8, 0, 8, 0);
             dtpCheckoutDate.Name = "dtpCheckoutDate";
-            dtpCheckoutDate.Size = new Size(286, 26);
+            dtpCheckoutDate.Size = new Size(290, 31);
             dtpCheckoutDate.TabIndex = 4;
             dtpCheckoutDate.ValueChanged += dtpCheckoutDate_ValueChanged;
             // 
@@ -644,38 +611,38 @@
             nudGuests.BorderStyle = BorderStyle.FixedSingle;
             nudGuests.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nudGuests.ForeColor = Color.FromArgb(47, 65, 86);
-            nudGuests.Location = new Point(648, 38);
+            nudGuests.Location = new Point(640, 34);
             nudGuests.Margin = new Padding(8, 0, 0, 0);
             nudGuests.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudGuests.Name = "nudGuests";
-            nudGuests.Size = new Size(293, 26);
+            nudGuests.Size = new Size(301, 31);
             nudGuests.TabIndex = 5;
             nudGuests.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudGuests.ValueChanged += nudGuests_ValueChanged;
             // 
-            // label4 (Room type)
+            // label4
             // 
             label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(92, 108, 128);
-            label4.Location = new Point(20, 81);
+            label4.Location = new Point(20, 74);
             label4.Margin = new Padding(0, 0, 0, 4);
             label4.Name = "label4";
-            label4.Size = new Size(64, 15);
+            label4.Size = new Size(83, 18);
             label4.TabIndex = 6;
             label4.Text = "Room type";
             // 
-            // label5 (Room number)
+            // label5
             // 
             label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(92, 108, 128);
-            label5.Location = new Point(334, 81);
+            label5.Location = new Point(334, 74);
             label5.Margin = new Padding(8, 0, 0, 4);
             label5.Name = "label5";
-            label5.Size = new Size(85, 15);
+            label5.Size = new Size(107, 18);
             label5.TabIndex = 7;
             label5.Text = "Room number";
             // 
@@ -688,10 +655,10 @@
             cboRoomType.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboRoomType.ForeColor = Color.FromArgb(47, 65, 86);
             cboRoomType.FormattingEnabled = true;
-            cboRoomType.Location = new Point(20, 100);
+            cboRoomType.Location = new Point(20, 96);
             cboRoomType.Margin = new Padding(0, 0, 8, 0);
             cboRoomType.Name = "cboRoomType";
-            cboRoomType.Size = new Size(294, 27);
+            cboRoomType.Size = new Size(298, 31);
             cboRoomType.TabIndex = 8;
             cboRoomType.SelectedIndexChanged += cboRoomType_SelectedIndexChanged;
             // 
@@ -704,10 +671,10 @@
             cboRoomNumber.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboRoomNumber.ForeColor = Color.FromArgb(47, 65, 86);
             cboRoomNumber.FormattingEnabled = true;
-            cboRoomNumber.Location = new Point(334, 100);
+            cboRoomNumber.Location = new Point(334, 96);
             cboRoomNumber.Margin = new Padding(8, 0, 8, 0);
             cboRoomNumber.Name = "cboRoomNumber";
-            cboRoomNumber.Size = new Size(286, 27);
+            cboRoomNumber.Size = new Size(290, 31);
             cboRoomNumber.TabIndex = 9;
             // 
             // btnAddBooking
@@ -724,60 +691,60 @@
             btnAddBooking.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddBooking.ForeColor = Color.White;
             btnAddBooking.HoverState.FillColor = Color.FromArgb(62, 82, 107);
-            btnAddBooking.Location = new Point(648, 100);
+            btnAddBooking.Location = new Point(640, 96);
             btnAddBooking.Margin = new Padding(8, 0, 0, 0);
             btnAddBooking.Name = "btnAddBooking";
             btnAddBooking.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnAddBooking.Size = new Size(293, 30);
+            btnAddBooking.Size = new Size(301, 30);
             btnAddBooking.TabIndex = 10;
             btnAddBooking.Text = "Add booking";
             btnAddBooking.Click += btnAddBooking_Click;
             // 
+            // pnlStayDivider
+            // 
+            pnlStayDivider.BackColor = Color.FromArgb(228, 234, 241);
+            pnlStayDivider.Dock = DockStyle.Top;
+            pnlStayDivider.Location = new Point(0, 59);
+            pnlStayDivider.Name = "pnlStayDivider";
+            pnlStayDivider.Size = new Size(961, 1);
+            pnlStayDivider.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.Dock = DockStyle.Top;
+            label2.Font = new Font("Segoe UI Semibold", 12.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(47, 65, 86);
+            label2.Location = new Point(0, 3);
+            label2.Name = "label2";
+            label2.Padding = new Padding(20, 0, 0, 0);
+            label2.Size = new Size(961, 56);
+            label2.TabIndex = 2;
+            label2.Text = "Stay details";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pnlStayAccent
+            // 
+            pnlStayAccent.BackColor = Color.FromArgb(47, 65, 86);
+            pnlStayAccent.Dock = DockStyle.Top;
+            pnlStayAccent.Location = new Point(0, 0);
+            pnlStayAccent.Name = "pnlStayAccent";
+            pnlStayAccent.Size = new Size(961, 3);
+            pnlStayAccent.TabIndex = 3;
+            // 
             // pnlBookingsCard
             // 
             pnlBookingsCard.BackColor = Color.White;
+            tblContent.SetColumnSpan(pnlBookingsCard, 2);
             pnlBookingsCard.Controls.Add(pnlGridHost);
             pnlBookingsCard.Controls.Add(pnlBookingsDivider);
             pnlBookingsCard.Controls.Add(lblRecentBookings);
             pnlBookingsCard.Controls.Add(pnlBookingsAccent);
-            tblContent.SetColumnSpan(pnlBookingsCard, 2);
             pnlBookingsCard.Dock = DockStyle.Fill;
             pnlBookingsCard.Location = new Point(24, 256);
             pnlBookingsCard.Margin = new Padding(0);
             pnlBookingsCard.Name = "pnlBookingsCard";
             pnlBookingsCard.Size = new Size(1670, 487);
             pnlBookingsCard.TabIndex = 2;
-            // 
-            // pnlBookingsAccent
-            // 
-            pnlBookingsAccent.BackColor = Color.FromArgb(47, 65, 86);
-            pnlBookingsAccent.Dock = DockStyle.Top;
-            pnlBookingsAccent.Location = new Point(0, 0);
-            pnlBookingsAccent.Name = "pnlBookingsAccent";
-            pnlBookingsAccent.Size = new Size(1670, 3);
-            pnlBookingsAccent.TabIndex = 3;
-            // 
-            // lblRecentBookings
-            // 
-            lblRecentBookings.Dock = DockStyle.Top;
-            lblRecentBookings.Font = new Font("Segoe UI Semibold", 12.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRecentBookings.ForeColor = Color.FromArgb(47, 65, 86);
-            lblRecentBookings.Location = new Point(0, 3);
-            lblRecentBookings.Name = "lblRecentBookings";
-            lblRecentBookings.Padding = new Padding(20, 0, 0, 0);
-            lblRecentBookings.Size = new Size(1670, 56);
-            lblRecentBookings.TabIndex = 2;
-            lblRecentBookings.Text = "Recent Bookings";
-            lblRecentBookings.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // pnlBookingsDivider
-            // 
-            pnlBookingsDivider.BackColor = Color.FromArgb(228, 234, 241);
-            pnlBookingsDivider.Dock = DockStyle.Top;
-            pnlBookingsDivider.Location = new Point(0, 59);
-            pnlBookingsDivider.Name = "pnlBookingsDivider";
-            pnlBookingsDivider.Size = new Size(1670, 1);
-            pnlBookingsDivider.TabIndex = 1;
             // 
             // pnlGridHost
             // 
@@ -795,34 +762,34 @@
             dgvBookings.AllowUserToAddRows = false;
             dgvBookings.AllowUserToDeleteRows = false;
             dgvBookings.AllowUserToResizeRows = false;
-            dgvBookings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(249, 251, 253);
+            dgvBookings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvBookings.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBookings.BackgroundColor = Color.White;
             dgvBookings.BorderStyle = BorderStyle.None;
             dgvBookings.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvBookings.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(238, 243, 248);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(47, 65, 86);
-            dataGridViewCellStyle1.Padding = new Padding(8, 0, 8, 0);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(238, 243, 248);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(47, 65, 86);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvBookings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(238, 243, 248);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(47, 65, 86);
+            dataGridViewCellStyle2.Padding = new Padding(8, 0, 8, 0);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(238, 243, 248);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(47, 65, 86);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvBookings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvBookings.ColumnHeadersHeight = 40;
             dgvBookings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvBookings.Columns.AddRange(new DataGridViewColumn[] { RoomID, GuestID, CheckIn, CheckOut, RoomType, RoomNumber, Guests, Nights, TotalAmount });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(47, 65, 86);
-            dataGridViewCellStyle2.Padding = new Padding(8, 0, 8, 0);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(219, 230, 242);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(47, 65, 86);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvBookings.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(249, 251, 253);
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(47, 65, 86);
+            dataGridViewCellStyle5.Padding = new Padding(8, 0, 8, 0);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(219, 230, 242);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(47, 65, 86);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvBookings.DefaultCellStyle = dataGridViewCellStyle5;
             dgvBookings.Dock = DockStyle.Fill;
             dgvBookings.EnableHeadersVisualStyles = false;
             dgvBookings.GridColor = Color.FromArgb(228, 234, 241);
@@ -858,8 +825,8 @@
             // CheckIn
             // 
             CheckIn.DataPropertyName = "CheckIn";
-            dataGridViewCellStyle4.Format = "MMM dd, yyyy";
-            CheckIn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Format = "MMM dd, yyyy";
+            CheckIn.DefaultCellStyle = dataGridViewCellStyle3;
             CheckIn.HeaderText = "Check In";
             CheckIn.MinimumWidth = 6;
             CheckIn.Name = "CheckIn";
@@ -868,7 +835,7 @@
             // CheckOut
             // 
             CheckOut.DataPropertyName = "CheckOut";
-            CheckOut.DefaultCellStyle = dataGridViewCellStyle4;
+            CheckOut.DefaultCellStyle = dataGridViewCellStyle3;
             CheckOut.HeaderText = "Check Out";
             CheckOut.MinimumWidth = 6;
             CheckOut.Name = "CheckOut";
@@ -911,17 +878,48 @@
             // TotalAmount
             // 
             TotalAmount.DataPropertyName = "TotalAmount";
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            TotalAmount.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            TotalAmount.DefaultCellStyle = dataGridViewCellStyle4;
             TotalAmount.HeaderText = "Total";
             TotalAmount.MinimumWidth = 6;
             TotalAmount.Name = "TotalAmount";
             TotalAmount.ReadOnly = true;
             // 
+            // pnlBookingsDivider
+            // 
+            pnlBookingsDivider.BackColor = Color.FromArgb(228, 234, 241);
+            pnlBookingsDivider.Dock = DockStyle.Top;
+            pnlBookingsDivider.Location = new Point(0, 59);
+            pnlBookingsDivider.Name = "pnlBookingsDivider";
+            pnlBookingsDivider.Size = new Size(1670, 1);
+            pnlBookingsDivider.TabIndex = 1;
+            // 
+            // lblRecentBookings
+            // 
+            lblRecentBookings.Dock = DockStyle.Top;
+            lblRecentBookings.Font = new Font("Segoe UI Semibold", 12.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRecentBookings.ForeColor = Color.FromArgb(47, 65, 86);
+            lblRecentBookings.Location = new Point(0, 3);
+            lblRecentBookings.Name = "lblRecentBookings";
+            lblRecentBookings.Padding = new Padding(20, 0, 0, 0);
+            lblRecentBookings.Size = new Size(1670, 56);
+            lblRecentBookings.TabIndex = 2;
+            lblRecentBookings.Text = "Recent Bookings";
+            lblRecentBookings.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pnlBookingsAccent
+            // 
+            pnlBookingsAccent.BackColor = Color.FromArgb(47, 65, 86);
+            pnlBookingsAccent.Dock = DockStyle.Top;
+            pnlBookingsAccent.Location = new Point(0, 0);
+            pnlBookingsAccent.Name = "pnlBookingsAccent";
+            pnlBookingsAccent.Size = new Size(1670, 3);
+            pnlBookingsAccent.TabIndex = 3;
+            // 
             // BookingsControl
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(238, 242, 246);
             Controls.Add(tblContent);

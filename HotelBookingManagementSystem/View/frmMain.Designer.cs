@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -37,6 +39,7 @@
             btnLogout = new Button();
             tbcMain = new Guna.UI2.WinForms.Guna2TabControl();
             tabDashboard = new TabPage();
+            btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             dgvBookingsAccounts = new DataGridView();
             lblRecentBookings = new Label();
             tlpCards = new TableLayoutPanel();
@@ -72,7 +75,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1280, 80);
+            panel2.Size = new Size(1906, 80);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
             // 
@@ -83,7 +86,7 @@
             lblAppTitle.ForeColor = Color.FromArgb(245, 239, 235);
             lblAppTitle.Location = new Point(24, 10);
             lblAppTitle.Name = "lblAppTitle";
-            lblAppTitle.Size = new Size(305, 30);
+            lblAppTitle.Size = new Size(381, 37);
             lblAppTitle.TabIndex = 0;
             lblAppTitle.Text = "Hotel Booking Management";
             // 
@@ -94,7 +97,7 @@
             lblCurrentUser.ForeColor = Color.FromArgb(203, 217, 230);
             lblCurrentUser.Location = new Point(26, 46);
             lblCurrentUser.Name = "lblCurrentUser";
-            lblCurrentUser.Size = new Size(91, 19);
+            lblCurrentUser.Size = new Size(106, 23);
             lblCurrentUser.TabIndex = 3;
             lblCurrentUser.Text = "Logged in as:";
             // 
@@ -107,7 +110,7 @@
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Segoe UI", 10.5F, FontStyle.Bold);
             btnLogout.ForeColor = Color.FromArgb(245, 239, 235);
-            btnLogout.Location = new Point(1136, 20);
+            btnLogout.Location = new Point(1762, 20);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(120, 40);
             btnLogout.TabIndex = 8;
@@ -129,7 +132,7 @@
             tbcMain.Location = new Point(0, 80);
             tbcMain.Name = "tbcMain";
             tbcMain.SelectedIndex = 0;
-            tbcMain.Size = new Size(1280, 669);
+            tbcMain.Size = new Size(1906, 957);
             tbcMain.TabButtonHoverState.BorderColor = Color.Empty;
             tbcMain.TabButtonHoverState.FillColor = Color.FromArgb(82, 107, 144);
             tbcMain.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10.5F);
@@ -153,15 +156,35 @@
             // tabDashboard
             // 
             tabDashboard.BackColor = Color.FromArgb(203, 217, 230);
+            tabDashboard.Controls.Add(btnRefresh);
             tabDashboard.Controls.Add(dgvBookingsAccounts);
             tabDashboard.Controls.Add(lblRecentBookings);
             tabDashboard.Controls.Add(tlpCards);
             tabDashboard.Location = new Point(184, 4);
             tabDashboard.Name = "tabDashboard";
             tabDashboard.Padding = new Padding(24);
-            tabDashboard.Size = new Size(1092, 661);
+            tabDashboard.Size = new Size(1718, 949);
             tabDashboard.TabIndex = 0;
             tabDashboard.Text = "Dashboard";
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.BorderRadius = 15;
+            btnRefresh.CustomizableEdges = customizableEdges1;
+            btnRefresh.DisabledState.BorderColor = Color.DarkGray;
+            btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRefresh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRefresh.FillColor = Color.FromArgb(245, 239, 235);
+            btnRefresh.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnRefresh.ForeColor = Color.Black;
+            btnRefresh.Location = new Point(1588, 177);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnRefresh.Size = new Size(106, 37);
+            btnRefresh.TabIndex = 11;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // dgvBookingsAccounts
             // 
@@ -195,10 +218,9 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(245, 239, 235);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvBookingsAccounts.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvBookingsAccounts.Dock = DockStyle.Fill;
             dgvBookingsAccounts.EnableHeadersVisualStyles = false;
             dgvBookingsAccounts.GridColor = Color.FromArgb(203, 217, 230);
-            dgvBookingsAccounts.Location = new Point(24, 214);
+            dgvBookingsAccounts.Location = new Point(24, 222);
             dgvBookingsAccounts.MultiSelect = false;
             dgvBookingsAccounts.Name = "dgvBookingsAccounts";
             dgvBookingsAccounts.ReadOnly = true;
@@ -206,7 +228,7 @@
             dgvBookingsAccounts.RowHeadersWidth = 51;
             dgvBookingsAccounts.RowTemplate.Height = 36;
             dgvBookingsAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvBookingsAccounts.Size = new Size(1044, 423);
+            dgvBookingsAccounts.Size = new Size(1670, 700);
             dgvBookingsAccounts.TabIndex = 2;
             // 
             // lblRecentBookings
@@ -216,7 +238,7 @@
             lblRecentBookings.ForeColor = Color.FromArgb(47, 65, 86);
             lblRecentBookings.Location = new Point(24, 174);
             lblRecentBookings.Name = "lblRecentBookings";
-            lblRecentBookings.Size = new Size(1044, 40);
+            lblRecentBookings.Size = new Size(1670, 40);
             lblRecentBookings.TabIndex = 3;
             lblRecentBookings.Text = "Recent Bookings";
             lblRecentBookings.TextAlign = ContentAlignment.MiddleLeft;
@@ -238,7 +260,7 @@
             tlpCards.Padding = new Padding(0, 0, 0, 16);
             tlpCards.RowCount = 1;
             tlpCards.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpCards.Size = new Size(1044, 150);
+            tlpCards.Size = new Size(1670, 150);
             tlpCards.TabIndex = 7;
             // 
             // panel1
@@ -250,7 +272,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(0, 0, 16, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(332, 134);
+            panel1.Size = new Size(540, 134);
             panel1.TabIndex = 4;
             // 
             // lblBookingNum
@@ -260,7 +282,7 @@
             lblBookingNum.ForeColor = Color.FromArgb(245, 239, 235);
             lblBookingNum.Location = new Point(18, 48);
             lblBookingNum.Name = "lblBookingNum";
-            lblBookingNum.Size = new Size(56, 65);
+            lblBookingNum.Size = new Size(70, 81);
             lblBookingNum.TabIndex = 1;
             lblBookingNum.Text = "0";
             // 
@@ -271,7 +293,7 @@
             lblTotalBookings.ForeColor = Color.FromArgb(203, 217, 230);
             lblTotalBookings.Location = new Point(20, 16);
             lblTotalBookings.Name = "lblTotalBookings";
-            lblTotalBookings.Size = new Size(109, 20);
+            lblTotalBookings.Size = new Size(136, 25);
             lblTotalBookings.TabIndex = 0;
             lblTotalBookings.Text = "Total Bookings";
             // 
@@ -281,10 +303,10 @@
             panel3.Controls.Add(lblPendingCheckins);
             panel3.Controls.Add(lblPendings);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(348, 0);
+            panel3.Location = new Point(556, 0);
             panel3.Margin = new Padding(0, 0, 16, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(332, 134);
+            panel3.Size = new Size(540, 134);
             panel3.TabIndex = 5;
             // 
             // lblPendingCheckins
@@ -294,7 +316,7 @@
             lblPendingCheckins.ForeColor = Color.FromArgb(245, 239, 235);
             lblPendingCheckins.Location = new Point(18, 48);
             lblPendingCheckins.Name = "lblPendingCheckins";
-            lblPendingCheckins.Size = new Size(56, 65);
+            lblPendingCheckins.Size = new Size(70, 81);
             lblPendingCheckins.TabIndex = 1;
             lblPendingCheckins.Text = "0";
             // 
@@ -305,7 +327,7 @@
             lblPendings.ForeColor = Color.FromArgb(203, 217, 230);
             lblPendings.Location = new Point(20, 16);
             lblPendings.Name = "lblPendings";
-            lblPendings.Size = new Size(129, 20);
+            lblPendings.Size = new Size(162, 25);
             lblPendings.TabIndex = 0;
             lblPendings.Text = "Pending Checkins";
             // 
@@ -315,10 +337,10 @@
             panel4.Controls.Add(lblAvailableRooms);
             panel4.Controls.Add(label4);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(696, 0);
+            panel4.Location = new Point(1112, 0);
             panel4.Margin = new Padding(0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(348, 134);
+            panel4.Size = new Size(558, 134);
             panel4.TabIndex = 6;
             // 
             // lblAvailableRooms
@@ -328,7 +350,7 @@
             lblAvailableRooms.ForeColor = Color.FromArgb(245, 239, 235);
             lblAvailableRooms.Location = new Point(18, 48);
             lblAvailableRooms.Name = "lblAvailableRooms";
-            lblAvailableRooms.Size = new Size(56, 65);
+            lblAvailableRooms.Size = new Size(70, 81);
             lblAvailableRooms.TabIndex = 1;
             lblAvailableRooms.Text = "0";
             // 
@@ -339,7 +361,7 @@
             label4.ForeColor = Color.FromArgb(203, 217, 230);
             label4.Location = new Point(20, 16);
             label4.Name = "label4";
-            label4.Size = new Size(122, 20);
+            label4.Size = new Size(154, 25);
             label4.TabIndex = 0;
             label4.Text = "Available Rooms";
             // 
@@ -349,7 +371,7 @@
             tabBookings.Location = new Point(184, 4);
             tabBookings.Name = "tabBookings";
             tabBookings.Padding = new Padding(3);
-            tabBookings.Size = new Size(1092, 672);
+            tabBookings.Size = new Size(1718, 949);
             tabBookings.TabIndex = 1;
             tabBookings.Text = "Bookings";
             // 
@@ -358,7 +380,7 @@
             tabGuests.BackColor = Color.FromArgb(203, 217, 230);
             tabGuests.Location = new Point(184, 4);
             tabGuests.Name = "tabGuests";
-            tabGuests.Size = new Size(1092, 661);
+            tabGuests.Size = new Size(1718, 949);
             tabGuests.TabIndex = 2;
             tabGuests.Text = "Guests";
             // 
@@ -367,7 +389,7 @@
             tabCheckout.BackColor = Color.FromArgb(203, 217, 230);
             tabCheckout.Location = new Point(184, 4);
             tabCheckout.Name = "tabCheckout";
-            tabCheckout.Size = new Size(1092, 672);
+            tabCheckout.Size = new Size(1718, 949);
             tabCheckout.TabIndex = 4;
             tabCheckout.Text = "Check out";
             // 
@@ -376,23 +398,27 @@
             tabReports.BackColor = Color.FromArgb(203, 217, 230);
             tabReports.Location = new Point(184, 4);
             tabReports.Name = "tabReports";
-            tabReports.Size = new Size(1092, 672);
+            tabReports.Size = new Size(1718, 949);
             tabReports.TabIndex = 3;
             tabReports.Text = "Reports";
             // 
             // frmMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(203, 217, 230);
-            ClientSize = new Size(1280, 749);
+            ClientSize = new Size(1906, 1037);
             Controls.Add(tbcMain);
             Controls.Add(panel2);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
+            MinimizeBox = false;
             MinimumSize = new Size(1100, 680);
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Hotel Booking Management System";
+            WindowState = FormWindowState.Maximized;
             Load += frmMain_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -432,5 +458,6 @@
         private TabPage tabGuests;
         private TabPage tabCheckout;
         private TabPage tabReports;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
     }
 }

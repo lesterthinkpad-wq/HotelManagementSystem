@@ -37,12 +37,24 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlHeader = new Panel();
             lblTitle = new Label();
             lblCheckedIn = new Label();
             lblSearch = new Label();
             dgvCheckedIn = new DataGridView();
             pnlDetails = new Panel();
+            label1 = new Label();
+            cboPaymentMethod = new Guna.UI2.WinForms.Guna2ComboBox();
+            txtBookingID = new Guna.UI2.WinForms.Guna2TextBox();
+            txtPayment = new Guna.UI2.WinForms.Guna2TextBox();
             lblDetailsTitle = new Label();
             lblRefCaption = new Label();
             lblRefValue = new Label();
@@ -63,10 +75,11 @@
             lblTotalCaption = new Label();
             lblTotalValue = new Label();
             chkPaymentReceived = new CheckBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            btnCheckout = new Guna.UI2.WinForms.Guna2Button();
+            btnClear = new Guna.UI2.WinForms.Guna2Button();
+            btnSearch = new Guna.UI2.WinForms.Guna2Button();
             txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCheckedIn).BeginInit();
             pnlDetails.SuspendLayout();
@@ -98,7 +111,7 @@
             lblCheckedIn.AutoSize = true;
             lblCheckedIn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
             lblCheckedIn.ForeColor = Color.DimGray;
-            lblCheckedIn.Location = new Point(165, 140);
+            lblCheckedIn.Location = new Point(139, 97);
             lblCheckedIn.Name = "lblCheckedIn";
             lblCheckedIn.Size = new Size(246, 29);
             lblCheckedIn.TabIndex = 1;
@@ -109,7 +122,7 @@
             lblSearch.AutoSize = true;
             lblSearch.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             lblSearch.ForeColor = Color.DimGray;
-            lblSearch.Location = new Point(165, 200);
+            lblSearch.Location = new Point(135, 207);
             lblSearch.Name = "lblSearch";
             lblSearch.Size = new Size(68, 20);
             lblSearch.TabIndex = 2;
@@ -120,6 +133,7 @@
             dgvCheckedIn.AllowUserToAddRows = false;
             dgvCheckedIn.AllowUserToDeleteRows = false;
             dgvCheckedIn.AllowUserToResizeRows = false;
+            dgvCheckedIn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCheckedIn.BackgroundColor = Color.White;
             dgvCheckedIn.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvCheckedIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -127,7 +141,7 @@
             dgvCheckedIn.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvCheckedIn.EnableHeadersVisualStyles = false;
             dgvCheckedIn.GridColor = Color.FromArgb(203, 217, 230);
-            dgvCheckedIn.Location = new Point(165, 248);
+            dgvCheckedIn.Location = new Point(135, 198);
             dgvCheckedIn.MultiSelect = false;
             dgvCheckedIn.Name = "dgvCheckedIn";
             dgvCheckedIn.ReadOnly = true;
@@ -135,13 +149,18 @@
             dgvCheckedIn.RowHeadersWidth = 51;
             dgvCheckedIn.RowTemplate.Height = 30;
             dgvCheckedIn.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCheckedIn.Size = new Size(920, 477);
+            dgvCheckedIn.Size = new Size(1002, 588);
             dgvCheckedIn.TabIndex = 5;
+            dgvCheckedIn.CellContentClick += dgvCheckedIn_CellContentClick;
             // 
             // pnlDetails
             // 
             pnlDetails.BackColor = Color.FromArgb(245, 239, 235);
             pnlDetails.BorderStyle = BorderStyle.FixedSingle;
+            pnlDetails.Controls.Add(label1);
+            pnlDetails.Controls.Add(cboPaymentMethod);
+            pnlDetails.Controls.Add(txtBookingID);
+            pnlDetails.Controls.Add(txtPayment);
             pnlDetails.Controls.Add(lblDetailsTitle);
             pnlDetails.Controls.Add(lblRefCaption);
             pnlDetails.Controls.Add(lblRefValue);
@@ -162,10 +181,87 @@
             pnlDetails.Controls.Add(lblTotalCaption);
             pnlDetails.Controls.Add(lblTotalValue);
             pnlDetails.Controls.Add(chkPaymentReceived);
-            pnlDetails.Location = new Point(1111, 248);
+            pnlDetails.Location = new Point(1163, 198);
             pnlDetails.Name = "pnlDetails";
-            pnlDetails.Size = new Size(426, 477);
+            pnlDetails.Size = new Size(426, 588);
             pnlDetails.TabIndex = 6;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
+            label1.ForeColor = Color.DimGray;
+            label1.Location = new Point(18, 515);
+            label1.Name = "label1";
+            label1.Size = new Size(148, 20);
+            label1.TabIndex = 24;
+            label1.Text = "Payment method";
+            // 
+            // cboPaymentMethod
+            // 
+            cboPaymentMethod.BackColor = Color.Transparent;
+            cboPaymentMethod.BorderRadius = 10;
+            cboPaymentMethod.CustomizableEdges = customizableEdges1;
+            cboPaymentMethod.DrawMode = DrawMode.OwnerDrawFixed;
+            cboPaymentMethod.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPaymentMethod.FocusedColor = Color.FromArgb(94, 148, 255);
+            cboPaymentMethod.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cboPaymentMethod.Font = new Font("Segoe UI", 10F);
+            cboPaymentMethod.ForeColor = Color.FromArgb(68, 88, 112);
+            cboPaymentMethod.ItemHeight = 30;
+            cboPaymentMethod.Items.AddRange(new object[] { "cash", "credit_card", "debit_card", "bank_transfer", "online" });
+            cboPaymentMethod.Location = new Point(18, 538);
+            cboPaymentMethod.Name = "cboPaymentMethod";
+            cboPaymentMethod.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            cboPaymentMethod.Size = new Size(386, 36);
+            cboPaymentMethod.TabIndex = 22;
+            // 
+            // txtBookingID
+            // 
+            txtBookingID.BorderRadius = 10;
+            txtBookingID.CustomizableEdges = customizableEdges3;
+            txtBookingID.DefaultText = "";
+            txtBookingID.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtBookingID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtBookingID.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtBookingID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtBookingID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtBookingID.Font = new Font("Microsoft Sans Serif", 12F);
+            txtBookingID.ForeColor = Color.Black;
+            txtBookingID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtBookingID.Location = new Point(318, 36);
+            txtBookingID.Margin = new Padding(4, 5, 4, 5);
+            txtBookingID.Name = "txtBookingID";
+            txtBookingID.PlaceholderForeColor = Color.Gray;
+            txtBookingID.PlaceholderText = "";
+            txtBookingID.SelectedText = "";
+            txtBookingID.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtBookingID.Size = new Size(102, 27);
+            txtBookingID.TabIndex = 21;
+            txtBookingID.Visible = false;
+            // 
+            // txtPayment
+            // 
+            txtPayment.BorderRadius = 10;
+            txtPayment.CustomizableEdges = customizableEdges5;
+            txtPayment.DefaultText = "";
+            txtPayment.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtPayment.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtPayment.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtPayment.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtPayment.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtPayment.Font = new Font("Microsoft Sans Serif", 12F);
+            txtPayment.ForeColor = Color.Black;
+            txtPayment.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtPayment.Location = new Point(18, 445);
+            txtPayment.Margin = new Padding(4, 5, 4, 5);
+            txtPayment.Name = "txtPayment";
+            txtPayment.PlaceholderForeColor = Color.Gray;
+            txtPayment.PlaceholderText = "Payment amount";
+            txtPayment.SelectedText = "";
+            txtPayment.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtPayment.Size = new Size(386, 49);
+            txtPayment.TabIndex = 20;
             // 
             // lblDetailsTitle
             // 
@@ -372,71 +468,72 @@
             chkPaymentReceived.AutoSize = true;
             chkPaymentReceived.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold);
             chkPaymentReceived.ForeColor = Color.FromArgb(47, 65, 86);
-            chkPaymentReceived.Location = new Point(18, 416);
+            chkPaymentReceived.Location = new Point(18, 411);
             chkPaymentReceived.Name = "chkPaymentReceived";
             chkPaymentReceived.Size = new Size(191, 26);
             chkPaymentReceived.TabIndex = 19;
             chkPaymentReceived.Text = "Payment received";
             chkPaymentReceived.UseVisualStyleBackColor = true;
             // 
-            // guna2Button1
+            // btnCheckout
             // 
-            guna2Button1.BorderRadius = 15;
-            guna2Button1.CustomizableEdges = customizableEdges1;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(47, 65, 86);
-            guna2Button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(1111, 737);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button1.Size = new Size(210, 56);
-            guna2Button1.TabIndex = 9;
-            guna2Button1.Text = "Confirm check out";
+            btnCheckout.BorderRadius = 15;
+            btnCheckout.CustomizableEdges = customizableEdges7;
+            btnCheckout.DisabledState.BorderColor = Color.DarkGray;
+            btnCheckout.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnCheckout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnCheckout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCheckout.FillColor = Color.FromArgb(47, 65, 86);
+            btnCheckout.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnCheckout.ForeColor = Color.White;
+            btnCheckout.Location = new Point(1163, 792);
+            btnCheckout.Name = "btnCheckout";
+            btnCheckout.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnCheckout.Size = new Size(210, 56);
+            btnCheckout.TabIndex = 9;
+            btnCheckout.Text = "Confirm check out";
+            btnCheckout.Click += btnCheckout_Click;
             // 
-            // guna2Button2
+            // btnClear
             // 
-            guna2Button2.BorderRadius = 15;
-            guna2Button2.CustomizableEdges = customizableEdges3;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.FromArgb(245, 239, 235);
-            guna2Button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            guna2Button2.ForeColor = Color.Black;
-            guna2Button2.Location = new Point(1327, 737);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button2.Size = new Size(210, 56);
-            guna2Button2.TabIndex = 10;
-            guna2Button2.Text = "Clear";
+            btnClear.BorderRadius = 15;
+            btnClear.CustomizableEdges = customizableEdges9;
+            btnClear.DisabledState.BorderColor = Color.DarkGray;
+            btnClear.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnClear.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnClear.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnClear.FillColor = Color.FromArgb(245, 239, 235);
+            btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnClear.ForeColor = Color.Black;
+            btnClear.Location = new Point(1379, 792);
+            btnClear.Name = "btnClear";
+            btnClear.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnClear.Size = new Size(210, 56);
+            btnClear.TabIndex = 10;
+            btnClear.Text = "Clear";
             // 
-            // guna2Button3
+            // btnSearch
             // 
-            guna2Button3.BorderRadius = 15;
-            guna2Button3.CustomizableEdges = customizableEdges5;
-            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.FromArgb(245, 239, 235);
-            guna2Button3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            guna2Button3.ForeColor = Color.Black;
-            guna2Button3.Location = new Point(573, 192);
-            guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button3.Size = new Size(111, 37);
-            guna2Button3.TabIndex = 11;
-            guna2Button3.Text = "Search";
+            btnSearch.BorderRadius = 15;
+            btnSearch.CustomizableEdges = customizableEdges11;
+            btnSearch.DisabledState.BorderColor = Color.DarkGray;
+            btnSearch.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSearch.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSearch.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSearch.FillColor = Color.FromArgb(245, 239, 235);
+            btnSearch.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnSearch.ForeColor = Color.Black;
+            btnSearch.Location = new Point(466, 149);
+            btnSearch.Name = "btnSearch";
+            btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnSearch.Size = new Size(111, 37);
+            btnSearch.TabIndex = 11;
+            btnSearch.Text = "Search";
             // 
             // txtSearch
             // 
             txtSearch.BorderRadius = 10;
-            txtSearch.CustomizableEdges = customizableEdges7;
+            txtSearch.CustomizableEdges = customizableEdges13;
             txtSearch.DefaultText = "";
             txtSearch.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtSearch.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -446,25 +543,45 @@
             txtSearch.Font = new Font("Microsoft Sans Serif", 12F);
             txtSearch.ForeColor = Color.Black;
             txtSearch.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSearch.Location = new Point(239, 188);
+            txtSearch.Location = new Point(139, 145);
             txtSearch.Margin = new Padding(4, 5, 4, 5);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderForeColor = Color.Gray;
             txtSearch.PlaceholderText = "Guest name or booking reference";
             txtSearch.SelectedText = "";
-            txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txtSearch.Size = new Size(320, 45);
             txtSearch.TabIndex = 12;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.BorderRadius = 15;
+            btnRefresh.CustomizableEdges = customizableEdges15;
+            btnRefresh.DisabledState.BorderColor = Color.DarkGray;
+            btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRefresh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRefresh.FillColor = Color.FromArgb(245, 239, 235);
+            btnRefresh.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnRefresh.ForeColor = Color.Black;
+            btnRefresh.Location = new Point(1026, 155);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnRefresh.Size = new Size(111, 37);
+            btnRefresh.TabIndex = 13;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // CheckoutControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(203, 217, 230);
+            Controls.Add(btnRefresh);
             Controls.Add(txtSearch);
-            Controls.Add(guna2Button3);
-            Controls.Add(guna2Button2);
-            Controls.Add(guna2Button1);
+            Controls.Add(btnSearch);
+            Controls.Add(btnClear);
+            Controls.Add(btnCheckout);
             Controls.Add(pnlDetails);
             Controls.Add(dgvCheckedIn);
             Controls.Add(lblSearch);
@@ -472,6 +589,7 @@
             Controls.Add(pnlHeader);
             Name = "CheckoutControl";
             Size = new Size(1718, 915);
+            Load += CheckoutControl_Load;
             pnlHeader.ResumeLayout(false);
             pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCheckedIn).EndInit();
@@ -509,9 +627,14 @@
         private Label lblTotalCaption;
         private Label lblTotalValue;
         private CheckBox chkPaymentReceived;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnCheckout;
+        private Guna.UI2.WinForms.Guna2Button btnClear;
+        private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2TextBox txtPayment;
+        private Guna.UI2.WinForms.Guna2TextBox txtBookingID;
+        private Guna.UI2.WinForms.Guna2ComboBox cboPaymentMethod;
+        private Label label1;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
     }
 }

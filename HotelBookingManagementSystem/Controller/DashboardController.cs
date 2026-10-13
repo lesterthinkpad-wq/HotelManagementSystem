@@ -14,9 +14,7 @@ namespace HotelBookingManagementSystem.Controller
         {
             try
             {
-                if (LoginController.cAdFd == 1)
-                {
-                    string query = @"
+                string query = @"
                 SELECT
                     CONCAT(g.first_name, ' ', g.last_name) AS Guest_Name,
                     r.room_number AS Room_Number,
@@ -33,6 +31,28 @@ namespace HotelBookingManagementSystem.Controller
                 ORDER BY b.booking_id DESC
                 LIMIT 10;";
 
+                dgv.DataSource = SQL.SQLPull(query);
+
+                /*
+                 if (LoginController.cAdFd == 2)
+                {
+                    string query = @"
+                    SELECT
+                        CONCAT(g.first_name, ' ', g.last_name) AS Guest_Name,
+                        r.room_number AS Room_Number,
+                        b.check_in_date AS Checkin,
+                        b.check_out_date AS Checkout,
+                        b.booking_status AS Status
+                    FROM bookings b
+                    INNER JOIN guests g 
+                        ON b.guest_id = g.guest_id
+                    INNER JOIN booking_rooms br
+                        ON b.booking_id = br.booking_id
+                    INNER JOIN rooms r
+                        ON br.room_id = r.room_id
+                    ORDER BY b.booking_id DESC
+                    LIMIT 10;";
+
                     dgv.DataSource = SQL.SQLPull(query);
                 }
                 else if (LoginController.cAdFd == 1)
@@ -42,8 +62,10 @@ namespace HotelBookingManagementSystem.Controller
                 }
                 else
                 {
-                    MessageBox.Show("Error");
+                    // 
+                    //for the cashier
                 }
+                 */
             }
             catch (Exception ex)
             {

@@ -41,16 +41,15 @@ namespace HotelBookingManagementSystem.View
                     tbcMain.TabPages.Remove(tabGuests);
                     tbcMain.TabPages.Remove(tabBookings);
                     break;
-
                 default:
                     MessageBox.Show("No users found", "Unexpected error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
-            // LoadData();   // uncomment if the dashboard grid and labels should fill on startup
-
+            
+            LoadData();
             // Load whichever tab is selected when the form opens
-            tbcMain_SelectedIndexChanged(tbcMain, EventArgs.Empty);
+            //tbcMain_SelectedIndexChanged(tbcMain, EventArgs.Empty);
         }
 
         private void LoadData()
@@ -115,6 +114,11 @@ namespace HotelBookingManagementSystem.View
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

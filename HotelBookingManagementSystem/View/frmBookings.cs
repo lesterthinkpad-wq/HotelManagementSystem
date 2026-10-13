@@ -37,7 +37,7 @@ namespace HotelBookingManagementSystem.View
 
         private void LoadRooms()
         {
-            DataTable dt = BookingController.GetRoomTypes();
+            DataTable dt = RoomController.GetRoomTypes();
 
             cboRoomType.DisplayMember = "room_name";
             cboRoomType.ValueMember = "room_type_id";
@@ -55,7 +55,7 @@ namespace HotelBookingManagementSystem.View
             int roomTypeId = Convert.ToInt32(cboRoomType.SelectedValue);
 
             // gets the available only for a selected date
-            DataTable dt = BookingController.GetAvailableRooms(
+            DataTable dt =  RoomController.GetAvailableRooms(
                 roomTypeId,
                 dtpCheckinDate.Value.Date,
                 dtpCheckoutDate.Value.Date
@@ -108,7 +108,7 @@ namespace HotelBookingManagementSystem.View
 
             int roomTypeId = Convert.ToInt32(cboRoomType.SelectedValue);
 
-            DataTable dt = BookingController.GetAvailableRooms(roomTypeId, dtpCheckinDate.Value, dtpCheckoutDate.Value);
+            DataTable dt = RoomController.GetAvailableRooms(roomTypeId, dtpCheckinDate.Value, dtpCheckoutDate.Value);
 
             cboRoomNumber.DisplayMember = "room_number";
             cboRoomNumber.ValueMember = "room_number";
@@ -122,7 +122,7 @@ namespace HotelBookingManagementSystem.View
             roomTypeID = Convert.ToInt32(cboRoomType.SelectedValue);
             guests = Convert.ToInt32(nudGuests.Value);
 
-            if (!BookingController.IsRoomCapacityValid(roomTypeID, guests))
+            if (!RoomController.IsRoomCapacityValid(roomTypeID, guests))
             {
                 MessageBox.Show(
                     "Guests exceeds the number of occupancy for this room type.",
@@ -158,7 +158,7 @@ namespace HotelBookingManagementSystem.View
             // calculates the total nights
             int nights = BookingController.CalculateNights(checkIn, checkOut);
 
-            double basePrice = BookingController.GetRoomTypePrice(roomTypeID);
+            double basePrice = RoomController.GetRoomTypePrice(roomTypeID);
             double total = BookingController.CalculateLineTotal(basePrice, nights);
 
             dgvBookings.Rows.Add(
