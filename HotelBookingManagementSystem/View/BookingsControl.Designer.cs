@@ -128,6 +128,7 @@
             lblSubtitle.Location = new Point(26, 46);
             lblSubtitle.Name = "lblSubtitle";
             lblSubtitle.Size = new Size(355, 20);
+            lblSubtitle.Size = new Size(284, 15);
             lblSubtitle.TabIndex = 1;
             lblSubtitle.Text = "Select a guest, add rooms, then confirm the booking";
             // 
@@ -139,6 +140,7 @@
             lblCurrentUser.Location = new Point(22, 8);
             lblCurrentUser.Name = "lblCurrentUser";
             lblCurrentUser.Size = new Size(202, 41);
+            lblCurrentUser.Size = new Size(159, 32);
             lblCurrentUser.TabIndex = 0;
             lblCurrentUser.Text = "New booking";
             // 
@@ -206,6 +208,7 @@
             lblTotalAmount.Location = new Point(50, 28);
             lblTotalAmount.Name = "lblTotalAmount";
             lblTotalAmount.Size = new Size(0, 41);
+            lblTotalAmount.Size = new Size(0, 32);
             lblTotalAmount.TabIndex = 6;
             // 
             // label9
@@ -216,6 +219,7 @@
             label9.Location = new Point(21, 28);
             label9.Name = "label9";
             label9.Size = new Size(36, 41);
+            label9.Size = new Size(29, 32);
             label9.TabIndex = 7;
             label9.Text = "₱";
             // 
@@ -227,6 +231,7 @@
             label8.Location = new Point(24, 10);
             label8.Name = "label8";
             label8.Size = new Size(99, 20);
+            label8.Size = new Size(78, 15);
             label8.TabIndex = 5;
             label8.Text = "Total amount";
             // 
@@ -271,6 +276,10 @@
             txtGuestID.Name = "txtGuestID";
             txtGuestID.ReadOnly = true;
             txtGuestID.Size = new Size(80, 27);
+            txtGuestID.Location = new Point(613, 70);
+            txtGuestID.Name = "txtGuestID";
+            txtGuestID.ReadOnly = true;
+            txtGuestID.Size = new Size(67, 23);
             txtGuestID.TabIndex = 0;
             txtGuestID.TabStop = false;
             txtGuestID.Visible = false;
@@ -311,6 +320,10 @@
             label1.Margin = new Padding(0, 0, 0, 4);
             label1.Name = "label1";
             label1.Size = new Size(80, 18);
+            label1.Location = new Point(20, 15);
+            label1.Margin = new Padding(0, 0, 0, 4);
+            label1.Name = "label1";
+            label1.Size = new Size(62, 15);
             label1.TabIndex = 0;
             label1.Text = "First name";
             // 
@@ -324,6 +337,10 @@
             lblLName.Margin = new Padding(8, 0, 0, 4);
             lblLName.Name = "lblLName";
             lblLName.Size = new Size(77, 18);
+            lblLName.Location = new Point(354, 15);
+            lblLName.Margin = new Padding(8, 0, 0, 4);
+            lblLName.Name = "lblLName";
+            lblLName.Size = new Size(61, 15);
             lblLName.TabIndex = 1;
             lblLName.Text = "Last name";
             // 
@@ -364,6 +381,7 @@
             lblEmail.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEmail.ForeColor = Color.FromArgb(92, 108, 128);
             lblEmail.Location = new Point(20, 74);
+            lblEmail.Location = new Point(20, 77);
             lblEmail.Margin = new Padding(0, 0, 0, 4);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(46, 18);
@@ -380,6 +398,10 @@
             label6.Margin = new Padding(8, 0, 0, 4);
             label6.Name = "label6";
             label6.Size = new Size(111, 18);
+            label6.Location = new Point(354, 77);
+            label6.Margin = new Padding(8, 0, 0, 4);
+            label6.Name = "label6";
+            label6.Size = new Size(86, 15);
             label6.TabIndex = 5;
             label6.Text = "Phone number";
             // 
@@ -479,6 +501,7 @@
             lblGuestTitle.Location = new Point(20, 14);
             lblGuestTitle.Name = "lblGuestTitle";
             lblGuestTitle.Size = new Size(68, 30);
+            lblGuestTitle.Size = new Size(54, 23);
             lblGuestTitle.TabIndex = 0;
             lblGuestTitle.Text = "Guest";
             // 
@@ -545,6 +568,10 @@
             lblDateBirth.Margin = new Padding(0, 0, 0, 4);
             lblDateBirth.Name = "lblDateBirth";
             lblDateBirth.Size = new Size(67, 18);
+            lblDateBirth.Location = new Point(20, 15);
+            lblDateBirth.Margin = new Padding(0, 0, 0, 4);
+            lblDateBirth.Name = "lblDateBirth";
+            lblDateBirth.Size = new Size(52, 15);
             lblDateBirth.TabIndex = 0;
             lblDateBirth.Text = "Check in";
             // 
@@ -558,6 +585,10 @@
             label3.Margin = new Padding(8, 0, 0, 4);
             label3.Name = "label3";
             label3.Size = new Size(77, 18);
+            label3.Location = new Point(334, 15);
+            label3.Margin = new Padding(8, 0, 0, 4);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 15);
             label3.TabIndex = 1;
             label3.Text = "Check out";
             // 
@@ -571,6 +602,10 @@
             label7.Margin = new Padding(8, 0, 0, 4);
             label7.Name = "label7";
             label7.Size = new Size(53, 18);
+            label7.Location = new Point(640, 15);
+            label7.Margin = new Padding(8, 0, 0, 4);
+            label7.Name = "label7";
+            label7.Size = new Size(42, 15);
             label7.TabIndex = 2;
             label7.Text = "Guests";
             // 
@@ -586,6 +621,7 @@
             dtpCheckinDate.Margin = new Padding(0, 0, 8, 0);
             dtpCheckinDate.Name = "dtpCheckinDate";
             dtpCheckinDate.Size = new Size(298, 31);
+            dtpCheckinDate.Size = new Size(298, 26);
             dtpCheckinDate.TabIndex = 3;
             dtpCheckinDate.ValueChanged += dtpCheckinDate_ValueChanged;
             // 
@@ -601,6 +637,7 @@
             dtpCheckoutDate.Margin = new Padding(8, 0, 8, 0);
             dtpCheckoutDate.Name = "dtpCheckoutDate";
             dtpCheckoutDate.Size = new Size(290, 31);
+            dtpCheckoutDate.Size = new Size(290, 26);
             dtpCheckoutDate.TabIndex = 4;
             dtpCheckoutDate.ValueChanged += dtpCheckoutDate_ValueChanged;
             // 
@@ -616,6 +653,7 @@
             nudGuests.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudGuests.Name = "nudGuests";
             nudGuests.Size = new Size(301, 31);
+            nudGuests.Size = new Size(301, 26);
             nudGuests.TabIndex = 5;
             nudGuests.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudGuests.ValueChanged += nudGuests_ValueChanged;
@@ -630,6 +668,10 @@
             label4.Margin = new Padding(0, 0, 0, 4);
             label4.Name = "label4";
             label4.Size = new Size(83, 18);
+            label4.Location = new Point(20, 77);
+            label4.Margin = new Padding(0, 0, 0, 4);
+            label4.Name = "label4";
+            label4.Size = new Size(65, 15);
             label4.TabIndex = 6;
             label4.Text = "Room type";
             // 
@@ -643,6 +685,10 @@
             label5.Margin = new Padding(8, 0, 0, 4);
             label5.Name = "label5";
             label5.Size = new Size(107, 18);
+            label5.Location = new Point(334, 77);
+            label5.Margin = new Padding(8, 0, 0, 4);
+            label5.Name = "label5";
+            label5.Size = new Size(84, 15);
             label5.TabIndex = 7;
             label5.Text = "Room number";
             // 
@@ -659,6 +705,7 @@
             cboRoomType.Margin = new Padding(0, 0, 8, 0);
             cboRoomType.Name = "cboRoomType";
             cboRoomType.Size = new Size(298, 31);
+            cboRoomType.Size = new Size(298, 27);
             cboRoomType.TabIndex = 8;
             cboRoomType.SelectedIndexChanged += cboRoomType_SelectedIndexChanged;
             // 
@@ -675,6 +722,7 @@
             cboRoomNumber.Margin = new Padding(8, 0, 8, 0);
             cboRoomNumber.Name = "cboRoomNumber";
             cboRoomNumber.Size = new Size(290, 31);
+            cboRoomNumber.Size = new Size(290, 27);
             cboRoomNumber.TabIndex = 9;
             // 
             // btnAddBooking
