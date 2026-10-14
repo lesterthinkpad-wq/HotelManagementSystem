@@ -53,11 +53,21 @@ namespace HotelBookingManagementSystem.View
         {
             int userId = LoginController.userID;
             int bookingId = Convert.ToInt32(txtBookingID.Text);
-            decimal amount = Convert.ToDecimal(lblTotalValue.Text.Replace("- ₱", "").Trim());
+            decimal paymentAmount = Convert.ToDecimal(txtPayment.Text.Trim());
             string paymentMethod = cboPaymentMethod.SelectedItem.ToString();
             string transactionReference = TransactionReference();
 
-            CheckoutController.ProcessCheckout(bookingId, amount, paymentMethod, transactionReference, userId);
+            if (paymentAmount < Convert.ToDecimal(lblTotalValue.Text.Replace("- ₱", "").Trim()))
+            {
+                MessageBox.Show(
+                    "Insufficient amount",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            CheckoutController.ProcessCheckout(bookingId, paymentAmount, paymentMethod, transactionReference, userId);
 
             ClearReceipt();
             LoadDGV();

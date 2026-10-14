@@ -56,6 +56,8 @@
             tabGuests = new TabPage();
             tabCheckout = new TabPage();
             tabReports = new TabPage();
+            tabUsers = new TabPage();
+            tabRooms = new TabPage();
             panel2.SuspendLayout();
             tbcMain.SuspendLayout();
             tabDashboard.SuspendLayout();
@@ -125,6 +127,8 @@
             tbcMain.Controls.Add(tabBookings);
             tbcMain.Controls.Add(tabGuests);
             tbcMain.Controls.Add(tabCheckout);
+            tbcMain.Controls.Add(tabRooms);
+            tbcMain.Controls.Add(tabUsers);
             tbcMain.Controls.Add(tabReports);
             tbcMain.Dock = DockStyle.Fill;
             tbcMain.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -402,6 +406,24 @@
             tabReports.TabIndex = 3;
             tabReports.Text = "Reports";
             // 
+            // tabUsers
+            // 
+            tabUsers.Location = new Point(184, 4);
+            tabUsers.Name = "tabUsers";
+            tabUsers.Size = new Size(1718, 949);
+            tabUsers.TabIndex = 5;
+            tabUsers.Text = "Users";
+            tabUsers.UseVisualStyleBackColor = true;
+            // 
+            // tabRooms
+            // 
+            tabRooms.Location = new Point(184, 4);
+            tabRooms.Name = "tabRooms";
+            tabRooms.Size = new Size(1718, 949);
+            tabRooms.TabIndex = 6;
+            tabRooms.Text = "Rooms";
+            tabRooms.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -459,5 +481,7 @@
         private TabPage tabCheckout;
         private TabPage tabReports;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
+        private TabPage tabRooms;
+        private TabPage tabUsers;
     }
 }

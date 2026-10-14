@@ -15,7 +15,7 @@ namespace HotelBookingManagementSystem.Controller
             try
             {
                 string query = @"
-                    SELECT user_id, first_name, last_name, email, password, user_role, phone, is_active
+                    SELECT user_id, first_name, last_name, email, password, user_role, phone, status
                     FROM users";
 
                 dgv.DataSource = SQL.SQLPull(query);
@@ -38,18 +38,18 @@ namespace HotelBookingManagementSystem.Controller
             dgv.Columns["password"].HeaderText = "Password";   
             dgv.Columns["user_role"].HeaderText = "Role";
             dgv.Columns["phone"].HeaderText = "Phone";
-            dgv.Columns["is_active"].HeaderText = "Status";
+            dgv.Columns["status"].HeaderText = "Status";
         }
 
-        public static void AddNewUser(string fname, string lname, string email, string password, string role, string phone, int status)
+        public static void AddNewUser(string fname, string lname, string email, string password, string role, string phone, string status)
         {
             try
             {
                 string query = @$"
                     INSERT INTO users
-                        (first_name, last_name, email, password, user_role, phone, is_active)
+                        (first_name, last_name, email, password, user_role, phone, status)
                     VALUES
-                        ('{fname}', '{lname}', '{email}', '{password}', '{role}', '{phone}', {status})";
+                        ('{fname}', '{lname}', '{email}', '{password}', '{role}', '{phone}', '{status}')";
 
                 if (SQL.SQLPush(query))
                 {
@@ -70,9 +70,11 @@ namespace HotelBookingManagementSystem.Controller
             }
         }
 
-        public static void UpdateUser(int userID, string fname, string lname, string email, string password, string role, string phone, int status)
+        public static void UpdateUser(int userID, string fname, string lname, string email, string password, string role, string phone, string status)
         {
-            string query = @$"
+            try
+            {
+                string query = @$"
                 UPDATE users SET
                     first_name = '{fname}',
                     last_name = '{lname}',
@@ -80,7 +82,26 @@ namespace HotelBookingManagementSystem.Controller
                     password = '{password}',
                     user_role = '{role}',
                     phone = '{phone}',
-                    is_active = {status}";
+                    status = '{status}'
+                WHERE user_id = {userID}";
+
+                if (SQL.SQLPush(query))
+                {
+                    MessageBox.Show(
+                        "User updated successfully",
+                        "Successful",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Unexpected error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

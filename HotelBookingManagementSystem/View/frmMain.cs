@@ -18,6 +18,7 @@ namespace HotelBookingManagementSystem.View
         private BookingsControl _bookingsControl;
         private CheckoutControl _checkoutControl;
         private ReportsControl _reportsControl;
+        private AccountsControl _accountsControl;
 
         public frmMain()
         {
@@ -109,6 +110,14 @@ namespace HotelBookingManagementSystem.View
                 {
                     _reportsControl = new ReportsControl { Dock = DockStyle.Fill };
                     tabReports.Controls.Add(_reportsControl);
+                }
+            }
+            else if (tbcMain.SelectedTab == tabUsers)
+            {
+                if (_accountsControl == null)
+                {
+                    _accountsControl = new AccountsControl { Dock = DockStyle.Fill };
+                    tabUsers.Controls.Add(_accountsControl);
                 }
             }
         }
