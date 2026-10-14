@@ -59,6 +59,7 @@ namespace HotelBookingManagementSystem.Controller
                 VALUES
                     ({bookingId}, {amount}, '{paymentMethod}', 'completed', '{transactionReference}', {userId})";
 
+                // this part updates the booking status to "checked_out" if the payment is successful
                 if (SQL.SQLPush(paymentQuery))
                 {
                     string bookingQuery = $@"
@@ -67,13 +68,26 @@ namespace HotelBookingManagementSystem.Controller
                     WHERE booking_id = {bookingId}
                     AND booking_status = 'checked_in'";
 
+                    // this part updates the room status to available once checkout is processed
                     if (SQL.SQLPush(bookingQuery))
                     {
-                        MessageBox.Show(
-                            "Guest checked out successfully.",
-                            "Checkout Successful",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+                        string roomQuery = $@"
+                        UPDATE rooms r
+                        INNER JOIN booking_rooms br
+                            ON r.room_id = br.room_id
+                        SET r.room_status = 'available'
+                        WHERE br.booking_id = {bookingId}
+                        AND r.room_status = 'occupied'";
+
+                        // Update room status
+                        if (SQL.SQLPush(roomQuery))
+                        {
+                            MessageBox.Show(
+                                "Guest checked out successfully.",
+                                "Checkout Successful",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                        }
                     }
                 }
             }

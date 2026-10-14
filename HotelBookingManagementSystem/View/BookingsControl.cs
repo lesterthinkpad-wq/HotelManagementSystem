@@ -34,6 +34,8 @@ namespace HotelBookingManagementSystem.View
             dtpCheckoutDate.MinDate = DateTime.Today.AddDays(1);
 
             isInitializing = false;
+
+            LoadAvailableRooms();
         }
 
         private void LoadRooms()
@@ -130,6 +132,8 @@ namespace HotelBookingManagementSystem.View
             cboRoomNumber.ValueMember = "room_number";
             cboRoomNumber.DataSource = dt;
             cboRoomNumber.DataSource = dt;
+
+            LoadAvailableRooms();
         }
 
         private void nudGuests_ValueChanged(object sender, EventArgs e)
@@ -147,7 +151,14 @@ namespace HotelBookingManagementSystem.View
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
-                nudGuests.Value -= 1;  // stops the increment in the nudGuest
+                if (nudGuests.Value > nudGuests.Minimum)
+                {
+                    nudGuests.Value--;
+                }
+                else
+                {
+                    nudGuests.Value -= 1;
+                }
                 return;
             }
         }
@@ -165,7 +176,7 @@ namespace HotelBookingManagementSystem.View
                 return;
             }
 
-            int roomID = RoomController.GetRoomID(cboRoomNumber.SelectedValue.ToString());
+            int roomID = Convert.ToInt32(cboRoomNumber.SelectedValue);
             int roomTypeID = Convert.ToInt32(cboRoomType.SelectedValue);
             int guestID = Convert.ToInt32(txtGuestID.Text);
 

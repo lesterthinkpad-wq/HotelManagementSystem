@@ -47,9 +47,10 @@ namespace HotelBookingManagementSystem.Controller
                         FROM booking_rooms br
                         INNER JOIN bookings b
                             ON br.booking_id = b.booking_id
-                        WHERE b.booking_status != 'cancelled'
-                          AND b.check_in_date < '{checkout:yyyy-MM-dd}'
-                          AND b.check_out_date > '{checkin:yyyy-MM-dd}'
+                        WHERE b.booking_status IN
+                            ('pending', 'confirmed', 'checked_in')
+                        AND b.check_in_date < '{checkout:yyyy-MM-dd}'
+                        AND b.check_out_date > '{checkin:yyyy-MM-dd}'
                     )";
 
                 return SQL.SQLPull(query);

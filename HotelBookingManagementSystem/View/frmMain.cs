@@ -59,6 +59,7 @@ namespace HotelBookingManagementSystem.View
 
             lblBookingNum.Text = $"{DashboardController.GetTotalBookings()}";
             lblPendingCheckins.Text = $"{DashboardController.GetPendingsCount()}";
+            lblAvailableRooms.Text = $"{DashboardController.GetAvailableRooms()}";
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

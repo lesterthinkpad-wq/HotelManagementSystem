@@ -58,6 +58,9 @@ namespace HotelBookingManagementSystem.View
             string transactionReference = TransactionReference();
 
             CheckoutController.ProcessCheckout(bookingId, amount, paymentMethod, transactionReference, userId);
+
+            ClearReceipt();
+            LoadDGV();
         }
 
         private string TransactionReference()
@@ -68,6 +71,22 @@ namespace HotelBookingManagementSystem.View
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadDGV();
+        }
+
+        private void ClearReceipt()
+        {
+            txtBookingID.Clear();
+            lblRefValue.Text = "-";
+            lblGuestValue.Text = "-";
+            lblPhoneValue.Text = "-";
+            lblRoomValue.Text = "-";
+            lblCheckInValue.Text = "-";
+            lblCheckOutValue.Text = "-";
+            lblNightsValue.Text = "-";
+            lblGuestsValue.Text = "-";
+            lblTotalValue.Text = "-";
+            txtPayment.Text = "";
+            cboPaymentMethod.SelectedIndex = -1;
         }
     }
 }

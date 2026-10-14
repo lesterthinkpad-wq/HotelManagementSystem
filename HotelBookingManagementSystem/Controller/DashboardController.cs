@@ -94,6 +94,23 @@ namespace HotelBookingManagementSystem.Controller
             }
         }
 
+        public static int GetAvailableRooms()
+        {
+            try
+            {
+                string query = "SELECT COUNT(*) AS availableRooms FROM rooms WHERE room_status = 'available'";
+
+                DataTable dt = SQL.SQLPull(query);
+
+                return Convert.ToInt32(dt.Rows[0]["availableRooms"]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
+        }
+
         public static int GetPendingsCount()
         {
             try

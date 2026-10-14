@@ -59,13 +59,35 @@ namespace HotelBookingManagementSystem.Controller
                     VALUES
                         ({bookingID}, {roomID}, {rate}, {guests})";
 
-                SQL.SQLPush(query);
+                // this query selects all booking status
+                if (SQL.SQLPush(query))
+                {
+                    string statusQuery = $@"
+                    SELECT booking_status
+                    FROM bookings
+                    WHERE booking_id = {bookingID}";
+
+                    DataTable dt = SQL.SQLPull(statusQuery);
+
+                    // if the booking is "checked in", update the room status to "occupied"
+                    if (dt.Rows.Count > 0 &&
+                        dt.Rows[0]["booking_status"].ToString() == "checked_in")
+                    {
+                        string roomQuery = $@"
+                        UPDATE rooms
+                        SET room_status = 'occupied'
+                        WHERE room_id = {roomID}";
+
+                        SQL.SQLPush(roomQuery);
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Unexpected error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public static string CalculateGrandTotal(DataGridView dgv, string totalAmount)
         {
             double grandTotal = 0;

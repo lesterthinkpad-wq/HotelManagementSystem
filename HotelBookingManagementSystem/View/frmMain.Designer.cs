@@ -361,9 +361,9 @@
             label4.ForeColor = Color.FromArgb(203, 217, 230);
             label4.Location = new Point(20, 16);
             label4.Name = "label4";
-            label4.Size = new Size(154, 25);
+            label4.Size = new Size(204, 25);
             label4.TabIndex = 0;
-            label4.Text = "Available Rooms";
+            label4.Text = "Available rooms today";
             // 
             // tabBookings
             // 
