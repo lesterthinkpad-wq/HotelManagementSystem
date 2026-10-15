@@ -14,13 +14,15 @@ namespace HotelBookingManagementSystem.View
 {
     public partial class frmMain : Form
     {
+        private GuestControls _guestsControl;
+        private BookingsControl _bookingsControl;
+        private CheckoutControl _checkoutControl;
+        private ReportsControl _reportsControl;
+
         public frmMain()
         {
             InitializeComponent();
-
-            tabBookings.Controls.Add(new BookingsControl { Dock = DockStyle.Fill });
         }
-
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -44,6 +46,11 @@ namespace HotelBookingManagementSystem.View
                     MessageBox.Show("No users found", "Unexpected error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
+
+            // LoadData();   // uncomment if the dashboard grid and labels should fill on startup
+
+            // Load whichever tab is selected when the form opens
+            tbcMain_SelectedIndexChanged(tbcMain, EventArgs.Empty);
         }
 
         private void LoadData()
@@ -54,7 +61,7 @@ namespace HotelBookingManagementSystem.View
             lblBookingNum.Text = $"{DashboardController.GetTotalBookings()}";
             lblPendingCheckins.Text = $"{DashboardController.GetPendingsCount()}";
         }
-          
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -67,31 +74,47 @@ namespace HotelBookingManagementSystem.View
             {
                 this.Close();
             }
-            return;
         }
 
-        private GuestControls _guestsControl;
-        private BookingsControl _bookingsControl;
-        private CheckoutControl _checkoutControl;
         private void tbcMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tbcMain.SelectedTab == tabGuests)
             {
-                _guestsControl = new GuestControls { Dock = DockStyle.Fill };
-                tabGuests.Controls.Add(_guestsControl);
+                if (_guestsControl == null)
+                {
+                    _guestsControl = new GuestControls { Dock = DockStyle.Fill };
+                    tabGuests.Controls.Add(_guestsControl);
+                }
                 _guestsControl.LoadDGV();
             }
             else if (tbcMain.SelectedTab == tabBookings)
             {
-                _bookingsControl = new BookingsControl { Dock = DockStyle.Fill };
-                tabBookings.Controls.Add(_bookingsControl);
+                if (_bookingsControl == null)
+                {
+                    _bookingsControl = new BookingsControl { Dock = DockStyle.Fill };
+                    tabBookings.Controls.Add(_bookingsControl);
+                }
             }
             else if (tbcMain.SelectedTab == tabCheckout)
             {
-                _checkoutControl = new CheckoutControl { Dock = DockStyle.Fill };
-                tabCheckout.Controls.Add(_checkoutControl);
+                if (_checkoutControl == null)
+                {
+                    _checkoutControl = new CheckoutControl { Dock = DockStyle.Fill };
+                    tabCheckout.Controls.Add(_checkoutControl);
+                }
+            }
+            else if (tbcMain.SelectedTab == tabReports)
+            {
+                if (_reportsControl == null)
+                {
+                    _reportsControl = new ReportsControl { Dock = DockStyle.Fill };
+                    tabReports.Controls.Add(_reportsControl);
+                }
             }
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+        }
     }
 }

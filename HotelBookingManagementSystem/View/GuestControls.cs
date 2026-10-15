@@ -45,7 +45,7 @@ namespace HotelBookingManagementSystem.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int guestId = Convert.ToInt32(txtGuestID.Text);
+            int guestId = string.IsNullOrWhiteSpace(txtGuestID.Text) ? 0 : Convert.ToInt32(txtGuestID.Text);
             string fname = txtFName.Text;
             string lname = txtLName.Text;
             string email = txtEmail.Text;
@@ -65,6 +65,7 @@ namespace HotelBookingManagementSystem.View
 
             edit = false;
             ClearGuestDetails();
+            txtGuestID.Clear();
         }
 
         public void LoadDGV()
@@ -88,6 +89,11 @@ namespace HotelBookingManagementSystem.View
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadDGV();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

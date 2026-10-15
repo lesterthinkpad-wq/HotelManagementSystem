@@ -10,10 +10,10 @@ namespace StudentManagementApp.Model
 
         public static string ConnectionString =
            "Server=localhost;" +
-            "Port=;" +
-            "Database=;" +
+            "Port=3306;" +
+            "Database=adetsystemdb;" +
             "Uid=root;" +
-            "Pwd=;";
+            "Pwd=Lester121406;";
 
         public static DataTable SQLPull(string sqlStatement)
         {

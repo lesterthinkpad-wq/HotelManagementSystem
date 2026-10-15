@@ -30,447 +30,529 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            panel2 = new Panel();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            pnlHeader = new Panel();
             lblAccounts = new Label();
-            splitter1 = new Splitter();
-            btnEditUser = new Button();
+            lblSubtitle = new Label();
+            txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            btnSearch = new Guna.UI2.WinForms.Guna2Button();
             dgvUsers = new DataGridView();
-            btnSearch = new Button();
-            lblSearch = new Label();
-            txtSearch = new TextBox();
-            pnlGuestDetail = new Panel();
-            txtStatus = new TextBox();
-            txtRole = new TextBox();
-            label7 = new Label();
-            txtUserID = new TextBox();
-            btnClear = new Button();
-            label5 = new Label();
-            label4 = new Label();
-            label2 = new Label();
-            txtPhoneNumber = new TextBox();
-            label3 = new Label();
-            txtPassword = new TextBox();
-            label6 = new Label();
+            btnEditUser = new Guna.UI2.WinForms.Guna2Button();
+            pnlGuestDetail = new Guna.UI2.WinForms.Guna2Panel();
+            lblDetails = new Label();
+            lblFName = new Label();
+            txtFName = new Guna.UI2.WinForms.Guna2TextBox();
             lblLName = new Label();
-            txtLName = new TextBox();
+            txtLName = new Guna.UI2.WinForms.Guna2TextBox();
             lblEmail = new Label();
-            txtEmail = new TextBox();
-            label1 = new Label();
-            txtFName = new TextBox();
-            btnSave = new Button();
-            splitter2 = new Splitter();
-            panel2.SuspendLayout();
+            txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            lblPhone = new Label();
+            txtPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            lblPassword = new Label();
+            txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            lblRole = new Label();
+            txtRole = new Guna.UI2.WinForms.Guna2TextBox();
+            lblStatus = new Label();
+            txtStatus = new Guna.UI2.WinForms.Guna2TextBox();
+            lblUserID = new Label();
+            txtUserID = new Guna.UI2.WinForms.Guna2TextBox();
+            btnSave = new Guna.UI2.WinForms.Guna2Button();
+            btnClear = new Guna.UI2.WinForms.Guna2Button();
+            pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             pnlGuestDetail.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(47, 65, 86);
-            panel2.Controls.Add(lblAccounts);
-            panel2.Controls.Add(splitter1);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(934, 82);
-            panel2.TabIndex = 4;
-            // 
+            //
+            // pnlHeader
+            //
+            pnlHeader.BackColor = Color.FromArgb(47, 65, 86);
+            pnlHeader.Controls.Add(lblSubtitle);
+            pnlHeader.Controls.Add(lblAccounts);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(0, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(934, 76);
+            pnlHeader.TabIndex = 0;
+            //
             // lblAccounts
-            // 
+            //
             lblAccounts.AutoSize = true;
-            lblAccounts.Font = new Font("Monotype Corsiva", 16.2F, FontStyle.Bold | FontStyle.Italic);
+            lblAccounts.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAccounts.ForeColor = Color.FromArgb(245, 239, 235);
-            lblAccounts.Location = new Point(12, 26);
+            lblAccounts.Location = new Point(22, 10);
             lblAccounts.Name = "lblAccounts";
-            lblAccounts.Size = new Size(115, 34);
-            lblAccounts.TabIndex = 3;
+            lblAccounts.Size = new Size(120, 32);
+            lblAccounts.TabIndex = 0;
             lblAccounts.Text = "Accounts";
-            // 
-            // splitter1
-            // 
-            splitter1.BackColor = Color.FromArgb(203, 217, 230);
-            splitter1.Location = new Point(0, 0);
-            splitter1.Name = "splitter1";
-            splitter1.Size = new Size(1, 82);
-            splitter1.TabIndex = 0;
-            splitter1.TabStop = false;
-            // 
-            // btnEditUser
-            // 
-            btnEditUser.BackColor = Color.FromArgb(245, 239, 235);
-            btnEditUser.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditUser.ForeColor = Color.Black;
-            btnEditUser.Location = new Point(12, 474);
-            btnEditUser.Name = "btnEditUser";
-            btnEditUser.Size = new Size(115, 34);
-            btnEditUser.TabIndex = 33;
-            btnEditUser.Text = "Edit user";
-            btnEditUser.UseVisualStyleBackColor = false;
-            btnEditUser.Click += btnEditUser_Click;
-            // 
+            //
+            // lblSubtitle
+            //
+            lblSubtitle.AutoSize = true;
+            lblSubtitle.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSubtitle.ForeColor = Color.FromArgb(203, 217, 230);
+            lblSubtitle.Location = new Point(25, 45);
+            lblSubtitle.Name = "lblSubtitle";
+            lblSubtitle.Size = new Size(200, 19);
+            lblSubtitle.TabIndex = 1;
+            lblSubtitle.Text = "Manage staff user accounts";
+            //
+            // txtSearch
+            //
+            txtSearch.BorderColor = Color.FromArgb(160, 180, 200);
+            txtSearch.BorderRadius = 8;
+            txtSearch.Cursor = Cursors.IBeam;
+            txtSearch.DefaultText = "";
+            txtSearch.FillColor = Color.White;
+            txtSearch.FocusedState.BorderColor = Color.FromArgb(47, 65, 86);
+            txtSearch.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSearch.ForeColor = Color.FromArgb(47, 65, 86);
+            txtSearch.Location = new Point(24, 94);
+            txtSearch.Margin = new Padding(3, 4, 3, 4);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search users...";
+            txtSearch.SelectedText = "";
+            txtSearch.Size = new Size(420, 42);
+            txtSearch.TabIndex = 1;
+            //
+            // btnSearch
+            //
+            btnSearch.Animated = true;
+            btnSearch.BorderRadius = 8;
+            btnSearch.Cursor = Cursors.Hand;
+            btnSearch.FillColor = Color.FromArgb(47, 65, 86);
+            btnSearch.Font = new Font("Segoe UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = Color.FromArgb(245, 239, 235);
+            btnSearch.HoverState.FillColor = Color.FromArgb(68, 92, 122);
+            btnSearch.Location = new Point(456, 94);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(110, 42);
+            btnSearch.TabIndex = 2;
+            btnSearch.Text = "Search";
+            //
             // dgvUsers
-            // 
+            //
             dgvUsers.AllowUserToAddRows = false;
             dgvUsers.AllowUserToDeleteRows = false;
-            dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgvUsers.AllowUserToResizeRows = false;
+            dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUsers.BackgroundColor = Color.White;
+            dgvUsers.BorderStyle = BorderStyle.None;
+            dgvUsers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvUsers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(47, 65, 86);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(245, 239, 235);
+            dataGridViewCellStyle1.Padding = new Padding(8, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(47, 65, 86);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(245, 239, 235);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsers.ColumnHeadersHeight = 40;
+            dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(47, 65, 86);
+            dataGridViewCellStyle2.Padding = new Padding(8, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(203, 217, 230);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(47, 65, 86);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvUsers.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvUsers.Location = new Point(12, 168);
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(245, 248, 251);
+            dgvUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dgvUsers.EnableHeadersVisualStyles = false;
+            dgvUsers.GridColor = Color.FromArgb(226, 232, 240);
+            dgvUsers.Location = new Point(24, 152);
+            dgvUsers.MultiSelect = false;
             dgvUsers.Name = "dgvUsers";
             dgvUsers.ReadOnly = true;
+            dgvUsers.RowHeadersVisible = false;
             dgvUsers.RowHeadersWidth = 51;
-            dgvUsers.Size = new Size(910, 300);
-            dgvUsers.TabIndex = 34;
-            // 
-            // btnSearch
-            // 
-            btnSearch.BackColor = Color.FromArgb(245, 239, 235);
-            btnSearch.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnSearch.Location = new Point(405, 124);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(108, 38);
-            btnSearch.TabIndex = 37;
-            btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // lblSearch
-            // 
-            lblSearch.AutoSize = true;
-            lblSearch.Font = new Font("Microsoft Sans Serif", 13.8F);
-            lblSearch.ForeColor = Color.DimGray;
-            lblSearch.Location = new Point(12, 92);
-            lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(89, 29);
-            lblSearch.TabIndex = 36;
-            lblSearch.Text = "Search";
-            // 
-            // txtSearch
-            // 
-            txtSearch.BackColor = Color.FromArgb(245, 239, 235);
-            txtSearch.BorderStyle = BorderStyle.FixedSingle;
-            txtSearch.Location = new Point(12, 124);
-            txtSearch.Multiline = true;
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(387, 38);
-            txtSearch.TabIndex = 35;
-            // 
+            dgvUsers.RowTemplate.Height = 34;
+            dgvUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUsers.Size = new Size(886, 290);
+            dgvUsers.TabIndex = 3;
+            //
+            // btnEditUser
+            //
+            btnEditUser.Animated = true;
+            btnEditUser.BorderRadius = 8;
+            btnEditUser.Cursor = Cursors.Hand;
+            btnEditUser.FillColor = Color.FromArgb(47, 65, 86);
+            btnEditUser.Font = new Font("Segoe UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditUser.ForeColor = Color.FromArgb(245, 239, 235);
+            btnEditUser.HoverState.FillColor = Color.FromArgb(68, 92, 122);
+            btnEditUser.Location = new Point(24, 454);
+            btnEditUser.Name = "btnEditUser";
+            btnEditUser.Size = new Size(130, 40);
+            btnEditUser.TabIndex = 4;
+            btnEditUser.Text = "Edit user";
+            btnEditUser.Click += btnEditUser_Click;
+            //
             // pnlGuestDetail
-            // 
-            pnlGuestDetail.BackColor = Color.FromArgb(47, 65, 86);
-            pnlGuestDetail.Controls.Add(txtStatus);
-            pnlGuestDetail.Controls.Add(txtRole);
-            pnlGuestDetail.Controls.Add(label7);
-            pnlGuestDetail.Controls.Add(txtUserID);
-            pnlGuestDetail.Controls.Add(btnClear);
-            pnlGuestDetail.Controls.Add(label5);
-            pnlGuestDetail.Controls.Add(label4);
-            pnlGuestDetail.Controls.Add(label2);
-            pnlGuestDetail.Controls.Add(txtPhoneNumber);
-            pnlGuestDetail.Controls.Add(label3);
-            pnlGuestDetail.Controls.Add(txtPassword);
-            pnlGuestDetail.Controls.Add(label6);
+            //
+            pnlGuestDetail.BackColor = Color.Transparent;
+            pnlGuestDetail.BorderRadius = 12;
+            pnlGuestDetail.Controls.Add(lblDetails);
+            pnlGuestDetail.Controls.Add(lblFName);
+            pnlGuestDetail.Controls.Add(txtFName);
             pnlGuestDetail.Controls.Add(lblLName);
             pnlGuestDetail.Controls.Add(txtLName);
             pnlGuestDetail.Controls.Add(lblEmail);
             pnlGuestDetail.Controls.Add(txtEmail);
-            pnlGuestDetail.Controls.Add(label1);
-            pnlGuestDetail.Controls.Add(txtFName);
+            pnlGuestDetail.Controls.Add(lblPhone);
+            pnlGuestDetail.Controls.Add(txtPhoneNumber);
+            pnlGuestDetail.Controls.Add(lblPassword);
+            pnlGuestDetail.Controls.Add(txtPassword);
+            pnlGuestDetail.Controls.Add(lblRole);
+            pnlGuestDetail.Controls.Add(txtRole);
+            pnlGuestDetail.Controls.Add(lblStatus);
+            pnlGuestDetail.Controls.Add(txtStatus);
+            pnlGuestDetail.Controls.Add(lblUserID);
+            pnlGuestDetail.Controls.Add(txtUserID);
             pnlGuestDetail.Controls.Add(btnSave);
-            pnlGuestDetail.Controls.Add(splitter2);
-            pnlGuestDetail.Location = new Point(12, 540);
+            pnlGuestDetail.Controls.Add(btnClear);
+            pnlGuestDetail.FillColor = Color.FromArgb(47, 65, 86);
+            pnlGuestDetail.Location = new Point(24, 510);
             pnlGuestDetail.Name = "pnlGuestDetail";
-            pnlGuestDetail.Size = new Size(910, 305);
-            pnlGuestDetail.TabIndex = 38;
-            // 
-            // txtStatus
-            // 
-            txtStatus.BackColor = Color.FromArgb(245, 239, 235);
-            txtStatus.BorderStyle = BorderStyle.FixedSingle;
-            txtStatus.Location = new Point(764, 154);
-            txtStatus.Multiline = true;
-            txtStatus.Name = "txtStatus";
-            txtStatus.Size = new Size(115, 38);
-            txtStatus.TabIndex = 39;
-            // 
-            // txtRole
-            // 
-            txtRole.BackColor = Color.FromArgb(245, 239, 235);
-            txtRole.BorderStyle = BorderStyle.FixedSingle;
-            txtRole.Location = new Point(624, 154);
-            txtRole.Multiline = true;
-            txtRole.Name = "txtRole";
-            txtRole.Size = new Size(115, 38);
-            txtRole.TabIndex = 38;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 12F);
-            label7.ForeColor = Color.FromArgb(245, 239, 235);
-            label7.Location = new Point(623, 204);
-            label7.Name = "label7";
-            label7.Size = new Size(77, 25);
-            label7.TabIndex = 37;
-            label7.Text = "User ID";
-            label7.Visible = false;
-            // 
-            // txtUserID
-            // 
-            txtUserID.BackColor = Color.FromArgb(245, 239, 235);
-            txtUserID.BorderStyle = BorderStyle.FixedSingle;
-            txtUserID.Location = new Point(623, 232);
-            txtUserID.Multiline = true;
-            txtUserID.Name = "txtUserID";
-            txtUserID.Size = new Size(115, 38);
-            txtUserID.TabIndex = 36;
-            txtUserID.Visible = false;
-            // 
-            // btnClear
-            // 
-            btnClear.BackColor = Color.FromArgb(245, 239, 235);
-            btnClear.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnClear.ForeColor = Color.Black;
-            btnClear.Location = new Point(203, 232);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(164, 51);
-            btnClear.TabIndex = 35;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Silver;
-            label5.Location = new Point(4, 3);
-            label5.Name = "label5";
-            label5.Size = new Size(153, 29);
-            label5.TabIndex = 34;
-            label5.Text = "User details";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F);
-            label4.ForeColor = Color.FromArgb(245, 239, 235);
-            label4.Location = new Point(764, 126);
-            label4.Name = "label4";
-            label4.Size = new Size(68, 25);
-            label4.TabIndex = 32;
-            label4.Text = "Status";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 12F);
-            label2.ForeColor = Color.FromArgb(245, 239, 235);
-            label2.Location = new Point(29, 126);
-            label2.Name = "label2";
-            label2.Size = new Size(143, 25);
-            label2.TabIndex = 27;
-            label2.Text = "Phone Number";
-            // 
-            // txtPhoneNumber
-            // 
-            txtPhoneNumber.BackColor = Color.FromArgb(245, 239, 235);
-            txtPhoneNumber.BorderStyle = BorderStyle.FixedSingle;
-            txtPhoneNumber.Location = new Point(28, 154);
-            txtPhoneNumber.Multiline = true;
-            txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Size = new Size(257, 38);
-            txtPhoneNumber.TabIndex = 26;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 12F);
-            label3.ForeColor = Color.FromArgb(245, 239, 235);
-            label3.Location = new Point(329, 126);
-            label3.Name = "label3";
-            label3.Size = new Size(98, 25);
-            label3.TabIndex = 25;
-            label3.Text = "Password";
-            // 
-            // txtPassword
-            // 
-            txtPassword.BackColor = Color.FromArgb(245, 239, 235);
-            txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.Location = new Point(329, 154);
-            txtPassword.Multiline = true;
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(256, 38);
-            txtPassword.TabIndex = 24;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 12F);
-            label6.ForeColor = Color.FromArgb(245, 239, 235);
-            label6.Location = new Point(623, 126);
-            label6.Name = "label6";
-            label6.Size = new Size(90, 25);
-            label6.TabIndex = 17;
-            label6.Text = "User role";
-            // 
-            // lblLName
-            // 
-            lblLName.AutoSize = true;
-            lblLName.Font = new Font("Microsoft Sans Serif", 12F);
-            lblLName.ForeColor = Color.FromArgb(245, 239, 235);
-            lblLName.Location = new Point(329, 45);
-            lblLName.Name = "lblLName";
-            lblLName.Size = new Size(106, 25);
-            lblLName.TabIndex = 15;
-            lblLName.Text = "Last Name";
-            // 
-            // txtLName
-            // 
-            txtLName.BackColor = Color.FromArgb(245, 239, 235);
-            txtLName.BorderStyle = BorderStyle.FixedSingle;
-            txtLName.Location = new Point(329, 73);
-            txtLName.Multiline = true;
-            txtLName.Name = "txtLName";
-            txtLName.Size = new Size(256, 38);
-            txtLName.TabIndex = 14;
-            // 
-            // lblEmail
-            // 
-            lblEmail.AutoSize = true;
-            lblEmail.Font = new Font("Microsoft Sans Serif", 12F);
-            lblEmail.ForeColor = Color.FromArgb(245, 239, 235);
-            lblEmail.Location = new Point(624, 45);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(60, 25);
-            lblEmail.TabIndex = 11;
-            lblEmail.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            txtEmail.BackColor = Color.FromArgb(245, 239, 235);
-            txtEmail.BorderStyle = BorderStyle.FixedSingle;
-            txtEmail.Location = new Point(623, 73);
-            txtEmail.Multiline = true;
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(256, 38);
-            txtEmail.TabIndex = 10;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 12F);
-            label1.ForeColor = Color.FromArgb(245, 239, 235);
-            label1.Location = new Point(28, 45);
-            label1.Name = "label1";
-            label1.Size = new Size(106, 25);
-            label1.TabIndex = 9;
-            label1.Text = "First Name";
-            // 
+            pnlGuestDetail.Size = new Size(886, 306);
+            pnlGuestDetail.TabIndex = 5;
+            //
+            // lblDetails
+            //
+            lblDetails.AutoSize = true;
+            lblDetails.BackColor = Color.Transparent;
+            lblDetails.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDetails.ForeColor = Color.FromArgb(245, 239, 235);
+            lblDetails.Location = new Point(26, 14);
+            lblDetails.Name = "lblDetails";
+            lblDetails.Size = new Size(116, 25);
+            lblDetails.TabIndex = 0;
+            lblDetails.Text = "User details";
+            //
+            // lblFName
+            //
+            lblFName.AutoSize = true;
+            lblFName.BackColor = Color.Transparent;
+            lblFName.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFName.ForeColor = Color.FromArgb(203, 217, 230);
+            lblFName.Location = new Point(28, 56);
+            lblFName.Name = "lblFName";
+            lblFName.Size = new Size(70, 17);
+            lblFName.TabIndex = 1;
+            lblFName.Text = "First name";
+            //
             // txtFName
-            // 
-            txtFName.BackColor = Color.FromArgb(245, 239, 235);
-            txtFName.BorderStyle = BorderStyle.FixedSingle;
-            txtFName.Location = new Point(27, 73);
-            txtFName.Multiline = true;
+            //
+            txtFName.BorderColor = Color.FromArgb(203, 217, 230);
+            txtFName.BorderRadius = 8;
+            txtFName.Cursor = Cursors.IBeam;
+            txtFName.DefaultText = "";
+            txtFName.FillColor = Color.FromArgb(245, 239, 235);
+            txtFName.FocusedState.BorderColor = Color.FromArgb(120, 160, 200);
+            txtFName.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtFName.ForeColor = Color.FromArgb(47, 65, 86);
+            txtFName.Margin = new Padding(3, 4, 3, 4);
+            txtFName.SelectedText = "";
+            txtFName.Location = new Point(28, 78);
             txtFName.Name = "txtFName";
-            txtFName.Size = new Size(256, 38);
-            txtFName.TabIndex = 5;
-            // 
+            txtFName.Size = new Size(250, 40);
+            txtFName.TabIndex = 2;
+            //
+            // lblLName
+            //
+            lblLName.AutoSize = true;
+            lblLName.BackColor = Color.Transparent;
+            lblLName.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLName.ForeColor = Color.FromArgb(203, 217, 230);
+            lblLName.Location = new Point(318, 56);
+            lblLName.Name = "lblLName";
+            lblLName.Size = new Size(70, 17);
+            lblLName.TabIndex = 3;
+            lblLName.Text = "Last name";
+            //
+            // txtLName
+            //
+            txtLName.BorderColor = Color.FromArgb(203, 217, 230);
+            txtLName.BorderRadius = 8;
+            txtLName.Cursor = Cursors.IBeam;
+            txtLName.DefaultText = "";
+            txtLName.FillColor = Color.FromArgb(245, 239, 235);
+            txtLName.FocusedState.BorderColor = Color.FromArgb(120, 160, 200);
+            txtLName.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtLName.ForeColor = Color.FromArgb(47, 65, 86);
+            txtLName.Margin = new Padding(3, 4, 3, 4);
+            txtLName.SelectedText = "";
+            txtLName.Location = new Point(318, 78);
+            txtLName.Name = "txtLName";
+            txtLName.Size = new Size(250, 40);
+            txtLName.TabIndex = 4;
+            //
+            // lblEmail
+            //
+            lblEmail.AutoSize = true;
+            lblEmail.BackColor = Color.Transparent;
+            lblEmail.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblEmail.ForeColor = Color.FromArgb(203, 217, 230);
+            lblEmail.Location = new Point(608, 56);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(41, 17);
+            lblEmail.TabIndex = 5;
+            lblEmail.Text = "Email";
+            //
+            // txtEmail
+            //
+            txtEmail.BorderColor = Color.FromArgb(203, 217, 230);
+            txtEmail.BorderRadius = 8;
+            txtEmail.Cursor = Cursors.IBeam;
+            txtEmail.DefaultText = "";
+            txtEmail.FillColor = Color.FromArgb(245, 239, 235);
+            txtEmail.FocusedState.BorderColor = Color.FromArgb(120, 160, 200);
+            txtEmail.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEmail.ForeColor = Color.FromArgb(47, 65, 86);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
+            txtEmail.SelectedText = "";
+            txtEmail.Location = new Point(608, 78);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(250, 40);
+            txtEmail.TabIndex = 6;
+            //
+            // lblPhone
+            //
+            lblPhone.AutoSize = true;
+            lblPhone.BackColor = Color.Transparent;
+            lblPhone.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPhone.ForeColor = Color.FromArgb(203, 217, 230);
+            lblPhone.Location = new Point(28, 136);
+            lblPhone.Name = "lblPhone";
+            lblPhone.Size = new Size(95, 17);
+            lblPhone.TabIndex = 7;
+            lblPhone.Text = "Phone number";
+            //
+            // txtPhoneNumber
+            //
+            txtPhoneNumber.BorderColor = Color.FromArgb(203, 217, 230);
+            txtPhoneNumber.BorderRadius = 8;
+            txtPhoneNumber.Cursor = Cursors.IBeam;
+            txtPhoneNumber.DefaultText = "";
+            txtPhoneNumber.FillColor = Color.FromArgb(245, 239, 235);
+            txtPhoneNumber.FocusedState.BorderColor = Color.FromArgb(120, 160, 200);
+            txtPhoneNumber.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPhoneNumber.ForeColor = Color.FromArgb(47, 65, 86);
+            txtPhoneNumber.Margin = new Padding(3, 4, 3, 4);
+            txtPhoneNumber.SelectedText = "";
+            txtPhoneNumber.Location = new Point(28, 158);
+            txtPhoneNumber.Name = "txtPhoneNumber";
+            txtPhoneNumber.Size = new Size(250, 40);
+            txtPhoneNumber.TabIndex = 8;
+            //
+            // lblPassword
+            //
+            lblPassword.AutoSize = true;
+            lblPassword.BackColor = Color.Transparent;
+            lblPassword.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPassword.ForeColor = Color.FromArgb(203, 217, 230);
+            lblPassword.Location = new Point(318, 136);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(63, 17);
+            lblPassword.TabIndex = 9;
+            lblPassword.Text = "Password";
+            //
+            // txtPassword
+            //
+            txtPassword.BorderColor = Color.FromArgb(203, 217, 230);
+            txtPassword.BorderRadius = 8;
+            txtPassword.Cursor = Cursors.IBeam;
+            txtPassword.DefaultText = "";
+            txtPassword.FillColor = Color.FromArgb(245, 239, 235);
+            txtPassword.FocusedState.BorderColor = Color.FromArgb(120, 160, 200);
+            txtPassword.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.ForeColor = Color.FromArgb(47, 65, 86);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
+            txtPassword.SelectedText = "";
+            txtPassword.Location = new Point(318, 158);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(250, 40);
+            txtPassword.TabIndex = 10;
+            //
+            // lblRole
+            //
+            lblRole.AutoSize = true;
+            lblRole.BackColor = Color.Transparent;
+            lblRole.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRole.ForeColor = Color.FromArgb(203, 217, 230);
+            lblRole.Location = new Point(608, 136);
+            lblRole.Name = "lblRole";
+            lblRole.Size = new Size(61, 17);
+            lblRole.TabIndex = 11;
+            lblRole.Text = "User role";
+            //
+            // txtRole
+            //
+            txtRole.BorderColor = Color.FromArgb(203, 217, 230);
+            txtRole.BorderRadius = 8;
+            txtRole.Cursor = Cursors.IBeam;
+            txtRole.DefaultText = "";
+            txtRole.FillColor = Color.FromArgb(245, 239, 235);
+            txtRole.FocusedState.BorderColor = Color.FromArgb(120, 160, 200);
+            txtRole.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtRole.ForeColor = Color.FromArgb(47, 65, 86);
+            txtRole.Margin = new Padding(3, 4, 3, 4);
+            txtRole.SelectedText = "";
+            txtRole.Location = new Point(608, 158);
+            txtRole.Name = "txtRole";
+            txtRole.Size = new Size(120, 40);
+            txtRole.TabIndex = 12;
+            //
+            // lblStatus
+            //
+            lblStatus.AutoSize = true;
+            lblStatus.BackColor = Color.Transparent;
+            lblStatus.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStatus.ForeColor = Color.FromArgb(203, 217, 230);
+            lblStatus.Location = new Point(742, 136);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(44, 17);
+            lblStatus.TabIndex = 13;
+            lblStatus.Text = "Status";
+            //
+            // txtStatus
+            //
+            txtStatus.BorderColor = Color.FromArgb(203, 217, 230);
+            txtStatus.BorderRadius = 8;
+            txtStatus.Cursor = Cursors.IBeam;
+            txtStatus.DefaultText = "";
+            txtStatus.FillColor = Color.FromArgb(245, 239, 235);
+            txtStatus.FocusedState.BorderColor = Color.FromArgb(120, 160, 200);
+            txtStatus.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtStatus.ForeColor = Color.FromArgb(47, 65, 86);
+            txtStatus.Margin = new Padding(3, 4, 3, 4);
+            txtStatus.SelectedText = "";
+            txtStatus.Location = new Point(742, 158);
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new Size(116, 40);
+            txtStatus.TabIndex = 14;
+            //
+            // lblUserID (hidden, holds the selected user's id)
+            //
+            lblUserID.AutoSize = true;
+            lblUserID.BackColor = Color.Transparent;
+            lblUserID.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUserID.ForeColor = Color.FromArgb(203, 217, 230);
+            lblUserID.Location = new Point(400, 226);
+            lblUserID.Name = "lblUserID";
+            lblUserID.Size = new Size(48, 17);
+            lblUserID.TabIndex = 15;
+            lblUserID.Text = "User ID";
+            lblUserID.Visible = false;
+            //
+            // txtUserID (hidden)
+            //
+            txtUserID.BorderColor = Color.FromArgb(203, 217, 230);
+            txtUserID.BorderRadius = 8;
+            txtUserID.Cursor = Cursors.IBeam;
+            txtUserID.DefaultText = "";
+            txtUserID.FillColor = Color.FromArgb(245, 239, 235);
+            txtUserID.FocusedState.BorderColor = Color.FromArgb(120, 160, 200);
+            txtUserID.Font = new Font("Segoe UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUserID.ForeColor = Color.FromArgb(47, 65, 86);
+            txtUserID.Margin = new Padding(3, 4, 3, 4);
+            txtUserID.SelectedText = "";
+            txtUserID.Location = new Point(400, 248);
+            txtUserID.Name = "txtUserID";
+            txtUserID.Size = new Size(120, 40);
+            txtUserID.TabIndex = 16;
+            txtUserID.Visible = false;
+            //
             // btnSave
-            // 
-            btnSave.BackColor = Color.FromArgb(203, 217, 230);
-            btnSave.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnSave.Location = new Point(31, 232);
+            //
+            btnSave.Animated = true;
+            btnSave.BorderRadius = 8;
+            btnSave.Cursor = Cursors.Hand;
+            btnSave.FillColor = Color.FromArgb(203, 217, 230);
+            btnSave.Font = new Font("Segoe UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = Color.FromArgb(47, 65, 86);
+            btnSave.HoverState.FillColor = Color.FromArgb(245, 239, 235);
+            btnSave.Location = new Point(28, 242);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(166, 51);
-            btnSave.TabIndex = 4;
+            btnSave.Size = new Size(150, 44);
+            btnSave.TabIndex = 17;
             btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
-            // 
-            // splitter2
-            // 
-            splitter2.BackColor = Color.FromArgb(203, 217, 230);
-            splitter2.Location = new Point(0, 0);
-            splitter2.Name = "splitter2";
-            splitter2.Size = new Size(1, 305);
-            splitter2.TabIndex = 0;
-            splitter2.TabStop = false;
-            // 
+            //
+            // btnClear
+            //
+            btnClear.Animated = true;
+            btnClear.BorderColor = Color.FromArgb(203, 217, 230);
+            btnClear.BorderRadius = 8;
+            btnClear.BorderThickness = 1;
+            btnClear.Cursor = Cursors.Hand;
+            btnClear.FillColor = Color.FromArgb(47, 65, 86);
+            btnClear.Font = new Font("Segoe UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClear.ForeColor = Color.FromArgb(245, 239, 235);
+            btnClear.HoverState.FillColor = Color.FromArgb(68, 92, 122);
+            btnClear.Location = new Point(192, 242);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(150, 44);
+            btnClear.TabIndex = 18;
+            btnClear.Text = "Clear";
+            //
             // frmAccounts
-            // 
-            AutoScaleDimensions = new SizeF(12F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
+            //
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(203, 217, 230);
-            ClientSize = new Size(934, 853);
+            ClientSize = new Size(934, 840);
             Controls.Add(pnlGuestDetail);
-            Controls.Add(btnSearch);
-            Controls.Add(lblSearch);
-            Controls.Add(txtSearch);
-            Controls.Add(dgvUsers);
             Controls.Add(btnEditUser);
-            Controls.Add(panel2);
-            Font = new Font("Microsoft Sans Serif", 12F);
+            Controls.Add(dgvUsers);
+            Controls.Add(btnSearch);
+            Controls.Add(txtSearch);
+            Controls.Add(pnlHeader);
+            Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmAccounts";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmAccounts";
+            Text = "Accounts";
             Load += frmAccounts_Load;
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
             pnlGuestDetail.ResumeLayout(false);
             pnlGuestDetail.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Panel panel2;
+        private Panel pnlHeader;
         private Label lblAccounts;
-        private Splitter splitter1;
-        private Button btnEditUser;
+        private Label lblSubtitle;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2Button btnSearch;
         private DataGridView dgvUsers;
-        private Button btnSearch;
-        private Label lblSearch;
-        private TextBox txtSearch;
-        private Panel pnlGuestDetail;
-        private Label label6;
+        private Guna.UI2.WinForms.Guna2Button btnEditUser;
+        private Guna.UI2.WinForms.Guna2Panel pnlGuestDetail;
+        private Label lblDetails;
+        private Label lblFName;
+        private Guna.UI2.WinForms.Guna2TextBox txtFName;
         private Label lblLName;
-        private TextBox txtLName;
+        private Guna.UI2.WinForms.Guna2TextBox txtLName;
         private Label lblEmail;
-        private TextBox txtEmail;
-        private Label label1;
-        private TextBox txtFName;
-        private Button btnSave;
-        private Splitter splitter2;
-        private Label label2;
-        private TextBox txtPhoneNumber;
-        private Label label3;
-        private TextBox txtPassword;
-        private Label label4;
-        private Label label5;
-        private Button btnClear;
-        private Label label7;
-        private TextBox txtUserID;
-        private TextBox txtStatus;
-        private TextBox txtRole;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
+        private Label lblPhone;
+        private Guna.UI2.WinForms.Guna2TextBox txtPhoneNumber;
+        private Label lblPassword;
+        private Guna.UI2.WinForms.Guna2TextBox txtPassword;
+        private Label lblRole;
+        private Guna.UI2.WinForms.Guna2TextBox txtRole;
+        private Label lblStatus;
+        private Guna.UI2.WinForms.Guna2TextBox txtStatus;
+        private Label lblUserID;
+        private Guna.UI2.WinForms.Guna2TextBox txtUserID;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
+        private Guna.UI2.WinForms.Guna2Button btnClear;
     }
 }
